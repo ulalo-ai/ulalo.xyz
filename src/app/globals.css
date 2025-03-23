@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #FFFF;
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: OpenSans-Light;
+  src: local("OpenSans-Light"),
+    url("/fonts/open-sans/OpenSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-LightItalic;
+  src: local("OpenSans-LightItalic"),
+    url("/fonts/open-sans/OpenSans-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: local("OpenSans-Regular"),
+    url("/fonts/open-sans/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-Italic;
+  src: local("OpenSans-Italic"),
+    url("/fonts/open-sans/OpenSans-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-Medium;
+  src: local("OpenSans-Medium"),
+    url("/fonts/open-sans/OpenSans-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-MediumItalic;
+  src: local("OpenSans-MediumItalic"),
+    url("/fonts/open-sans/OpenSans-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-SemiBold;
+  src: local("OpenSans-SemiBold"),
+    url("/fonts/open-sans/OpenSans-SemiBold.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: OpenSans-SemiBoldItalic;
+  src: local("OpenSans-SemiBoldItalic"),
+    url("/fonts/open-sans/OpenSans-SemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-Bold;
+  src: local("OpenSans-Bold"),
+    url("/fonts/open-sans/OpenSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-BoldItalic;
+  src: local("OpenSans-BoldItalic"),
+    url("/fonts/open-sans/OpenSans-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-ExtraBold;
+  src: local("OpenSans-ExtraBold"),
+    url("/fonts/open-sans/OpenSans-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: OpenSans-ExtraBoldItalic;
+  src: local("OpenSans-ExtraBoldItalic"),
+    url("/fonts/open-sans/OpenSans-ExtraBoldItalic.ttf") format("truetype");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: SFPRODISPLAYBLACKITALIC;
+  src: local("SFPRODISPLAYBLACKITALIC"),
+    url("/fonts/SFPro/SFPRODISPLAYBLACKITALIC.otf") format("truetype");
+}
+
+@font-face {
+  font-family: SFPRODISPLAYBOLD;
+  src: local("SFPRODISPLAYBOLD"),
+    url("/fonts/SFPro/SFPRODISPLAYBOLD.otf") format("truetype");
+}
+
+@font-face {
+  font-family: SFPRODISPLAYHEAVYITALIC;
+  src: local("SFPRODISPLAYHEAVYITALIC"),
+    url("/fonts/SFPro/SFPRODISPLAYHEAVYITALIC.otf") format("truetype");
+}
+
+@font-face {
+  font-family: SFPRODISPLAYLIGHTITALIC;
+  src: local("SFPRODISPLAYLIGHTITALIC"),
+    url("/fonts/SFPro/SFPRODISPLAYLIGHTITALIC.otf") format("truetype");
+}
+
+@font-face {
+  font-family: SFPRODISPLAYMEDIUM;
+  src: local("SFPRODISPLAYMEDIUM"),
+    url("/fonts/SFPro/SFPRODISPLAYMEDIUM.otf") format("truetype");
+}
+
+@font-face {
+  font-family: SFPRODISPLAYREGULAR;
+  src: local("SFPRODISPLAYREGULAR"),
+    url("/fonts/SFPro/SFPRODISPLAYREGULAR.otf") format("truetype");
+}
+
+@font-face {
+  font-family: SFPRODISPLAYSEMIBOLDITALIC;
+  src: local("SFPRODISPLAYSEMIBOLDITALIC"),
+    url("/fonts/SFPro/SFPRODISPLAYSEMIBOLDITALIC.otf") format("truetype");
+}
+
+@font-face {
+  font-family: SFPRODISPLAYTHINITALIC;
+  src: local("SFPRODISPLAYTHINITALIC"),
+    url("/fonts/SFPro/SFPRODISPLAYTHINITALIC.otf") format("truetype");
+}
+
+@font-face {
+  font-family: SFPRODISPLAYULTRALIGHTITALIC;
+  src: local("SFPRODISPLAYULTRALIGHTITALIC"),
+    url("/fonts/SFPro/SFPRODISPLAYULTRALIGHTITALIC.otf") format("truetype");
+}
+
+
+
+html::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 1rem;
+}
+
+
+
+
+.swiper_container {
+  position: relative;
+  padding: 0px 20px !important;
+}
+
+.swiper-slide {
+  opacity: 0.2;
+  transform: scale(0.85) !important;
+  background-color: white !important;
+  box-shadow: none;
+  border-radius: 12px;
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1) !important;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 0px 24.71px 9.504px rgba(74, 253, 125, 0.14);
+  z-index: 10;
+}
+
+.swiper-slide::before {
+  display: none;
+  content: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right,
+.swiper-3d .swiper-slide-shadow-top,
+.swiper-3d .swiper-slide-shadow-bottom {
+  background-image: none !important;
+  display: none !important;
+}
+
+
+ .custom-scrollbar::-webkit-scrollbar {
+   height: 8px;
+ }
+
+ .custom-scrollbar::-webkit-scrollbar-track {
+   background: #f1f1f1;
+   border-radius: 4px;
+ }
+
+ .custom-scrollbar::-webkit-scrollbar-thumb {
+   background: #888;
+   border-radius: 4px;
+ }
+
+ .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+   background: #555;
+ }
