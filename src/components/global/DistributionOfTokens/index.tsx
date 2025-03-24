@@ -43,7 +43,7 @@ const DistributionOfTokens = () => {
   return (
     <section id='tokenomics' className='container mx-auto max-w-[88rem] flex flex-col items-center justify-center p-5 md:p-16 mb-[40px] md:mb-0  '>
           <p className='text-secondary md:text-[46px] font-openSans_ExtraBold leading-[125%] uppercase text-[32px] '>Distribution of Tokens</p>
-          <p className='text-secondary text-[20px] font-sfpro_400 leading-[110%] mt-4 text-center text-balance'>Our clients — both corporate and private ones — will access all the services they need from a single platform. Blockchain technology gives us the chance to make your finances grow faster and give better returns.</p>
+          <p className='text-secondary text-[20px] font-sfpro_400 leading-[110%] mt-4 text-center text-balance'>Our clients — both corporate and private ones — will access all the services they need from a single platform.</p>
           <Link href={"https://ulalo.gitbook.io/ulalo-whitepaper"} target="_blank" className='bg-[#364655] text-white text-[16px] md:text-[24px] font-openSans_Medium leading-[23.856px] px-[64px] py-[24px] rounded-[25px] mt-8 '>Gitbook Docs</Link>
 
           <div className='flex flex-col-reverse md:flex-row  items-center justify-between w-full mt-[100px] '>

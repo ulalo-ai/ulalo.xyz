@@ -14,7 +14,7 @@ const Footer = () => {
                             <Logo />
                         </div>
                         <p className='text-[#FFF] text-[14px] leading-[22px] font-openSans_Regular'>
-                            ULALO Decentralized Smart Patient Wallet. Special Features: Multi-party Processes Automation, Digital Wallet, Real-Time Cryptocurrency Converter.
+                            ULALO Decentralized Smart Patient Wallet. Special Features: Secure Digital Wallet, AI Medical Insights and Recommendations, Telemedicine Integration, Token-based Medical Insurance.
                         </p>
                     </div>
 

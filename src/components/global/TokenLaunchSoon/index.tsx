@@ -15,15 +15,15 @@ const TokenLaunchSoon = () => {
 
                         <div className='flex flex-col  md:flex-row  h-full  gap-5'>
 
-                            <Card title='Cornerstone of ULALO Ecosystem' description='$ULA gives you the exclusive and priority access in the ecosystem&apos;s premium features like AI-based personalised health insights and dedicated customer service.' />
-                            <Card title='Earn by Growing Project ' description='Do your contributions like data sharing and engaging in community initiatives, and this way you get FREE new tokens at regular basis while improving healthcare system.' />
+                            <Card title='Cornerstone of ULALO Ecosystem' description='$ULA gives you exclusive and priority access to the ecosystem’s premium features like AI-based personalised health insights and dedicated customer service.' />
+                            <Card title='Earn by Growing Project ' description='Earn tokens on a regular basis and improve the healthcare system by sharing data and engaging in community initiatives.' />
 
 
 
                         </div>
 
                         <div className='flex flex-col md:flex-row h-full   gap-5'>
-                            <Card title='Higher Staking Rewards' description='Hold $ULA tokens to gain higher APY staking opportunity. This way you will grow your investments multifold.' />
+                            <Card title='Higher Staking Rewards' description='Stake your $ULA tokens for an attractive APY!' />
                             <Card title='Community Governance ' description='Vote on key decisions within the ULALO’s ecosystem. Governance rights mean you control the project&apos;s direction.' />
                         </div>
 
