@@ -303,8 +303,8 @@ const HeroSection = () => {
           >HEALTH DATA</p>
         </div>
 
-        <p className='text-[24px] text-[#374655] font-sfpro_400 leading-[125%] text-center mt-[20px]'>Decentralised Smart Health Passport Wallet </p>
-        <p className='text-[18px] text-[#374655] font-sfpro_400 leading-[125%] text-center mt-[20px]'>
+        <p className='text-[22px] text-[#374655] font-sfpro_400 leading-[125%] text-center mt-[20px]'>Decentralised Smart Health Passport Wallet </p>
+        <p className='text-[18px] text-[#374655] font-sfpro_400 leading-[125%] text-center mt-[15px]'>
           Welcome to the Web3 era of healthcare, where you will unlock the power of data while earning crypto rewards.
         </p>
         <div className='w-full flex-row flex items-center justify-center'>
@@ -317,7 +317,7 @@ const HeroSection = () => {
           repeatType: 'reverse',
 
         }} className="flex flex-col items-center"  >
-          <p className="text-[#364655] text-[20.3px] font-sfpro_400 ">I am ready to be free</p>
+          <p className="text-[#364655] text-[20px] font-sfpro_400 ">I am ready to be free</p>
           <div className="w-1.5">
             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="28" viewBox="0 0 23 28" fill="none">
               <path d="M9.3007 22.3428L16.3347 14.0675H10.8981L11.8836 6.49321L5.59686 15.4023H10.3198L9.3007 22.3428ZM5.83508 27.4148L7.19425 18.0717H0.398438L12.6309 0.720276H15.3492L13.9901 11.3981H22.145L8.55341 27.4148H5.83508Z" fill="#364655" />
