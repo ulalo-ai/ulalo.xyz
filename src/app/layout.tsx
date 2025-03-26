@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/global/Header";
 export const metadata: Metadata = {
   title: "Ulalo",
-  description: "The first meme coin to be created on the Ulao network",
+  description: "ULALO | Your secure HEALTH DATA HUB",
 };
 
 export default function RootLayout({
