@@ -9,8 +9,12 @@ const data = [
         color: '#F8F1FF'
     },
     {
-        title: '25% Advisors & Community',
+        title: '20% Advisors & Community',
         color: '#D2EFE5'
+    },
+    {
+        title: '5% Data-sharing Rewards',
+        color: '#CEFFCE'
     },
     {
         title: '10% Operations & Legal',
@@ -134,12 +138,23 @@ const DistributionOfTokens = () => {
                       initial={{opacity:0}}
                       whileInView={{opacity:1}}
                       transition={{duration:1, delay:1.5 ,ease:"easeInOut"}}
-                      className='w-auto h-auto absolute top-[50%] translate-y-1/2 p-[10px] max-w-[300px]  left-[0%] bg-[#D8FBE5] rounded-[12px] []  '
+                      className='w-auto h-auto absolute top-[55%] translate-y-1/2 p-[10px] max-w-[300px]  left-[0%] bg-[#E7FCF5] rounded-[12px] []  '
                       style={{
                           boxShadow: '0px 4px 10px 0px rgba(0, 0, 0, 0.14)'
                   }}
                   >
-                      <p className=' text-[12px] md:text-[16px] text-secondary font-sfpro_400 leading-[125%]  text-center '>25% Advisors & Community</p>
+                      <p className=' text-[12px] md:text-[16px] text-secondary font-sfpro_400 leading-[125%]  text-center '>20% Advisors & Community</p>
+                  </motion.div>
+                  <motion.div
+                      initial={{opacity:0}}
+                      whileInView={{opacity:1}}
+                      transition={{duration:1, delay:1.5 ,ease:"easeInOut"}}
+                      className='w-auto h-auto absolute top-[30%] left-0 md:-left-[5%] translate-y-1/2 p-[10px] max-w-[300px]   bg-[#CEFFCE] rounded-[12px] []  '
+                      style={{
+                          boxShadow: '0px 4px 10px 0px rgba(0, 0, 0, 0.14)'
+                  }}
+                  >
+                      <p className=' text-[12px] md:text-[16px] text-secondary font-sfpro_400 leading-[125%]  text-center '>5% Data-sharing Rewards</p>
                   </motion.div>
                   <div className='w-[100vw] md:w-[600px]  '>
                       
