@@ -1,6 +1,6 @@
 import { Marquee } from '@/components/ui/Marquee'
 import React from 'react'
-
+import Image from 'next/image'
 
 const BridgingTheWorld = () => {
     return (
@@ -35,7 +35,7 @@ export default BridgingTheWorld
 const MarqueeItem = ({ index }: { index: number }) => {
     return (
         <div className=' h-24 md:h-48 relative mx-4 group' >
-            <img src={`/image/marquee-${index + 1}.png`} alt="" className=' object-contain w-full h-full group-hover:grayscale-0 grayscale transition-all duration-300' />
+            <Image width={100} height={100} src={`/image/marquee-${index + 1}.png`} alt="" className=' object-contain w-full h-full group-hover:grayscale-0 grayscale transition-all duration-300' />
         </div>
     )
 }

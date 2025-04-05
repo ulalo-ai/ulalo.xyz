@@ -39,7 +39,7 @@ const LeftSection = () => {
             Are you passionate about blockchain and eager to make an impact in the medical and Web3 space? The ULALO Ambassador Program offers a unique opportunity to grow your influence and earn rewards by helping us promote, educate, and build our community.
           </p>
           <p>
-          We’re seeking creative, motivated individuals to join the exclusive ULALO Ambassador Program. Whether you're an experienced KOL or just starting out, you’ll have the opportunity to connect, collaborate, and contribute to reshaping the future of healthcare through blockchain.
+          We&apos;re seeking creative, motivated individuals to join the exclusive ULALO Ambassador Program. Whether you&apos;re an experienced KOL or just starting out, you&apos;ll have the opportunity to connect, collaborate, and contribute to reshaping the future of healthcare through blockchain.
           </p>
         </div>
       </div>

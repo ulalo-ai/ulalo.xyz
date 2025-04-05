@@ -34,7 +34,7 @@ const RoleCreator = () => {
                     {data.description}
                 </p>
                 <RightClickCard data={data.points} />
-                <p className="text-[#364655] font-openSans_Regular text-[15px] leading-[160%]">Whether you're a content creator, community builder, educator, or strategist—there’s a valuable role for you in the ULALO movement.
+                <p className="text-[#364655] font-openSans_Regular text-[15px] leading-[160%]">Whether you&apos; re a content creator, community builder, educator, or strategist—there&apos;s a valuable role for you in the ULALO movement.
                 </p>
             </div>
         ))}

@@ -1,6 +1,7 @@
 import { TriangelLogo } from '@/VectorImage/Image'
 import { motion, useScroll, useTransform } from 'motion/react'
 import React, { useRef, useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const HeroSection = () => {
 
@@ -73,7 +74,7 @@ const HeroSection = () => {
             }}
           >
             
-          <img src="/image/Herosection.png" alt="" className='w-[22vw] h-auto' />
+          <Image  width={100} height={100} src="/image/Herosection.png" alt="" className='w-[22vw] h-auto' />
         </motion.div>
         </div>
         <div className="absolute hidden md:flex flex-col justify-center items-center w-4/5">
@@ -309,7 +310,7 @@ const HeroSection = () => {
         </p>
         <div className='w-full flex-row flex items-center justify-center'>
           
-        <img src="/image/Herosection.png" alt="" className='w-[] h-auto ' />
+        <Image width={100} height={100} src="/image/Herosection.png" alt="" className='w-[] h-auto ' />
 </div>
         <motion.div animate={{ y: [-5.05389, 0] }} transition={{
           duration: 1, ease: 'linear',
