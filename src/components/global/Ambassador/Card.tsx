@@ -17,13 +17,15 @@ const datas = [
    },
    {
     title:"Skill development",
-    description:"As an ambassador, you’ll gain valuable skills in community building, marketing, and project advocacy. You will have the opportunity to improve your leadership, communication, and organizational ",
-    description1:"skills, helping you grow professionally."
+    description:"You will have the opportunity to improve your leadership, communication, and organizational skills, helping you grow professionally.",
    },
    {
     title:"Rewards and Incentives:",
-    description:`Our ambassadors will receive $ULA tokens,
-exclusive NFTs, and other rewards as a token of appreciation for their dedication and contribution to growing the ULALO community. This is your opportunity to earn while making an impact.`,
+    description:`Our ambassadors will receive $ULA tokens, USDT rewards, exclusive NFTs, and other incentives as a token of appreciation for their dedication and contributions to growing the ULALO community. This is your opportunity to earn while making a real impact in the Web3 and healthcare space.`,
+   },
+   {
+    title:"Performance Bonuses:",
+    description:`Top-performing ambassadors may receive bonus incentives based on milestones and impact.`,
    },
 ]
 
@@ -49,9 +51,6 @@ const Card = () => {
               </p>
               <p className='self-stretch text-[#364655] font-openSans_Regular text-[15px] leading-[160%]'>
                 {data.description}
-              </p>
-              <p className='self-stretch text-[#364655] font-openSans_Regular text-[15px] leading-[160%]'>
-                {data.description1}
               </p>
             </div>
           </div>

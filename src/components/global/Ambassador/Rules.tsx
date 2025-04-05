@@ -3,11 +3,12 @@ import RightClickCard from './RightClickCard'
 
 const items=[
     {
-        title:"Your Commitment",
+        title:"Your Commitment as an Ambassador",
         points:[
-            "Work closely with us to build and nurture the ULALO community.",
-            "Identify yourself as a ULALO KOL in your bios and promote ULALO actively.",
-            "Drive new users to ULALO through your unique KOL invitation link.",
+            "Collaborate closely with the ULALO team to strengthen and support our global community.",
+            "Represent ULALO proudly by adding your ambassador status to bios, profiles, or social handles.",
+            "Actively promote ULALO through your unique invitation link and help onboard new community members.",
+            "Maintain professionalism, consistency, and alignment with the ULALO brand and values.",
         ]
 
     },
@@ -16,9 +17,6 @@ const items=[
         points:[
             `ULALO will verify all followers to prevent fraudulent activity. Any KOL using bots or encouraging false
 registrations will be disqualified.`,
-            "Social media accounts must be active since August 31, 2022 and have published at least 30 posts.",
-            "After a one-month trial period, successful applicants will officially join the ULALO Ambassador Program and begin receiving a base salary.",
-            "ULAP members must submit daily task forms for review. ULALO reserves the right to request the removal of any content that does not meet ULALO standards.",
             "Any behavior that damages ULALO’s reputation will result in immediate termination and loss of all earnings.",
         ]
 

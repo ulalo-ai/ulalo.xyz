@@ -9,7 +9,7 @@ const dataset = [
   {
     title: 'Airdrops',
     description:
-      'Participate in special airdrop events.'
+      'Participate in special airdrop events. Top-performing ambassadors may receive bonus incentives based on milestones and impact. '
   },
   {
     title: 'Team Building',
@@ -17,9 +17,9 @@ const dataset = [
       'Join in on team-building activities to connect with other influencers.'
   },
   {
-    title: 'Bi-Weekly Payment',
+    title: 'Monthly Payment',
     description:
-      'Enjoy the benefit of bi-weekly payments for your contributions.'
+      'Receive monthly rewards based on your contributions and performance as an ambassador.'
   },
   {
     title: 'Giveaways',

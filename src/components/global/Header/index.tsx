@@ -65,11 +65,13 @@ const Header = () => {
                             <Link href="#smart-wallet">Smart Wallet</Link>
                         </li>
                         <li className="text-[#F8F1FF] text-[16px] font-openSans_Medium">
-                            <p className="text-[#FE0101] text-[10px] leading-[110%] font-sfpro_500">
-                                Coming Soon
-                            </p>
-                            <Link href="/">Testnet</Link>
-                        </li>
+    <p className="text-[#125d37] text-[10px] leading-[110%] font-sfpro_500 flex items-center gap-1">
+        <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
+        Live
+    </p>
+    <Link href="https://testnet.ulalo.xyz/">Testnet</Link>
+</li>
+
                         <li className="text-[#F8F1FF] text-[16px] font-openSans_Medium">
                             <Link href="#token">Token</Link>
                         </li>
@@ -124,10 +126,11 @@ const Header = () => {
                             <Link href="/" onClick={() => setMobileNav(false)}>Smart Wallet</Link>
                         </li>
                         <li className="text-[#364655] text-[16px] font-openSans_Medium">
-                            <p className="text-[#FE0101] text-[10px] leading-[110%] font-sfpro_500 text-center">
-                                Coming Soon
-                            </p>
-                            <Link href="/" onClick={() => setMobileNav(false)}>Testnet</Link>
+                        <p className="text-[#125d37] text-[10px] leading-[110%] font-sfpro_500 flex items-center gap-1">
+        <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
+        Live
+    </p>
+                            <Link href="https://testnet.ulalo.xyz/" onClick={() => setMobileNav(false)}>Testnet</Link>
                         </li>
                         <li className="text-[#364655] text-[16px] font-openSans_Medium">
                             <Link href="/" onClick={() => setMobileNav(false)}>Token</Link>

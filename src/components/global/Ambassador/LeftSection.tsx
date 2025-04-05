@@ -32,22 +32,15 @@ const LeftSection = () => {
       </div>
       <div className="flex flex-col items-start gap-4 self-stretch">
         <p className="self-stretch text-[#1BE866] font-sfpro_700 text-xl md:text-2xl  leading-[160%] tracking-[0.72px] uppercase">
-          Increase your influence, earn money with us, join the ULALO Ambassador
-          program
+        Boost Your Influence, Earn Rewards, and Shape the Future of Healthcare — Join the ULALO Ambassador Program
         </p>
         <div className="self-stretch text-[#364655] font-openSans_Regular text-sm md:text-base  leading-[160%] tracking-[0.48px]  flex flex-col gap-5 md:gap-6 lg:gap-8">
           <p className="">
             {" "}
-            Are you passionate about blockchain and eager to make your mark in
-            the Medical space? The ULALO Ambassador program offers you the
-            opportunity to increase your influence and earn money by creating
-            impactful content.
+            Are you passionate about blockchain and eager to make an impact in the medical and Web3 space? The ULALO Ambassador Program offers a unique opportunity to grow your influence and earn rewards by helping us promote, educate, and build our community.
           </p>
           <p>
-            We’re looking for creative, motivated people to join our exclusive
-            ULALO Ambassador program – whether you’re an experienced KOL or a
-            rising star, there’s a place for you here. Get ready to connect,
-            collaborate and contribute to the future of medicine with ULALO.
+          We’re seeking creative, motivated individuals to join the exclusive ULALO Ambassador Program. Whether you're an experienced KOL or just starting out, you’ll have the opportunity to connect, collaborate, and contribute to reshaping the future of healthcare through blockchain.
           </p>
         </div>
       </div>
@@ -59,7 +52,7 @@ const LeftSection = () => {
       <div className="flex w-full flex-col items-start gap-4">
           <p className='self-stretch text-[#1BE866] font-sfpro_700 text-xl md:text-2xl  leading-[160%] tracking-[-0.48px] uppercase'>How to get started</p>
           <p className='self-stretch text-[#364655] font-sfpro_400 text-lg md:text-xl  leading-6'>Would you like to register? Simply fill in the registration form below. Link:</p>
-          <a href="https://forms.gle/Pp3LEnTwTAfUz61c7" target="_blank" rel="noopener noreferrer" className='text-[#0071FC] font-openSans_Regular text-lg md:text-xl  leading-6'>https://forms.gle/Pp3LEnTwTAfUz61c7</a>
+          <a href="https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit" target="_blank" rel="noopener noreferrer" className='text-[#0071FC] font-openSans_Regular text-lg md:text-xl  leading-6'>https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit</a>
           <p className='self-stretch text-[#364655] font-sfpro_400 text-lg md:text-xl  leading-6'>We will select content creators to join our preparation group on Telegram, where we will evaluate and guide candidates through the process. Those who meet our criteria will be welcomed into the official ULALO Ambassador community.</p>
       </div>
      <Card/>
