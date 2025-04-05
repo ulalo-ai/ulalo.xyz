@@ -1,4 +1,3 @@
-
 import { Comment } from "@/VectorImage/Image";
 
 import React from "react";
@@ -52,7 +51,14 @@ const LeftSection = () => {
       <div className="flex w-full flex-col items-start gap-4">
           <p className='self-stretch text-[#1BE866] font-sfpro_700 text-xl md:text-2xl  leading-[160%] tracking-[-0.48px] uppercase'>How to get started</p>
           <p className='self-stretch text-[#364655] font-sfpro_400 text-lg md:text-xl  leading-6'>Would you like to register? Simply fill in the registration form below. Link:</p>
-          <a href="https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit" target="_blank" rel="noopener noreferrer" className='text-[#0071FC] font-openSans_Regular text-lg md:text-xl  leading-6'>https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit</a>
+          <a 
+            href="https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className='text-[#0071FC] font-openSans_Regular text-lg md:text-xl leading-6 max-w-[800px] w-full block overflow-hidden text-ellipsis'
+          >
+            https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit
+          </a>
           <p className='self-stretch text-[#364655] font-sfpro_400 text-lg md:text-xl  leading-6'>We will select content creators to join our preparation group on Telegram, where we will evaluate and guide candidates through the process. Those who meet our criteria will be welcomed into the official ULALO Ambassador community.</p>
       </div>
      <Card/>
