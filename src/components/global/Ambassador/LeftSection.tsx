@@ -1,4 +1,3 @@
-
 import { Comment } from "@/VectorImage/Image";
 
 import React from "react";
@@ -40,7 +39,7 @@ const LeftSection = () => {
             Are you passionate about blockchain and eager to make an impact in the medical and Web3 space? The ULALO Ambassador Program offers a unique opportunity to grow your influence and earn rewards by helping us promote, educate, and build our community.
           </p>
           <p>
-          We’re seeking creative, motivated individuals to join the exclusive ULALO Ambassador Program. Whether you're an experienced KOL or just starting out, you’ll have the opportunity to connect, collaborate, and contribute to reshaping the future of healthcare through blockchain.
+          We&apos;re seeking creative, motivated individuals to join the exclusive ULALO Ambassador Program. Whether you&apos;re an experienced KOL or just starting out, you&apos;ll have the opportunity to connect, collaborate, and contribute to reshaping the future of healthcare through blockchain.
           </p>
         </div>
       </div>
@@ -52,7 +51,14 @@ const LeftSection = () => {
       <div className="flex w-full flex-col items-start gap-4">
           <p className='self-stretch text-[#1BE866] font-sfpro_700 text-xl md:text-2xl  leading-[160%] tracking-[-0.48px] uppercase'>How to get started</p>
           <p className='self-stretch text-[#364655] font-sfpro_400 text-lg md:text-xl  leading-6'>Would you like to register? Simply fill in the registration form below. Link:</p>
-          <a href="https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit" target="_blank" rel="noopener noreferrer" className='text-[#0071FC] font-openSans_Regular text-lg md:text-xl  leading-6'>https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit</a>
+          <a 
+            href="https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className='text-[#0071FC] font-openSans_Regular text-lg md:text-xl leading-6 max-w-[800px] w-full block overflow-hidden text-ellipsis'
+          >
+            https://docs.google.com/forms/d/1X4OeFS8ncItDe6LaH8cF2kE6r5iAeG-48qIlThc9X_E/edit
+          </a>
           <p className='self-stretch text-[#364655] font-sfpro_400 text-lg md:text-xl  leading-6'>We will select content creators to join our preparation group on Telegram, where we will evaluate and guide candidates through the process. Those who meet our criteria will be welcomed into the official ULALO Ambassador community.</p>
       </div>
      <Card/>
