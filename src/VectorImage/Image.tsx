@@ -105,17 +105,6 @@ export const SinigCoin = () => {
 }
 
 
-const options = {
-    plugins: {
-        legend: {
-            display: false,
-        },
-        tooltip: {
-            enabled: true, // disables hover tooltips
-        },
-    },
-};
-
 export const data = {
         labels: [
             'Strategic Sale',
