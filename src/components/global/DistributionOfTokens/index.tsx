@@ -65,9 +65,11 @@ const DistributionOfTokens = () => {
             </div>
 
             {/* Pie Chart Block */}
-            <div className='flex-[2] flex justify-center items-center max-w-full'>
-                <div className='w-full md:max-w-[450px] flex flex-col items-center justify-center'>
-                    <DistributionPieChart />
+            <div className='flex-[2] flex justify-center items-center max-w-full h-full'>
+                <div className='w-full h-full max-w-[500px] max-h-[500px] flex items-center justify-center'>
+                    <div className="w-full max-w-[500px] h-[500px] relative">
+                        <DistributionPieChart />
+                    </div>
                 </div>
             </div>
 
@@ -78,6 +80,7 @@ const DistributionOfTokens = () => {
                 ))}
             </div>
         </div>
+
 
 
     </section>

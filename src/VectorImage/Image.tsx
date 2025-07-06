@@ -169,27 +169,29 @@ export const data = {
 
 export const DistributionPieChart = () => {
     return (
-        <Pie
-            data={data}
-            options={{
-                responsive: true,
-                maintainAspectRatio: false, // allows control via container
-                cutout: '60%', // makes it a donut chart
-                plugins: {
-                    legend: {
-                        display: false,
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: (tooltipItem) => {
-                                const value = tooltipItem.raw;
-                                return `${value}%`;
+        // <ResponsiveContainer width="100%" height="100%">
+            <Pie
+                data={data}
+                options={{
+                    responsive: true,
+                    maintainAspectRatio: false, // allows control via container
+                    cutout: '60%', // makes it a donut chart
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: (tooltipItem) => {
+                                    const value = tooltipItem.raw;
+                                    return `${value}%`;
+                                },
                             },
                         },
                     },
-                },
-            }}
-        />
+                }}
+            />
+        // </ResponsiveContainer>
     )
 }
 
