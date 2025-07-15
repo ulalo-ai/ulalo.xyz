@@ -1,4 +1,4 @@
-import { Discord, DiscordFooter, LinkedinFooter, Logo, Telegram, TelegramFooter, XFooter, YoutubeFooter } from '@/VectorImage/Image'
+import { Discord, DiscordFooter, LinkedinFooter, Logo, Telegram, TelegramFooter, XFooter, YoutubeFooter,IQlogo  } from '@/VectorImage/Image'
 import Link from 'next/link'
 
 const Footer = () => {
@@ -78,6 +78,9 @@ const Footer = () => {
                                 <Link href='https://www.youtube.com/@ULALO_IO' target='_blank'><YoutubeFooter /></Link>
                                 {/* <Link href=''><RedditFooter /></Link> */}
                                 <Link href='https://www.linkedin.com/company/ulalo-io/' target='_blank'><LinkedinFooter /></Link>
+                                <Link href="https://iq.wiki/wiki/ulalo" target="_blank">
+                  <IQlogo />
+                </Link>
                             </div>
                         </div>
                     </div>
