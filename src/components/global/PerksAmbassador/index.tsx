@@ -1,55 +1,54 @@
-import React from 'react'
+import React from "react";
+import { useTranslations } from "next-intl";
 
 const dataset = [
   {
-    title: 'Advance KOL Training',
-    description:
-      'Receive advanced training to enhance your influence.'
+    titleKey: "advanceKolTrainingTitle",
+    descriptionKey: "advanceKolTrainingDescription",
   },
   {
-    title: 'Airdrops',
-    description:
-      'Participate in special airdrop events. Top-performing ambassadors may receive bonus incentives based on milestones and impact. '
+    titleKey: "airdropsTitle",
+    descriptionKey: "airdropsDescription",
   },
   {
-    title: 'Team Building',
-    description:
-      'Join in on team-building activities to connect with other influencers.'
+    titleKey: "teamBuildingTitle",
+    descriptionKey: "teamBuildingDescription",
   },
   {
-    title: 'Monthly Payment',
-    description:
-      'Receive monthly rewards based on your contributions and performance as an ambassador.'
+    titleKey: "monthlyPaymentTitle",
+    descriptionKey: "monthlyPaymentDescription",
   },
   {
-    title: 'Giveaways',
-    description:
-      'Access to exclusive giveaways.'
+    titleKey: "giveawaysTitle",
+    descriptionKey: "giveawaysDescription",
   },
-]
+];
 
 const PerksAmbassador = () => {
+  const t = useTranslations();
+
   return (
-    <div className='flex w-full flex-col items-start gap-4'>
-        <p className='self-stretch text-[#1BE866] font-sfpro_700 text-2xl  leading-[160%] tracking-[0.72px] uppercase'>Perks of Joining:</p>
-        <div className="flex flex-wrap items-stretch gap-3 md:gap-4 self-stretch">
-  {dataset.map((item, index) => (
-    <div 
-      key={index} 
-      className="flex flex-col items-start gap-2 flex-[1_1_250px] border p-4 rounded-3xl border-solid border-[#CCC] max-w-[400px]"
-    >
-      <p className="self-stretch text-[#364655] font-sfpro_700 text-lg leading-[160%] tracking-[0.54px] uppercase">
-        {item.title}
+    <div className="flex w-full flex-col items-start gap-4">
+      <p className="self-stretch text-[#1BE866] font-sfpro_700 text-2xl  leading-[160%] tracking-[0.72px] uppercase">
+        {t("perksAmbassador.perksOfJoining")}
       </p>
-      <p className="self-stretch text-[#364655] font-sfpro_400 text-base leading-[160%]">
-        {item.description}
-      </p>
+      <div className="flex flex-wrap items-stretch gap-3 md:gap-4 self-stretch">
+        {dataset.map((item, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-start gap-2 flex-[1_1_250px] border p-4 rounded-3xl border-solid border-[#CCC] max-w-[400px]"
+          >
+            <p className="self-stretch text-[#364655] font-sfpro_700 text-lg leading-[160%] tracking-[0.54px] uppercase">
+              {t(`perksAmbassador.${item.titleKey}`)}
+            </p>
+            <p className="self-stretch text-[#364655] font-sfpro_400 text-base leading-[160%]">
+              {t(`perksAmbassador.${item.descriptionKey}`)}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
-  ))}
-</div>
+  );
+};
 
-    </div>
-  )
-}
-
-export default PerksAmbassador
+export default PerksAmbassador;

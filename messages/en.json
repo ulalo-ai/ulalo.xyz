@@ -1,0 +1,342 @@
+{
+  "homePage": {
+    "title": "Hello world!"
+  },
+  "LocaleSwitcher": {
+    "fr": "French",
+    "en": "English",
+    "label": "Language"
+  },
+  "heroSection": {
+    "reclaimControl": "Reclaim Control",
+    "over": "Over",
+    "healthData": "HEALTH DATA",
+    "your": "YOUR",
+    "decentralisedHealthWallet": "Decentralised & AI-Smart Health Passport Wallet",
+    "welcomeWeb3Era": "Welcome to the Web3 era of healthcare,",
+    "typingTextPrefix": "where you will unlock the power of data while earning crypto rewards.",
+    "decentralisedSmartHealthWallet": "Decentralised Smart Health Passport Wallet",
+    "digitalWorld": "Digital World",
+    "digitalWorldControls": "Digital world controls and dictates quality of your life",
+    "takeControlInternet": "Take control over the internet to take control over your life",
+    "readyToBeFree": "I am ready to be free",
+    "reclaimControlOver": "RECLAIM CONTROL OVER"
+  },
+  "tokenLaunchSoon": {
+    "tokenLaunchSoonHeading": "$ULA Token Launch Soon!",
+    "tokenLaunchSoonSubheading": "Buy tokens to enjoy unrivaled holder benefits!",
+    "cornerstoneTitle": "Cornerstone of ULALO Ecosystem",
+    "cornerstoneDescription": "$ULA gives you exclusive and priority access to the ecosystem’s premium features like AI-based personalised health insights and dedicated customer service.",
+    "earnTitle": "Earn by Growing Project",
+    "earnDescription": "Earn tokens on a regular basis and improve the healthcare system by sharing data and engaging in community initiatives.",
+    "stakingTitle": "Higher Staking Rewards",
+    "stakingDescription": "Stake your $ULA tokens for an attractive APY!",
+    "governanceTitle": "Community Governance",
+    "governanceDescription": "Vote on key decisions within the ULALO’s ecosystem. Governance rights mean you control the project's direction.",
+    "isMoreThanAsset": "$ULA is more than just a digital asset",
+    "keyToHealthcareEra": "—it’s a key to unlocking a new era in patient-centric healthcare.",
+    "viewTokenomics": "view Tokenomics",
+    "exploreWhitepaper": "Explore Whitepaper",
+    "exploreRoadmap": "Explore Roadmap",
+    "joinCommunity": "Join Community",
+    "purchaseTokens": "purchase $ULA Tokens",
+    "comingSoon": "COMING SOON!",
+    "empoweringHeading": "Empowering a Healthier Future for 400 Million patients with Web3 and AI"
+  },
+  "owningYourHealth": {
+    "owningYourHealthDataMeansOwningYour": "Owning Your Health Data Means Owning Your ...",
+    "patientIdentityProtection": "Patient Identity Protection",
+    "monetaryBenefits": "Monetary Benefits",
+    "medicalBenefits": "Medical Benefits",
+    "optimizingYourHealth": "Optimizing Your Health",
+    "transparency": "Transparency",
+    "controlAndPrivacy": "Control And Privacy"
+  },
+  "bridgingTheWorld": {
+    "headingPart1": "Bridging the world",
+    "headingPart2": "TOGETHER",
+    "footerText": "one block at a time..."
+  },
+  "roadMap": {
+    "heading": "Roadmap",
+
+    "itemTop1Title": "• The Origins",
+    "itemTop1Date": "Jan 2023",
+
+    "itemTop3Title": "• Refined the idea through comprehensive research to understand real-life patient needs globally.\n• Conducted thorough competitive benchmarking to identify market gaps and opportunities.",
+    "itemTop3Date": "Dec 2023",
+
+    "itemTop5Title": "• Token Launch within the Ethereum platform, Smart contract audit and Security",
+    "itemTop5Date": "June 2024",
+
+    "itemTop7Title": "• Development and Testing of Beta 1 with essential functionalities.\n• Ambassador Program launch.",
+    "itemTop7Date": "Jan 2025",
+
+    "itemTop9Title": "• Cross-chain and multi-chain interoperability for testnet\n• Partnership with launchpads and community growth efforts\n• Launch of $ULA token's investor round.",
+    "itemTop9Date": "April 2025",
+
+    "itemTop11Title": "Launching of ULALO L1 MainNet.",
+    "itemTop11Date": "Sep 2025",
+
+    "itemBottom2Title": "• Platform Alpha Released",
+    "itemBottom2Date": "March 2023",
+
+    "itemBottom4Title": "• Graduation from the The Founder Institute Sillicon Valley accelerator",
+    "itemBottom4Date": "April 2024",
+
+    "itemBottom6Title": "• Finalizing the Technical architecture, laying a solid foundation for the development of a user-centric solution.",
+    "itemBottom6Date": "Sep 2024",
+
+    "itemBottom8Title": "• Launching of ULALO L1 TestNet and call for beta testing.",
+    "itemBottom8Date": "March 2025",
+
+    "itemBottom10Title": "TGE and Listing on DEX and CEX Platforms",
+    "itemBottom10Date": "June 2025"
+  },
+  "distributionOfTokens": {
+    "title": "Distribution of Tokens",
+    "description": "Our clients — both corporate and private ones — will access all the services they need from a single platform.",
+    "buttonGitbookDocs": "Gitbook Docs",
+    "labelStrategicSale": "1.47% Strategic Sale",
+    "labelPublicSale": "3.50% Public Sale",
+    "labelTreasuryDaoFund": "18.03% Treasury/DAO Fund",
+    "labelLiquidity": "4.00% Liquidity",
+    "labelCommunity": "20.00% Community",
+    "labelDataSharingReward": "5.00% Data Sharing Reward",
+    "labelOperationsLegal": "5.00% Operations & Legal",
+    "labelMainnetEcosystemL1": "15.00% Mainnet & Ecosystem L1",
+    "labelMarketingGrantsPartnerships": "10.00% Marketing, Grants & Partnerships",
+    "labelTeamAdvisor": "17.00% Team & Advisor",
+    "labelAirdrop": "1.00% Airdrop"
+  },
+  "footer": {
+    "description": "ULALO Decentralized Smart Patient Wallet. Special Features: Secure Digital Wallet, AI Medical Insights and Recommendations, Telemedicine Integration, Token-based Medical Insurance.",
+    "utility": "UTILITY",
+    "home": "Home",
+    "testnet": "Testnet",
+    "mainnet": "Mainnet",
+    "gitbook": "Gitbook",
+    "token": "TOKEN",
+    "ulaToken": "$ULA Token",
+    "tokenomics": "Tokenomics",
+    "staking": "Staking",
+    "more": "MORE",
+    "joinCommunity": "Join Community",
+    "ambassadorProgram": "Ambassador Program",
+    "disclaimer": "Disclaimer",
+    "getYourWallet": "Get your wallet",
+    "links": "Links"
+  },
+  "card": {
+    "whyUlalo": "WHY ULALO",
+    "introText": "Becoming a ULALO ambassador means playing a vital role in spreading our vision and values. As an ambassador, you are not only supporting the mission of revolutionizing healthcare through blockchain, but you also get to benefit from multiple advantages:",
+    "exclusiveAccess": "Exclusive Access:",
+    "exclusiveAccessDescription": "Gain early access to key project updates, new features, and ULALO’s development roadmap. As part of the ULALO team, you’ll be the first to know about groundbreaking innovations.",
+    "empowerTheFutureOfHealthcare": "Empower the Future of Healthcare:",
+    "empowerTheFutureOfHealthcareDescription": "By representing ULALO, you’re not only advocating for blockchain technology but also for an improved healthcare system that benefits everyone.",
+    "expandYourNetwork": "Expand Your Network:",
+    "expandYourNetworkDescription": "You will join a global community of like-minded individuals passionate about the intersection of blockchain technology and healthcare. Collaborate, share ideas, and grow your professional network.",
+    "skillDevelopment": "Skill development",
+    "skillDevelopmentDescription": "You will have the opportunity to improve your leadership, communication, and organizational skills, helping you grow professionally.",
+    "rewardsAndIncentives": "Rewards and Incentives:",
+    "rewardsAndIncentivesDescription": "Our ambassadors will receive $ULA tokens, USDT rewards, exclusive NFTs, and other incentives as a token of appreciation for their dedication and contributions to growing the ULALO community. This is your opportunity to earn while making a real impact in the Web3 and healthcare space.",
+    "performanceBonuses": "Performance Bonuses:",
+    "performanceBonusesDescription": "Top-performing ambassadors may receive bonus incentives based on milestones and impact."
+  },
+  "ambassadorHeroSection": {
+    "blockchain": "Blockchain",
+    "events": "EVENTS",
+    "ico": "ICO",
+    "media": "Media",
+    "membershipProgram": "Membership Program",
+    "ulaToken": "ULA Token",
+    "ambassadorProgramTitle": "ULALO Ambassador Program"
+  },
+  "leftFormSection": {
+    "enterYourName": "Enter your name",
+    "enterYourEmailAddress": "Enter your Email Address",
+    "enterYourWebsiteUrl": "Enter your Website URL",
+    "writeAMessage": "Write a message",
+    "nameIsRequired": "Name is required",
+    "emailIsRequired": "Email is required",
+    "pleaseEnterAValidEmail": "Please enter a valid email",
+    "websiteUrlIsRequired": "Website URL is required",
+    "messageIsRequired": "Message is required",
+    "postAComment": "Post a comment"
+  },
+  "leftSection": {
+    "postedDate": "October 24, 2025",
+    "postedBy": "POSTED BY",
+    "boostYourInfluence": "Boost Your Influence, Earn Rewards, and Shape the Future of Healthcare — Join the ULALO Ambassador Program",
+    "passionateAboutBlockchain": "Are you passionate about blockchain and eager to make an impact in the medical and Web3 space? The ULALO Ambassador Program offers a unique opportunity to grow your influence and earn rewards by helping us promote, educate, and build our community.",
+    "seekingCreativeIndividuals": "We're seeking creative, motivated individuals to join the exclusive ULALO Ambassador Program. Whether you're an experienced KOL or just starting out, you'll have the opportunity to connect, collaborate, and contribute to reshaping the future of healthcare through blockchain.",
+    "howToGetStarted": "How to get started",
+    "registrationPrompt": "Would you like to register? Simply fill in the registration form below. Link:",
+    "selectionProcessDescription": "We will select content creators to join our preparation group on Telegram, where we will evaluate and guide candidates through the process. Those who meet our criteria will be welcomed into the official ULALO Ambassador community.",
+    "addAComment": "Add A COMMENT"
+  },
+  "rightBox": {
+    "helpHeader": "How can we help you?",
+    "supportDescription": "Contact Ulalo support team if you need help or have questions.",
+    "contactButton": "Contact Us"
+  },
+  "rightDropDown": {
+    "selectMonth": "Select Month",
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  },
+  "rightSection": {
+    "categories": "Categories",
+    "archieves": "Archieves",
+    "itemAma": "AMA",
+    "itemBlockchain": "Blockchain",
+    "itemEvents": "Events",
+    "itemIco": "ICO",
+    "itemMedia": "Media",
+    "itemMembershipProgram": "Membership Program",
+    "itemUlaToken": "ULA Token",
+    "itemUlalo": "Ulalo"
+  },
+  "roleCreator": {
+    "yourRoleAsAUlaloAmbassador": "Your Role as a ULALO Ambassador",
+    "ambassadorDescription": "As an ambassador, you will play a dynamic role in growing and supporting the ULALO ecosystem. Your contributions may include:",
+    "promotingBrand": "Promoting the ULALO brand across social media and Web3 platforms",
+    "creatingContent": "Creating original and engaging content (threads, videos, graphics, etc.)",
+    "participatingCommunity": "Participating in community discussions and answering questions",
+    "hostingEvents": "Hosting or joining events, AMAs, and campaigns",
+    "supportingRegionalGrowth": "Supporting regional growth and localized awareness",
+    "identifyingOpportunities": "Identifying partnership or collaboration opportunities",
+    "roleValueStatement": "Whether you're a content creator, community builder, educator, or strategist—there's a valuable role for you in the ULALO movement."
+  },
+  "rules": {
+    "yourCommitmentAsAnAmbassador": "Votre engagement en tant qu'ambassadeur",
+    "yourCommitmentPoint1": "Collaborez étroitement avec l'équipe ULALO pour renforcer et soutenir notre communauté mondiale.",
+    "yourCommitmentPoint2": "Représentez fièrement ULALO en ajoutant votre statut d'ambassadeur aux biographies, profils ou réseaux sociaux.",
+    "yourCommitmentPoint3": "Promouvez activement ULALO via votre lien d'invitation unique et aidez à intégrer de nouveaux membres dans la communauté.",
+    "yourCommitmentPoint4": "Maintenez professionnalisme, cohérence et alignement avec la marque et les valeurs ULALO.",
+
+    "importantNotes": "Notes importantes",
+    "importantNotesPoint1": "ULALO vérifiera tous les abonnés pour prévenir les activités frauduleuses. Tout KOL utilisant des bots ou incitant à de fausses inscriptions sera disqualifié.",
+    "importantNotesPoint2": "Tout comportement portant atteinte à la réputation d'ULALO entraînera une résiliation immédiate et la perte de tous les gains.",
+
+    "rulesOfElimination": "Règles d'élimination",
+    "rulesOfEliminationPoint1": "Le non-respect des critères d'évaluation mensuels peut entraîner la résiliation du contrat, avec deux possibilités de réintégration.",
+    "rulesOfEliminationPoint2": "Les actions causant des dommages importants à la marque ULALO entraîneront une disqualification immédiate.",
+    "rulesOfEliminationPoint3": "La publication continue de contenu interdit après trois avertissements entraînera la résiliation du contrat.",
+
+    "precautions": "Précautions",
+    "precautionsPoint1": "Les KOL doivent éviter toute déclaration diffamatoire sur ULALO. Toute violation entraînera une résiliation immédiate.",
+    "precautionsPoint2": "La participation à des activités illégales sous le nom d'ULALO entraînera une résiliation immédiate.",
+    "precautionsPoint3": "L'utilisation non autorisée du nom ULALO à des fins personnelles entraînera une résiliation et la récupération potentielle de tous les gains."
+  },
+  "tags": {
+    "tags": "Tags",
+    "tag1MillionUla": "#1MillionULA",
+    "tagBlockchainHealthcare": "#BlockchainHealthcare",
+    "tagBlockchainInHealthcare": "#BlockchainInHealthcare",
+    "tagCommunity": "#Community",
+    "tagCommunityFirst": "#CommunityFirst",
+    "tagCryptoRewards": "#CryptoRewards",
+    "tagBitcoin": "#BitCoin",
+    "tagUlaToken": "#ULAToken",
+    "tagUlaLo": "#ULALO",
+    "tagHealthcareInnovation": "#HealthcareInnovation",
+    "tagUla": "#ula",
+    "tagEthereum": "#Ethereum",
+    "tagMembershipProgram": "#MembershipProgram",
+    "tagWinnersAnnounced": "#WinnersAnnounced",
+    "tagAmbassadeursUlaLo": "#AmbassadeursULALO",
+    "tagCryptocurrency": "#Cryptocurrency"
+  },
+  "header": {
+    "smartWallet": "Smart Wallet",
+    "live": "Live",
+    "testnet": "Testnet",
+    "token": "Token",
+    "gitbook": "Gitbook",
+    "comingSoon": "Coming Soon",
+    "staking": "Staking",
+    "ambassadorProgram": "Ambassador Program",
+    "buyUlaToken": "Buy $ULA Token",
+    "comingSoonLabel": "COMING SOON!",
+    "links": "Links"
+  },
+  "perksAmbassador": {
+    "perksOfJoining": "Perks of Joining:",
+    "advanceKolTrainingTitle": "Advance KOL Training",
+    "advanceKolTrainingDescription": "Receive advanced training to enhance your influence.",
+    "airdropsTitle": "Airdrops",
+    "airdropsDescription": "Participate in special airdrop events. Top-performing ambassadors may receive bonus incentives based on milestones and impact.",
+    "teamBuildingTitle": "Team Building",
+    "teamBuildingDescription": "Join in on team-building activities to connect with other influencers.",
+    "monthlyPaymentTitle": "Monthly Payment",
+    "monthlyPaymentDescription": "Receive monthly rewards based on your contributions and performance as an ambassador.",
+    "giveawaysTitle": "Giveaways",
+    "giveawaysDescription": "Access to exclusive giveaways."
+  },
+  "showCaseSubSection1": {
+    "reclaimControl": "RECLAIM CONTROL",
+    "description": "ULALO revolutionizes healthcare with patient empowerment, overcoming paper-based records, improved care coordination, global healthcare access."
+  },
+  "showCaseSubSection2": {
+    "headingPart1": "Your secure",
+    "headingPart2": "HEALTH DATA HUB",
+    "description": "ULALO is the protocol and infrastructure that empowers patients to:",
+    "feature1": "Securely store and manage their complete medical history.",
+    "feature2": "Easily share relevant medical data with healthcare providers.",
+    "feature3": "Gain valuable insights into their health through data visualization and analysis.",
+    "feature4": "Receive personalized medication recommendations and disease risk alerts (Premium feature)."
+  },
+  "showCaseSubSection3": {
+    "ulaloPocketSized": "ULALO-Pocket Sized",
+    "healthAdvocate": "Health Advocate",
+    "ulaloDescriptionPart1": "The ultimate goal of ULALO is to be the all-in-one wallet solution.",
+    "ulaloDescriptionPart2": "No more hunting for records! ULALO puts your medical data at your fingertips – anytime, anywhere, in any language.",
+    "imageAltSubsection1": "subsection1"
+  },
+  "BottomLeft": {
+    "securePrivateInYourControl": "Secure, Private, and In Your Control",
+    "description": "Whether you’re managing chronic conditions, undergoing treatment, or simply staying on top of your health, ULALO ensures that your data is always safe, private, and under your control.",
+    "logoAltText": "ULALO",
+    "walletImageAltText": "ULALO"
+  },
+  "bottomRight": {
+    "ulaloIsRelevant": "Ulalo is relevant to ANY PERSON ON THE PLANET"
+  },
+  "middleLeft": {
+    "ourApproach": "OUR APPROACH",
+    "paragraph1": "ULALO stands out by integrating blockchain technology into healthcare, ensuring that all patient data is encrypted, immutable, and accessible only to those authorized by the patient.",
+    "paragraph2": "By putting control back in the hands of the patients, ULALO fosters a healthcare environment where privacy and efficiency are the norm."
+  },
+  "middleRight": {
+    "whyUlalo": "Why ULALO?",
+    "introText": "In today’s digital age, health data is one of the most valuable assets a person possesses. However, traditional systems often fall short in providing the security and accessibility that modern patients require. ULALO addresses this challenge with a blockchain-based platform that is not only secure but user-friendly."
+  },
+  "topRight": {
+    "revolutionizeHealthcareTitle": "Revolutionize Healthcare",
+    "revolutionizeHealthcareDescription": "We envision a future where healthcare is no longer fragmented but unified through innovative technology. By leveraging blockchain, we are ensuring that every piece of data is protected and that patients remain the ultimate guardians of their health records.",
+    "joinCommunityTitle": "Join a growing community",
+    "joinTelegramButton": "Join Telegram",
+    "joinDiscordButton": "Join Discord",
+    "joinCommunityDescription": "ULALO is a decentralized smart wallet that puts individuals in control of their health data securely and efficiently. Join the community and take control of the future.",
+    "useUlaloWalletTitle": "Use ULALO Wallet",
+    "useUlaloWalletDescription": "Taking ownership of your data, identity, health history is easy with ULALO. With our blockchain-secured wallet and get “true” ownership."
+  },
+  "upperTop": {
+    "headerText": "ULALO - ONE STOP SOLUTION FOR YOUR HEALTH DATA",
+    "uloLabel": "ULALO",
+    "altLogo": "ULALO",
+    "altCube": "ULALO",
+    "description": "At ULALO, we believe in a world where individuals have complete control over their health data. Founded on the principles of transparency, security, and patient empowerment."
+  }
+}

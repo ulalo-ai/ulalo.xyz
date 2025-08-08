@@ -1,0 +1,10 @@
+{
+  "homePage": {
+    "title": "Bonjour le monde !"
+  },
+  "LocaleSwitcher": {
+    "fr": "Français",
+    "en": "Anglais",
+    "label": "Langue"
+  }
+}
