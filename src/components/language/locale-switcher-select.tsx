@@ -1,18 +1,16 @@
 "use client";
 
-import { CheckIcon, GlobeIcon } from "lucide-react"; // shadcn uses lucide icons
-import { useTransition } from "react";
+import { CheckIcon, GlobeIcon } from "lucide-react";
+import { useTransition, useState } from "react";
 import { Locale } from "@/i18n/config";
 import { setUserLocale } from "@/services/locale";
 
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
 
 type Props = {
   defaultValue: string;
@@ -26,41 +24,85 @@ export default function LocaleSwitcherSelect({
   label,
 }: Props) {
   const [isPending, startTransition] = useTransition();
+  const [open, setOpen] = useState(false);
+
+  const currentItem = items.find((item) => item.value === defaultValue);
 
   function onChange(value: string) {
     const locale = value as Locale;
+    setOpen(false);
     startTransition(() => {
       setUserLocale(locale);
     });
   }
 
   return (
-    <Select defaultValue={defaultValue} onValueChange={onChange}>
-      <SelectTrigger
-        aria-label={label}
-        className={isPending ? "pointer-events-none opacity-60" : undefined}
-      >
-        <GlobeIcon className="mr-2 h-5 w-5 text-slate-600" />
-        <SelectValue />
-      </SelectTrigger>
-      <SelectContent position="popper" className="min-w-[8rem]">
-        <SelectGroup>
-          {items.map((item) => (
-            <SelectItem
-              key={item.value}
-              value={item.value}
-              className="flex items-center"
-            >
-              <span className="mr-2 flex h-5 w-5 items-center justify-center">
-                {item.value === defaultValue && (
-                  <CheckIcon className="h-5 w-5 text-slate-600" />
-                )}
-              </span>
-              {item.label}
-            </SelectItem>
-          ))}
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+    <div className="fixed bottom-5 right-5 z-50">
+      <Popover open={open} onOpenChange={setOpen}>
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            role="combobox"
+            aria-expanded={open}
+            aria-label={label}
+            disabled={isPending}
+            className={`
+            !aspect-square
+            h-fit
+            px-3 
+            text-sm
+            font-normal
+            flex-col
+            items-center
+            justify-center
+            rounded-full
+            shadow-md
+            ${isPending ? "opacity-60" : ""}
+          `}
+          >
+            <GlobeIcon className="h-4 w-4 text-muted-foreground" />
+            <span className="truncate uppercase text-xs text-black font-semibold">
+              {currentItem?.value || "Select language"}
+            </span>
+          </Button>
+        </PopoverTrigger>
+
+        <PopoverContent className="w-80 p-1" align="start" sideOffset={4}>
+          <div className="max-h-80 overflow-y-auto">
+            <div className="grid gap-0.5">
+              {items.map((item) => (
+                <button
+                  key={item.value}
+                  onClick={() => onChange(item.value)}
+                  className={`
+                  flex 
+                  items-center 
+                  justify-between 
+                  w-full 
+                  px-3 
+                  py-2.5 
+                  text-left 
+                  text-sm 
+                  rounded-md 
+                  transition-colors 
+                  font-medium
+                  ${
+                    item.value === defaultValue
+                      ? "bg-accent text-accent-foreground"
+                      : "hover:bg-accent/50"
+                  }
+                `}
+                >
+                  <span className="truncate pr-2">{item.label}</span>
+                  {item.value === defaultValue && (
+                    <CheckIcon className="h-4 w-4 flex-shrink-0" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 }
