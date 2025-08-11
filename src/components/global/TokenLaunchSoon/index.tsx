@@ -1,6 +1,8 @@
 import { GoArrow, Logo, SinigCoin, Speaker } from "@/VectorImage/Image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import {FaDiscord, FaTelegramPlane} from "react-icons/fa";
+import {RiTelegram2Fill} from "react-icons/ri";
 
 const TokenLaunchSoon = () => {
   const t = useTranslations();
@@ -67,50 +69,28 @@ const TokenLaunchSoon = () => {
             <div className=" relative z-50 w-full bg-[#36C56B] border-solid border-[3px] border-white rounded-[64px] p-[24px] pt-[151px] flex flex-col items-center  justify-start  ">
               <Link
                 href={"#roadmap"}
-                className="w-[80%] flex flex-col items-center justify-center bg-[#364655] text-white text-[24px] font-openSans_Medium leading-[23.856px] capitalize py-[25px] mt-[22px] rounded-[25px]"
+                className="w-[80%] flex flex-col items-center text-center justify-center bg-[#364655] text-white text-[24px] font-openSans_Medium leading-[23.856px] capitalize py-[25px] mt-[22px] rounded-[25px]"
               >
                 {t("tokenLaunchSoon.exploreRoadmap")}
               </Link>
-              <div className="w-[80%] bg-[#364655] text-[#FFF] flex flex-col items-center gap-y-[20px] text-[24px] font-openSans_Medium leading-[23.856px] capitalize py-[25px] mt-[22px] rounded-[25px]">
-                {t("tokenLaunchSoon.joinCommunity")}
+              <div className="w-[80%] bg-[#364655] text-[#FFF] flex flex-col text-center items-center gap-y-[20px] text-[24px] font-openSans_Medium leading-[23.856px] capitalize py-[25px] mt-[22px] rounded-[25px]">
+                <div className={'flex justify-center items-center text-center'}>
+                  {t("tokenLaunchSoon.joinCommunity")}
+                </div>
                 <div className="flex flex-row gap-x-4 ">
                   <Link
                     href="https://discord.gg/ChhVCqe9Vp"
                     target="_blank"
                     className="w-[64px] h-[64px]  flex flex-col items-center justify-center bg-white rounded-[8px]"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="41"
-                      height="33"
-                      viewBox="0 0 41 33"
-                      fill="none"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M15.2989 28.3014C14.8287 29.6113..."
-                        fill="#364655"
-                      />
-                    </svg>
+                    <FaDiscord className={'w-[40px] !text-[#364655] h-auto'} />
                   </Link>
                   <Link
                     href="https://t.me/+Zeg3Q8tRseEzM2U8"
                     target="_blank"
                     className="w-[64px] h-[64px] flex flex-col items-center justify-center bg-white rounded-[8px]"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="40"
-                      height="33"
-                      viewBox="0 0 40 33"
-                      fill="none"
-                    >
-                      <path
-                        d="M36.8533 0.770466L2.30684 13.8038..."
-                        fill="#364655"
-                      />
-                    </svg>
+                    <FaTelegramPlane className={'w-[40px] !text-[#364655] h-auto'} />
                   </Link>
                 </div>
               </div>
@@ -131,7 +111,14 @@ const TokenLaunchSoon = () => {
             <GoArrow />
           </div>
           <p className="text-[#626262] text-[24px] hidden md:flex items-center justify-center font-openSans_Medium leading-[125%] capitalize ">
-            {t("tokenLaunchSoon.comingSoon")}
+            <button className="md:block hidden bg-[#1BE866] text-[#fff] relative text-[16px] font-openSans_SemiBold px-[21.3px] py-[12.5px] rounded-[48px]">
+              <Link href="https://www.mexc.com/exchange/ULA_USDT" target={"_blank"}>{t("header.buyUlaToken")}</Link>
+              {/*<div className="w-[68px] bg-white rotate-[-7deg] h-[41px] rounded-[48px] absolute top-0 right-0 -translate-y-1/2 flex flex-col items-center justify-center translate-x-1/2">*/}
+              {/*  <p className="text-[#FE0101] text-[13px] leading-[110%] font-sfpro_500 text-center">*/}
+              {/*    {t("header.comingSoonLabel")}*/}
+              {/*  </p>*/}
+              {/*</div>*/}
+            </button>
           </p>
         </div>
       </div>
@@ -156,12 +143,12 @@ const Card = ({
   description: string;
 }) => {
   return (
-    <div className="pt-[88px] bg-primary rounded-[64px]  ">
+    <div className="pt-[88px] bg-[#1BE866] rounded-[64px]  ">
       <div className=" relative border-solid border-[3px] h-full border-black rounded-[48px] p-8 pt-[64px] pb-[120px] bg-white flex flex-col  gap-6  max-w-[400px]">
-        <h1 className="text-secondary text-[32px] uppercase font-openSans_ExtraBold leading-[125%]">
+        <h1 className="!text-[#364655] text-[32px] uppercase font-openSans_ExtraBold leading-[125%]">
           {title}
         </h1>
-        <p className="text-secondary text-[16px] font-openSans_Medium leading-[125%]">
+        <p className="text-[#364655] text-[16px] font-openSans_Medium leading-[125%]">
           {description}
         </p>
         <SpeakerCircle />

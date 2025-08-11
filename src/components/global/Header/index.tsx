@@ -99,12 +99,12 @@ const Header = () => {
           </ul>
 
           <button className="md:block hidden bg-white text-[#374655] relative text-[16px] font-openSans_SemiBold px-[21.3px] py-[12.5px] rounded-[48px]">
-            <Link href="/">{t("header.buyUlaToken")}</Link>
-            <div className="w-[68px] bg-white rotate-[-7deg] h-[41px] rounded-[48px] absolute top-0 right-0 -translate-y-1/2 flex flex-col items-center justify-center translate-x-1/2">
-              <p className="text-[#FE0101] text-[13px] leading-[110%] font-sfpro_500 text-center">
-                {t("header.comingSoonLabel")}
-              </p>
-            </div>
+            <Link href="https://www.mexc.com/exchange/ULA_USDT" target={"_blank"}>{t("header.buyUlaToken")}</Link>
+            {/*<div className="w-[68px] bg-white rotate-[-7deg] h-[41px] rounded-[48px] absolute top-0 right-0 -translate-y-1/2 flex flex-col items-center justify-center translate-x-1/2">*/}
+            {/*  <p className="text-[#FE0101] text-[13px] leading-[110%] font-sfpro_500 text-center">*/}
+            {/*    {t("header.comingSoonLabel")}*/}
+            {/*  </p>*/}
+            {/*</div>*/}
           </button>
 
           <button
@@ -178,14 +178,14 @@ const Header = () => {
 
           <div className="mt-12 flex flex-col items-center justify-center">
             <button className="w-auto bg-[#374655] text-white relative text-[16px] font-openSans_SemiBold px-[21.3px] py-[12.5px] rounded-[48px]">
-              <Link href="/" onClick={() => setMobileNav(false)}>
+              <Link href="https://www.mexc.com/exchange/ULA_USDT" onClick={() => setMobileNav(false)}>
                 {t("header.buyUlaToken")}
               </Link>
-              <div className="w-[68px] bg-white rotate-[-7deg] h-[41px] rounded-[48px] absolute top-0 right-0 -translate-y-1/2 flex flex-col items-center justify-center translate-x-1/2">
-                <p className="text-[#FE0101] text-[13px] leading-[110%] font-sfpro_500 text-center">
-                  {t("header.comingSoonLabel")}
-                </p>
-              </div>
+              {/*<div className="w-[68px] bg-white rotate-[-7deg] h-[41px] rounded-[48px] absolute top-0 right-0 -translate-y-1/2 flex flex-col items-center justify-center translate-x-1/2">*/}
+              {/*  <p className="text-[#FE0101] text-[13px] leading-[110%] font-sfpro_500 text-center">*/}
+              {/*    {t("header.comingSoonLabel")}*/}
+              {/*  </p>*/}
+              {/*</div>*/}
             </button>
           </div>
 

@@ -11,11 +11,11 @@ export default {
   	extend: {
   		colors: {
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
+  				DEFAULT: '#1BE866',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
   			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
+  				DEFAULT: '#364655',
   				foreground: 'hsl(var(--secondary-foreground))'
   			},
   			'secondary-100': '#DFE9EE',
