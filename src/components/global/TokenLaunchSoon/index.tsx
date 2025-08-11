@@ -2,7 +2,6 @@ import { GoArrow, Logo, SinigCoin, Speaker } from "@/VectorImage/Image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import {FaDiscord, FaTelegramPlane} from "react-icons/fa";
-import {RiTelegram2Fill} from "react-icons/ri";
 
 const TokenLaunchSoon = () => {
   const t = useTranslations();
