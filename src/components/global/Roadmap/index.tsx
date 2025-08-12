@@ -47,7 +47,7 @@ const Roadmap = () => {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseUp}
         >
-          <div className="min-w-[1500px] h-auto pt-[120px] pb-[150px]">
+          <div className="min-w-[1500px] min-h-[700px] h-auto pt-[120px] pb-[120px]">
             <div className="w-full h-[11px] bg-secondary/10 rounded-[10px] relative my-[200px]">
               <div className="w-[55%] h-full bg-primary/20 rounded-[10px]" />
 
@@ -131,96 +131,39 @@ const Roadmap = () => {
 
 export default Roadmap;
 
-const RoadmapItemTop = ({
-  index,
-  className,
-  title,
-  date,
-  isGray = false,
-}: {
-  index: number;
-  className?: string;
-  title: string;
-  date: string;
-  isGray?: boolean;
-}) => {
-  // Split title by new line for bullet list rendering
-  const lines = title.split("\n").filter(Boolean);
-
+const RoadmapItemTop = ({ index, className, title, date, isGray = false }: { index: number, className?: string, title: string, date: string, isGray?: boolean }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      whileInView={{ opacity: 1, y: 5 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-      className={`absolute bottom-0 translate-y-[5px] flex flex-col items-center justify-start ${className}`}
-    >
-      <div
-        className={`w-[1px] h-[96px]  ${
-          isGray ? "bg-[#DFE9EE]" : "bg-primary"
-        }`}
-      ></div>
-      <div
-        className={`w-[20px] h-[20px] rounded-full border border-solid border-black ${
-          isGray ? "bg-[#DFE9EE]" : "bg-primary"
-        }`}
-      />
+      <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 5 }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
+          className={` absolute bottom-0 translate-y-[5px]  flex flex-col items-center justify-start ${className}`}>
+        <div className={`w-[1px] h-[96px]  ${isGray ? 'bg-[#DFE9EE]' : 'bg-primary'}`} ></div>
+        <div className={`w-[20px] h-[20px]  rounded-full border border-solid border-black ${isGray ? 'bg-[#DFE9EE]' : 'bg-primary'}`} />
 
-      <div className="w-[240px] h-auto rounded-lg absolute top-0 left-[20px] -translate-y-[80%] flex flex-col items-start gap-2 px-2 md:px-5 py-[10px] md:py-[20px] text-left bg-primary text-secondary text-[12px] md:text-[16px] font-normal leading-[24px]">
-        {lines.map((line, i) => (
-          <p key={i} className="text-secondary">
-            {line.trim()}
-          </p>
-        ))}
-        <p className="text-[#000] text-[16px] md:text-[24px] font-normal leading-[15px] tracking-normal mt-2">
-          {date}
-        </p>
-      </div>
-    </motion.div>
-  );
-};
+        <div className='w-[240px] h-auto rounded-lg absolute top-0 left-[20px] -translate-y-[80%] flex flex-col items-start gap-5 '>
+          <div className={` text-secondary  text-[12px] md:text-[16px] font-normal leading-[24px] px-2 md:px-5 py-[10px] md:py-[20px] text-left   rounded-lg ${isGray ? 'bg-[#DFE9EE]' : 'bg-primary'}`} dangerouslySetInnerHTML={{ __html: title }} />
+          <p className='text-[#000]  text-[16px] md:text-[24px] font-normal leading-[15px] tracking-normal'>{date}</p>
+        </div>
+      </motion.div>
+  )
+}
 
-const RoadmapItemBottom = ({
-  index,
-  className,
-  title,
-  date,
-  isGray = false,
-}: {
-  index: number;
-  className?: string;
-  title: string;
-  date: string;
-  isGray?: boolean;
-}) => {
-  const lines = title.split("\n").filter(Boolean);
 
+
+const RoadmapItemBottom = ({ index, className, title, date, isGray = false }: { index: number, className?: string, title: string, date: string, isGray?: boolean }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: -5 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-      className={`absolute top-0 -translate-y-[5px] flex flex-col items-center justify-start ${className}`}
-    >
-      <div
-        className={`w-[20px] h-[20px] rounded-full border border-solid border-black ${
-          isGray ? "bg-[#DFE9EE]" : "bg-primary"
-        }`}
-      />
-      <div
-        className={`w-[1px] h-[96px]  ${
-          isGray ? "bg-[#DFE9EE]" : "bg-primary"
-        }`}
-      ></div>
-      <div className="w-[230px] h-auto rounded-lg absolute bottom-0 left-[20px] translate-y-[80%] flex flex-col items-start gap-2 px-2 md:px-5 py-[10px] md:py-[20px] text-left bg-primary text-secondary text-[12px] md:text-[16px] font-normal leading-[24px]">
-        {lines.map((line, i) => (
-          <p key={i} className="text-secondary">
-            {line.trim()}
-          </p>
-        ))}
-        <p className="text-[#000] text-[16px] md:text-[24px] font-normal leading-[15px] tracking-normal mt-2">
-          {date}
-        </p>
-      </div>
-    </motion.div>
-  );
-};
+      <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: -5 }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
+          className={`absolute top-0 -translate-y-[5px]  flex flex-col items-center justify-start ${className}`}>
+        <div className={`w-[20px] h-[20px]  rounded-full border border-solid border-black ${isGray ? 'bg-[#DFE9EE]' : 'bg-primary'}`} />
+        <div className={`w-[1px] h-[96px]  ${isGray ? 'bg-[#DFE9EE]' : 'bg-primary'}`} ></div>
+        <div className='w-[230px] h-auto rounded-lg absolute bottom-0 left-[20px] translate-y-[80%] flex flex-col items-start gap-5 '>
+          <div className={` text-secondary  text-[12px] md:text-[16px] font-normal leading-[24px] px-2 md:px-5 py-[10px] md:py-[20px] text-left   rounded-lg ${isGray ? 'bg-[#DFE9EE]' : 'bg-primary'}`} dangerouslySetInnerHTML={{ __html: title }} />
+          <p className='text-[#000] text-[16px] md:text-[24px] font-normal leading-[15px] tracking-normal'>{date}</p>
+        </div>
+      </motion.div>
+  )
+}

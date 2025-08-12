@@ -63,7 +63,7 @@ const HeroSection = () => {
           <div className="absolute right-[20%] translate-x-1/2 bottom-[16%] z-10  ">
             <motion.div
               initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: -100 }}
               transition={{
                 duration: 1,
                 ease: "easeInOut",
