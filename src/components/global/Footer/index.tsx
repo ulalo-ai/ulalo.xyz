@@ -7,8 +7,7 @@ import {
   Telegram,
   TelegramFooter,
   XFooter,
-  YoutubeFooter,
-  IQlogo,
+  YoutubeFooter
 } from "@/VectorImage/Image";
 import Link from "next/link";
 
