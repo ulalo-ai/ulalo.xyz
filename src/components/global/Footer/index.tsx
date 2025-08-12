@@ -165,9 +165,9 @@ const Footer = () => {
                 >
                   <LinkedinFooter />
                 </Link>
-                <Link href="https://iq.wiki/wiki/ulalo" target="_blank">
-                  <IQlogo />
-                </Link>
+                {/*<Link href="https://iq.wiki/wiki/ulalo" target="_blank">*/}
+                {/*  <IQlogo />*/}
+                {/*</Link>*/}
               </div>
             </div>
           </div>

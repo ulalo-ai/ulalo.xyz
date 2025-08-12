@@ -23,7 +23,7 @@
     "reclaimControlOver": "REPRENEZ LE CONTRÔLE DE"
   },
   "tokenLaunchSoon": {
-    "tokenLaunchSoonHeading": "Le Token $ULA is Actif !",
+    "tokenLaunchSoonHeading": "Le Token $ULA est Disponible !",
     "tokenLaunchSoonSubheading": "Achetez des tokens pour profiter d'avantages inégalés pour les détenteurs !",
     "cornerstoneTitle": "Pierre Angulaire de l'Écosystème ULALO",
     "cornerstoneDescription": "$ULA vous donne un accès exclusif et prioritaire aux fonctionnalités premium de l'écosystème comme les insights de santé personnalisés basés sur l'IA et un service client dédié.",
@@ -34,14 +34,14 @@
     "governanceTitle": "Gouvernance Communautaire",
     "governanceDescription": "Votez sur les décisions clés au sein de l'écosystème ULALO. Les droits de gouvernance signifient que vous contrôlez la direction du projet.",
     "isMoreThanAsset": "$ULA est plus qu'un simple actif numérique",
-    "keyToHealthcareEra": "—c'est une clé pour débloquer une nouvelle ère dans les soins de santé centrés sur le patient.",
+    "keyToHealthcareEra": "—c'est une clé pour débloquer une nouvelle ère Santé centrés sur le patient.",
     "viewTokenomics": "voir la Tokenomique",
     "exploreWhitepaper": "Explorer le Livre Blanc",
     "exploreRoadmap": "Explorer la Feuille de Route",
     "joinCommunity": "Rejoindre la Communauté",
     "purchaseTokens": "acheter des Tokens $ULA",
     "comingSoon": "BIENTÔT DISPONIBLE !",
-    "empoweringHeading": "Autonomiser un Avenir Plus Sain pour 400 Millions de patients avec Web3 et l'IA"
+    "empoweringHeading": "Façonner un Avenir Plus Sain pour 400 Millions de patients avec Web3 et l'IA"
   },
   "owningYourHealth": {
     "owningYourHealthDataMeansOwningYour": "Posséder Vos Données de Santé Signifie Posséder Votre ...",
@@ -102,7 +102,7 @@
     "labelTreasuryDaoFund": "18,03% Fonds Trésorerie/DAO",
     "labelLiquidity": "4,00% Liquidité",
     "labelCommunity": "20,00% Communauté",
-    "labelDataSharingReward": "5,00% Récompense Partage de Données",
+    "labelDataSharingReward": "5,00% Rémunération Partage de Données",
     "labelOperationsLegal": "5,00% Opérations et Légal",
     "labelMainnetEcosystemL1": "15,00% Mainnet et Écosystème L1",
     "labelMarketingGrantsPartnerships": "10,00% Marketing, Subventions et Partenariats",
@@ -298,7 +298,7 @@
     "feature4": "Recevoir des recommandations de médicaments personnalisées et des alertes de risque de maladie (fonctionnalité Premium)."
   },
   "showCaseSubSection3": {
-    "ulaloPocketSized": "ULALO-Format Poche",
+    "ulaloPocketSized": "e-portefeuille ULALO",
     "healthAdvocate": "Défenseur de la Santé",
     "ulaloDescriptionPart1": "L'objectif ultime d'ULALO est d'être la solution de portefeuille tout-en-un.",
     "ulaloDescriptionPart2": "Fini la chasse aux dossiers ! ULALO met vos données médicales à portée de main – à tout moment, n'importe où, dans n'importe quelle langue.",
@@ -311,7 +311,7 @@
     "walletImageAltText": "ULALO"
   },
   "bottomRight": {
-    "ulaloIsRelevant": "Ulalo est pertinent pour TOUTE PERSONNE SUR LA PLANÈTE"
+    "ulaloIsRelevant": "Ulalo est utile pour TOUTE PERSONNE SUR LA PLANÈTE"
   },
   "middleLeft": {
     "ourApproach": "NOTRE APPROCHE",
