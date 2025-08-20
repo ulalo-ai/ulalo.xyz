@@ -76,9 +76,10 @@ const Header = () => {
               <p className="text-[#FE0101] text-[10px] leading-[110%] font-sfpro_500">
                 {t("header.comingSoon")}
               </p>
-              <Link href="https://testnet.ulalo.xyz/">
+              {/*<Link href="https://testnet.ulalo.xyz/">*/}
+              <div>
                 {t("header.mainnet")}
-              </Link>
+              </div>
             </li>
             <li className="text-[#F8F1FF] text-[16px] font-openSans_Medium">
               <Link href="#token">{t("header.token")}</Link>
@@ -147,12 +148,12 @@ const Header = () => {
               {/*  <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>*/}
               {/*  {t("header.live")}*/}
               {/*</p>*/}
-              <Link
-                href="https://testnet.ulalo.xyz/"
+              <div
+                // href="https://testnet.ulalo.xyz/"
                 onClick={() => setMobileNav(false)}
               >
                 {t("header.mainnet")}
-              </Link>
+              </div>
             </li>
             <li className="text-[#364655] text-[16px] font-openSans_Medium">
               <Link href="/" onClick={() => setMobileNav(false)}>
