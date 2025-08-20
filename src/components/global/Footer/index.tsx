@@ -72,9 +72,9 @@ const Footer = () => {
                             <p className='text-[#FFF] text-[20px] leading-[22px] font-openSans_Bold'>Links</p>
                             <div className='flex flex-wrap justify-center items-center lg:justify-end gap-2'>
                                 <Link href='https://x.com/ulalo_io' target='_blank'><XFooter /></Link>
-                                <Link href='https://t.me/+Zeg3Q8tRseEzM2U8' target='_blank'><TelegramFooter /></Link>
+                                <Link href='https://t.me/ulaloNews' target='_blank'><TelegramFooter /></Link>
                                 {/* <Link href='/'><MediumFooter /></Link> */}
-                                <Link href='https://discord.gg/ChhVCqe9Vp' target='_blank'><DiscordFooter /></Link>
+                                <Link href='https://discord.gg/jGfMR3Tu5t' target='_blank'><DiscordFooter /></Link>
                                 <Link href='https://www.youtube.com/@ULALO_IO' target='_blank'><YoutubeFooter /></Link>
                                 {/* <Link href=''><RedditFooter /></Link> */}
                                 <Link href='https://www.linkedin.com/company/ulalo-io/' target='_blank'><LinkedinFooter /></Link>
