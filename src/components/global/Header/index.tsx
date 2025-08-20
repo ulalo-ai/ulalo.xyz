@@ -69,12 +69,15 @@ const Header = () => {
               <Link href="#smart-wallet">{t("header.smartWallet")}</Link>
             </li>
             <li className="text-[#F8F1FF] text-[16px] font-openSans_Medium">
-              <p className="text-[#125d37] text-[10px] leading-[110%] font-sfpro_500 flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
-                {t("header.live")}
+              {/*<p className="text-[#125d37] text-[10px] leading-[110%] font-sfpro_500 flex items-center gap-1">*/}
+              {/*  <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>*/}
+              {/*  {t("header.live")}*/}
+              {/*</p>*/}
+              <p className="text-[#FE0101] text-[10px] leading-[110%] font-sfpro_500">
+                {t("header.comingSoon")}
               </p>
               <Link href="https://testnet.ulalo.xyz/">
-                {t("header.testnet")}
+                {t("header.mainnet")}
               </Link>
             </li>
             <li className="text-[#F8F1FF] text-[16px] font-openSans_Medium">
@@ -137,15 +140,18 @@ const Header = () => {
               </Link>
             </li>
             <li className="text-[#364655] text-[16px] font-openSans_Medium">
-              <p className="text-[#125d37] text-[10px] leading-[110%] font-sfpro_500 flex items-center gap-1">
-                <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>
-                {t("header.live")}
+              <p className="text-[#FE0101] text-[10px] leading-[110%] font-sfpro_500 text-center">
+                {t("header.comingSoon")}
               </p>
+              {/*<p className="text-[#125d37] text-[10px] leading-[110%] font-sfpro_500 flex items-center gap-1">*/}
+              {/*  <span className="w-2 h-2 rounded-full bg-green-500 inline-block"></span>*/}
+              {/*  {t("header.live")}*/}
+              {/*</p>*/}
               <Link
                 href="https://testnet.ulalo.xyz/"
                 onClick={() => setMobileNav(false)}
               >
-                {t("header.testnet")}
+                {t("header.mainnet")}
               </Link>
             </li>
             <li className="text-[#364655] text-[16px] font-openSans_Medium">

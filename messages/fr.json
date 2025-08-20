@@ -262,6 +262,7 @@
     "smartWallet": "Portefeuille Intelligent",
     "live": "En Direct",
     "testnet": "Testnet",
+    "mainnet": "Mainnet",
     "token": "Token",
     "gitbook": "Gitbook",
     "comingSoon": "Bientôt Disponible",

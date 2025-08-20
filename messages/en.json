@@ -262,6 +262,7 @@
     "smartWallet": "Smart Wallet",
     "live": "Live",
     "testnet": "Testnet",
+    "mainnet": "Mainnet",
     "token": "Token",
     "gitbook": "Gitbook",
     "comingSoon": "Coming Soon",
