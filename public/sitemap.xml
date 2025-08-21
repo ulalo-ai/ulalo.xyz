@@ -8,4 +8,16 @@
         <loc>https://ulalo.xyz/sitemap-fr.xml</loc>
         <lastmod>2025-08-12</lastmod>
     </sitemap>
+    <sitemap>
+        <loc>https://ulalo.xyz/sitemap-ge.xml</loc>
+        <lastmod>2025-08-12</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://ulalo.xyz/sitemap-es.xml</loc>
+        <lastmod>2025-08-12</lastmod>
+    </sitemap>
+    <sitemap>
+        <loc>https://ulalo.xyz/sitemap-nl.xml</loc>
+        <lastmod>2025-08-12</lastmod>
+    </sitemap>
 </sitemapindex>
