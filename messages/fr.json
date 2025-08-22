@@ -59,37 +59,26 @@
   },
   "roadMap": {
     "heading": "Feuille de Route",
-
     "itemTop1Title": "Les Origines",
     "itemTop1Date": "Jan 2023",
-
     "itemTop3Title": "Affinement de l'idée grâce à une recherche approfondie pour comprendre les besoins réels des patients dans le monde.\nRéalisation d'un benchmarking concurrentiel complet pour identifier les lacunes du marché et les opportunités.",
     "itemTop3Date": "Déc 2023",
-
     "itemTop5Title": "Lancement du Token sur la plateforme Ethereum, Audit du contrat intelligent et Sécurité",
     "itemTop5Date": "Juin 2024",
-
     "itemTop7Title": "Développement et Test de la Beta 1 avec les fonctionnalités essentielles.\nLancement du Programme Ambassadeur.",
     "itemTop7Date": "Jan 2025",
-
     "itemTop9Title": "Interopérabilité cross-chain et multi-chain pour le testnet\nPartenariat avec des launchpads et efforts de croissance communautaire\nLancement du tour d'investisseurs du token $ULA.",
     "itemTop9Date": "Avril 2025",
-
     "itemTop11Title": "Lancement du MainNet L1 ULALO.",
     "itemTop11Date": "Sep 2025",
-
     "itemBottom2Title": "Plateforme Alpha Publiée",
     "itemBottom2Date": "Mars 2023",
-
     "itemBottom4Title": "Diplôme de l'accélérateur The Founder Institute Silicon Valley",
     "itemBottom4Date": "Avril 2024",
-
     "itemBottom6Title": "Finalisation de l'architecture technique, établissant une base solide pour le développement d'une solution centrée sur l'utilisateur.",
     "itemBottom6Date": "Sep 2024",
-
     "itemBottom8Title": "Lancement du TestNet L1 ULALO et appel aux tests beta.",
     "itemBottom8Date": "Mars 2025",
-
     "itemBottom10Title": "TGE et Listing sur les Plateformes DEX et CEX",
     "itemBottom10Date": "Juin 2025"
   },
@@ -224,16 +213,13 @@
     "yourCommitmentPoint2": "Représentez fièrement ULALO en ajoutant votre statut d'ambassadeur aux biographies, profils ou réseaux sociaux.",
     "yourCommitmentPoint3": "Promouvez activement ULALO via votre lien d'invitation unique et aidez à intégrer de nouveaux membres dans la communauté.",
     "yourCommitmentPoint4": "Maintenez professionnalisme, cohérence et alignement avec la marque et les valeurs ULALO.",
-
     "importantNotes": "Notes Importantes",
     "importantNotesPoint1": "ULALO vérifiera tous les abonnés pour prévenir les activités frauduleuses. Tout KOL utilisant des bots ou incitant à de fausses inscriptions sera disqualifié.",
     "importantNotesPoint2": "Tout comportement portant atteinte à la réputation d'ULALO entraînera une résiliation immédiate et la perte de tous les gains.",
-
     "rulesOfElimination": "Règles d'Élimination",
     "rulesOfEliminationPoint1": "Le non-respect des critères d'évaluation mensuels peut entraîner la résiliation du contrat, avec deux possibilités de réintégration.",
     "rulesOfEliminationPoint2": "Les actions causant des dommages importants à la marque ULALO entraîneront une disqualification immédiate.",
     "rulesOfEliminationPoint3": "La publication continue de contenu interdit après trois avertissements entraînera la résiliation du contrat.",
-
     "precautions": "Précautions",
     "precautionsPoint1": "Les KOL doivent éviter toute déclaration diffamatoire sur ULALO. Toute violation entraînera une résiliation immédiate.",
     "precautionsPoint2": "La participation à des activités illégales sous le nom d'ULALO entraînera une résiliation immédiate.",
