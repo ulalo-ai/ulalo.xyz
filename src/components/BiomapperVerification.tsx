@@ -24,11 +24,6 @@ export function BiomapperVerification({
         refetch
     } = useBiomapper(address, network);
 
-    const biomapperAbi = [
-        "function generationsHead() external view returns (uint256)",
-        "function lookupBiomappingPtr(address account, uint256 generationPtr) external view returns (uint256)",
-    ];
-
     const handleStartBiomapping = async () => {
         try {
             // Check if the user's address is biomapped
