@@ -138,7 +138,6 @@ const Footer = () => {
             <button className="bg-[#FFF] rounded-[20px] px-[46px] py-[12.5px] text-[14px] leading-[16.8px] font-openSans_Medium w-full md:w-auto">
               {t("getYourWallet")}
             </button>
-
             <div className="flex flex-col items-center lg:items-end gap-y-5 w-full">
               <p className="text-[#FFF] text-[20px] leading-[22px] font-openSans_Bold">
                 {t("links")}
@@ -177,3 +176,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
