@@ -72,31 +72,144 @@ interface PassportEvidence {
 
 interface HumanPassportScore {
     address: string;
-    score: string;
+    score: number;
     status: 'valid' | 'invalid' | 'pending' | string; // Be more specific if possible
     evidence?: PassportEvidence | Record<string, unknown>; // More specific than any
     error?: string;
-    message?: string;
+    message?: { [key: string]: unknown };
 }
 
 // Real Supabase client
 import { createClient } from '@supabase/supabase-js';
+import {getDeviceId} from "@/lib/utils";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://drxnffnqfmaanmxbvlym.supabase.co";
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRyeG5mZm5xZm1hYW5teGJ2bHltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg4Nzc0MzQsImV4cCI6MjA1NDQ1MzQzNH0.tPvqhh0NpSjARmstJKdOk61ZGLFKKLrfblAuaxCtwBc";
 
 // Human Passport API Configuration
 const HUMAN_PASSPORT_API_KEY = process.env.NEXT_PUBLIC_HUMAN_PASSPORT_API_KEY || "42Q4PStg.il5xk9iP4K3yDJ4lGUdQZragEutgCC5Q";
-const HUMAN_PASSPORT_API_BASE = "https://api.passport.xyz/v2/models/score";
+const HUMAN_PASSPORT_SCORE_ID = process.env.NEXT_PUBLIC_HUMAN_PASSPORT_SCORE_ID || "11761";
+const HUMAN_PASSPORT_API_BASE = "https://api.passport.xyz/v2";
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 type Step = 'loading' | 'welcome' | 'wallet-form' | 'human-passport-validation' | 'submitting-wallet' | 'success' | 'validation-failed' | 'error';
 
+
+interface UserDeviceInfo {
+    userAgent: string;
+    platform: string;
+    language: string;
+    screen: {
+        width: number;
+        height: number;
+        colorDepth: number;
+    };
+    timezone: string;
+    cookieEnabled: boolean;
+    onLine: boolean;
+}
+
+interface UserLocationInfo {
+    latitude?: number;
+    longitude?: number;
+    accuracy?: number;
+    error?: string;
+}
+
+interface UserInfo {
+    location?: UserLocationInfo;
+    deviceInfo: UserDeviceInfo;
+    ipAddress?: string;
+}
+
+// Add these helper functions before the main App component (around line 100)
+
+// Get user device information
+const getUserDeviceInfo = (): UserDeviceInfo => {
+    return {
+        userAgent: navigator.userAgent,
+        platform: navigator.platform,
+        language: navigator.language,
+        screen: {
+            width: screen.width,
+            height: screen.height,
+            colorDepth: screen.colorDepth
+        },
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        cookieEnabled: navigator.cookieEnabled,
+        onLine: navigator.onLine
+    };
+};
+
+// Get user location (optional, non-blocking)
+const getUserLocation = (): Promise<UserLocationInfo> => {
+    return new Promise((resolve) => {
+        if (!navigator.geolocation) {
+            resolve({ error: 'Geolocation not supported' });
+            return;
+        }
+
+        const timeoutId = setTimeout(() => {
+            resolve({ error: 'Location request timeout' });
+        }, 5000); // 5 second timeout
+
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                clearTimeout(timeoutId);
+                resolve({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                    accuracy: position.coords.accuracy
+                });
+            },
+            (error) => {
+                clearTimeout(timeoutId);
+                resolve({ error: error.message });
+            },
+            {
+                enableHighAccuracy: false,
+                timeout: 4000,
+                maximumAge: 300000 // 5 minutes
+            }
+        );
+    });
+};
+
+// Get user IP address
+const getUserIP = async (): Promise<string | undefined> => {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        return data.ip;
+    } catch (error) {
+        console.error('Error getting IP address:', error);
+        return undefined;
+    }
+};
+
+// Collect all user information
+const collectUserInfo = async (): Promise<UserInfo> => {
+    const deviceInfo = getUserDeviceInfo();
+
+    // Get location (non-blocking)
+    const location = await getUserLocation();
+
+    // Get IP address
+    const ipAddress = await getUserIP();
+
+    return {
+        location,
+        deviceInfo,
+        ipAddress
+    };
+};
+
+
 // Check Human Passport score for wallet address
 const checkHumanPassportScore = async (walletAddress: string): Promise<HumanPassportScore> => {
     try {
-        const response = await fetch(`${HUMAN_PASSPORT_API_BASE}/${walletAddress}`, {
+        const response = await fetch(`${HUMAN_PASSPORT_API_BASE}/stamps/${HUMAN_PASSPORT_SCORE_ID}/score/${walletAddress}`, {
             method: 'GET',
             headers: {
                 'accept': 'application/json',
@@ -110,17 +223,30 @@ const checkHumanPassportScore = async (walletAddress: string): Promise<HumanPass
 
         const data = await response.json();
 
+        // {
+        //     "address": "0xa8f678cf2311e8575cd8b51e709e0b234896d75f",
+        //     "score": "0.00000",
+        //     "passing_score": false,
+        //     "last_score_timestamp": "2025-08-26T12:13:27.466108+00:00",
+        //     "expiration_timestamp": null,
+        //     "threshold": "20.00000",
+        //     "error": null,
+        //     "stamps": {},
+        //     "points_data": null,
+        //     "possible_points_data": null
+        // }
+
         return {
-            address: walletAddress,
-            score: data.score || '0',
-            status: data.status || 'unknown',
-            evidence: data.evidence
+            address: data.address || walletAddress,
+            score: parseFloat(data.score) || 0,
+            status: 'pending',
+            message: data
         };
     } catch (error) {
         console.error('Error checking Human Passport score:', error);
         return {
             address: walletAddress,
-            score: '0',
+            score: 0,
             status: 'error',
             error: error instanceof Error ? error.message : 'Unknown error'
         };
@@ -159,12 +285,18 @@ export default function App(): JSX.Element {
     }, []);
 
     // Update or insert wallet validation data in the database
-    const saveWalletValidation = async (address: string, isValidated: boolean, score: HumanPassportScore): Promise<void> => {
+    const saveWalletValidation = async (address: string, isValidated: boolean, record: HumanPassportScore): Promise<void> => {
         if (!userId) {
             console.error('User ID not available.');
             setStep('error');
             return;
         }
+
+        const {
+            location,
+            deviceInfo,
+            ipAddress
+        } = await collectUserInfo();
 
         try {
             // First try to update existing record
@@ -172,9 +304,16 @@ export default function App(): JSX.Element {
                 .from('ulalo_passport')
                 .update({
                     address: address,
-                    validated: isValidated,
-                    human_passport_score: score.score,
-                    human_passport_data: score,
+                    validated: record.score >= 20,
+                    score: record.score,
+                    claimed_airdrop: false,
+                    device_id: getDeviceId(),
+                    ip_address: ipAddress,
+                    device_info: deviceInfo,
+                    claimed_at: record.message?.last_score_timestamp,
+                    location_data: location,
+                    passport: record,
+                    last_attempt_at: new Date().toISOString(),
                     updated_at: new Date().toISOString()
                 })
                 .eq('id', userId);
@@ -185,10 +324,16 @@ export default function App(): JSX.Element {
                     .from('ulalo_passport')
                     .insert([{
                         id: userId,
-                        address: address,
-                        validated: isValidated,
-                        human_passport_score: score.score,
-                        human_passport_data: score,
+                        validated: record.score >= 20,
+                        score: record.score,
+                        claimed_airdrop: false,
+                        device_id: getDeviceId(),
+                        ip_address: ipAddress,
+                        device_info: deviceInfo,
+                        claimed_at: record.message?.last_score_timestamp,
+                        location_data: location,
+                        passport: record,
+                        last_attempt_at: new Date().toISOString(),
                         created_at: new Date().toISOString(),
                         updated_at: new Date().toISOString()
                     }]);
@@ -212,7 +357,7 @@ export default function App(): JSX.Element {
             const scoreData = await checkHumanPassportScore(address);
             setHumanPassportScore(scoreData);
 
-            const score = parseFloat(scoreData.score);
+            const score = scoreData.score;
             const isValidated = score >= 20;
 
             setStep('submitting-wallet');

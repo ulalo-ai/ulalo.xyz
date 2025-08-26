@@ -34,6 +34,7 @@
     "swiper": "^11.2.5",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
+    "uuid": "^11.1.0",
     "viem": "^2.34.0",
     "wagmi": "^2.16.4"
   },
