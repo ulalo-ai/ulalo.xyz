@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/global/Header";
+import { NextIntlClientProvider } from "next-intl";
+import LocaleSwitcher from "@/components/language/locale-switcher";
 export const metadata: Metadata = {
   title: "Ulalo",
   description: "ULALO | Your secure HEALTH DATA HUB",
@@ -17,8 +19,11 @@ export default function RootLayout({
         <link rel="icon" href="/image/logo.png" sizes="32x32" />
       </head>
       <body>
+        <NextIntlClientProvider>
           <Header />
           {children}
+          <LocaleSwitcher />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
