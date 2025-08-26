@@ -1,8 +1,6 @@
 "use client"
 
 import React, {useState, useEffect, JSX} from 'react';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import { CheckCircle, Loader2, Wallet, XCircle, Shield, UserCheck, UserX, AlertTriangle } from 'lucide-react';
 
 // Define specific types for Ethereum RPC methods
