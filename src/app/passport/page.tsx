@@ -83,8 +83,8 @@ interface HumanPassportScore {
 import { createClient } from '@supabase/supabase-js';
 import {getDeviceId} from "@/lib/utils";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://drxnffnqfmaanmxbvlym.supabase.co";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRyeG5mZm5xZm1hYW5teGJ2bHltIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg4Nzc0MzQsImV4cCI6MjA1NDQ1MzQzNH0.tPvqhh0NpSjARmstJKdOk61ZGLFKKLrfblAuaxCtwBc";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://mgsybbcgfpqleqimaelv.supabase.co";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_JDbbK6HDvvfPQStykgo9JQ_FWpnWaXE";
 
 // Human Passport API Configuration
 const HUMAN_PASSPORT_API_KEY = process.env.NEXT_PUBLIC_HUMAN_PASSPORT_API_KEY || "42Q4PStg.il5xk9iP4K3yDJ4lGUdQZragEutgCC5Q";
@@ -92,6 +92,17 @@ const HUMAN_PASSPORT_SCORE_ID = process.env.NEXT_PUBLIC_HUMAN_PASSPORT_SCORE_ID 
 const HUMAN_PASSPORT_API_BASE = "https://api.passport.xyz/v2";
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+async function testConnection() {
+    const { error } = await supabase.from("ulalo_passport").select("*").limit(1);
+    if (error) {
+        console.error("❌ Database connection failed:", error.message);
+    } else {
+        console.log("✅ Database connected! Sample row:");
+    }
+}
+
+testConnection()
 
 type Step = 'loading' | 'welcome' | 'wallet-form' | 'human-passport-validation' | 'submitting-wallet' | 'success' | 'validation-failed' | 'error';
 
@@ -223,23 +234,10 @@ const checkHumanPassportScore = async (walletAddress: string): Promise<HumanPass
 
         const data = await response.json();
 
-        // {
-        //     "address": "0xa8f678cf2311e8575cd8b51e709e0b234896d75f",
-        //     "score": "0.00000",
-        //     "passing_score": false,
-        //     "last_score_timestamp": "2025-08-26T12:13:27.466108+00:00",
-        //     "expiration_timestamp": null,
-        //     "threshold": "20.00000",
-        //     "error": null,
-        //     "stamps": {},
-        //     "points_data": null,
-        //     "possible_points_data": null
-        // }
-
         return {
             address: data.address || walletAddress,
             score: parseFloat(data.score) || 0,
-            status: 'pending',
+            status: data.score >= 20 ? 'valid' : 'invalid',
             message: data
         };
     } catch (error) {
@@ -298,11 +296,12 @@ export default function App(): JSX.Element {
             ipAddress
         } = await collectUserInfo();
 
+        console.log("Session Init", userId)
+
         try {
-            // First try to update existing record
-            const { data: updateData, error: updateError } = await supabase
+            const { data, error } = await supabase
                 .from('ulalo_passport')
-                .update({
+                .upsert([{
                     address: address,
                     validated: record.score >= 20,
                     score: record.score,
@@ -313,36 +312,13 @@ export default function App(): JSX.Element {
                     claimed_at: record.message?.last_score_timestamp,
                     location_data: location,
                     passport: record,
-                    last_attempt_at: new Date().toISOString(),
-                    updated_at: new Date().toISOString()
-                })
-                .eq('id', userId);
+                    last_attempt_at: new Date().toISOString()
+                }], {
+                    onConflict: 'address'
+                });
+            if (error) throw error;
+            console.log("New wallet validation record created:", data);
 
-            // If no rows were updated, insert a new record
-            if (updateError || !updateData) {
-                const { data: insertData, error: insertError } = await supabase
-                    .from('ulalo_passport')
-                    .insert([{
-                        id: userId,
-                        validated: record.score >= 20,
-                        score: record.score,
-                        claimed_airdrop: false,
-                        device_id: getDeviceId(),
-                        ip_address: ipAddress,
-                        device_info: deviceInfo,
-                        claimed_at: record.message?.last_score_timestamp,
-                        location_data: location,
-                        passport: record,
-                        last_attempt_at: new Date().toISOString(),
-                        created_at: new Date().toISOString(),
-                        updated_at: new Date().toISOString()
-                    }]);
-
-                if (insertError) throw insertError;
-                console.log("New wallet validation record created:", insertData);
-            } else {
-                console.log("Wallet validation record updated:", updateData);
-            }
         } catch (error) {
             console.error('Error saving wallet validation:', error);
             setStep('error');
