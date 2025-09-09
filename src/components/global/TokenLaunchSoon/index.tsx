@@ -1,7 +1,9 @@
 import { GoArrow, Logo, SinigCoin, Speaker } from "@/VectorImage/Image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import {FaDiscord, FaTelegramPlane} from "react-icons/fa";
+import { FaTelegram } from "@react-icons/all-files/fa/FaTelegram";
+import { FaDiscord } from "@react-icons/all-files/fa/FaDiscord";
+
 
 const TokenLaunchSoon = () => {
   const t = useTranslations();
@@ -78,18 +80,18 @@ const TokenLaunchSoon = () => {
                 </div>
                 <div className="flex flex-row gap-x-4 ">
                   <Link
-                    href="https://discord.gg/ChhVCqe9Vp"
+                    href="https://discord.gg/jGfMR3Tu5t"
                     target="_blank"
                     className="w-[64px] h-[64px]  flex flex-col items-center justify-center bg-white rounded-[8px]"
                   >
                     <FaDiscord className={'w-[40px] !text-[#364655] h-auto'} />
                   </Link>
                   <Link
-                    href="https://t.me/+Zeg3Q8tRseEzM2U8"
+                    href="https://t.me/ulaloNews"
                     target="_blank"
                     className="w-[64px] h-[64px] flex flex-col items-center justify-center bg-white rounded-[8px]"
                   >
-                    <FaTelegramPlane className={'w-[40px] !text-[#364655] h-auto'} />
+                    <FaTelegram className={'w-[40px] !text-[#364655] h-auto'} />
                   </Link>
                 </div>
               </div>

@@ -11,9 +11,9 @@ import {
 } from "@/VectorImage/Image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { FaXmark } from "react-icons/fa6";
-import { IoMenu } from "react-icons/io5";
 import { useTranslations } from "next-intl";
+import { IoMenu } from "@react-icons/all-files/io5/IoMenu";
+import { IoClose } from "@react-icons/all-files/io5/IoClose";
 
 const Header = () => {
   const t = useTranslations();
@@ -130,7 +130,7 @@ const Header = () => {
         <div className="container mx-auto px-6 py-8">
           <div className="flex justify-end mb-8">
             <button onClick={() => setMobileNav(false)}>
-              <FaXmark className="text-[32px] text-black" />
+              <IoClose className="text-[32px] text-black" />
             </button>
           </div>
 
@@ -208,7 +208,7 @@ const Header = () => {
                 <XFooter color="#364655" />
               </Link>
               <Link
-                href="https://t.me/+Zeg3Q8tRseEzM2U8"
+                href="https://t.me/ulaloNews"
                 onClick={() => setMobileNav(false)}
               >
                 <TelegramFooter color="#364655" />
@@ -217,7 +217,7 @@ const Header = () => {
                 <MediumFooter color="#364655" />
               </Link>
               <Link
-                href="https://discord.gg/ChhVCqe9Vp"
+                href="https://discord.gg/jGfMR3Tu5t"
                 onClick={() => setMobileNav(false)}
               >
                 <DiscordFooter color="#364655" />

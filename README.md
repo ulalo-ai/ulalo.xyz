@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+Using this same structure Integrate this Human Passport API
+
+curl -X 'GET' \ 'https://api.passport.xyz/v2/models/score/0xA8F678cF2311e8575cd8b51E709e0B234896d75F' \ -H 'accept: application/json' \ -H 'X-API-Key: 42Q4PStg.il5xk9iP4K3yDJ4lGUdQZragEutgCC5Q'
+
+On the web app you created on our website can you allow them to enter their wallet address, if the score is >=20, set the validated attribute to True else False in the supabase db ?
+
+Note that user can do many submit so use a update query on supabase
+
+When done display success or failed component based on validation result from human passport
