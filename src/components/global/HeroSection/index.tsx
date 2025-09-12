@@ -81,7 +81,7 @@ const HeroSection = () => {
                 initial="hidden"
                 animate="visible"
             >
-                <div className="flex w-full relative justify-center flex-col">
+                <div className="flex w-full relative justify-center flex-col h-[20%]">
                     <motion.h1
                         className="text-[72px] text-white text-center font-black leading-tight"
                         variants={itemVariants}
@@ -89,7 +89,7 @@ const HeroSection = () => {
                         {t('heroSection.title')}
                     </motion.h1>
                 </div>
-                <div className={'flex items-center justify-center flex-col'}>
+                <div className={'flex items-center justify-center flex-col h-[80%]'}>
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                         {/* Left Content */}
                         <motion.div className="text-white space-y-8 h-full justify-center gap-y-8 flex flex-col" variants={itemVariants}>
@@ -157,19 +157,19 @@ const HeroSection = () => {
                                 <img
                                     src="/image/banner.png"
                                     alt="Health Data App Mockup"
-                                    className="w-[40vw] h-[auto] relative z-20"
+                                    className="w-[35vw] h-[auto] relative z-20"
                                 />
                             </motion.div>
 
                             {/* Floating Badges */}
                             <motion.div
-                                className="absolute top-40 left-70 bg-white rounded-full px-4 py-2 shadow-lg z-30"
+                                className="absolute top-[6rem] left-[10rem] bg-white rounded-full px-3 py-1.5 shadow-lg z-30"
                                 variants={badgeVariants}
                                 initial="hidden"
                                 animate="visible"
                             >
-                                <div className="flex items-center gap-y-2 gap-x-7">
-                                    <span className="text-lg text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>
+                                <div className="flex items-center gap-y-1.5 gap-x-3">
+                                    <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>
                                     <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
                                         <circle cx="25" cy="25" r="16" fill="white"/>
@@ -185,13 +185,14 @@ const HeroSection = () => {
                             </motion.div>
 
                             <motion.div
-                                className="absolute top-[18rem] -left-20 bg-white rounded-full px-4 py-2 shadow-lg z-30"
+                                className="absolute top-[18rem] -left-20 bg-white rounded-full px-2 py-1.5 shadow-lg z-30"
                                 variants={badgeVariants}
                                 initial="hidden"
                                 animate="visible"
                                 transition={{ delay: 1 }}
                             >
-                                <div className="flex items-center gap-y-2 gap-x-7">
+                                <div className="flex items-center gap-y-1.5 gap-x-3">
+                                    <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>
                                     <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
                                         <circle cx="25" cy="25" r="16" fill="white"/>
@@ -203,19 +204,18 @@ const HeroSection = () => {
                                             </linearGradient>
                                         </defs>
                                     </svg>
-                                    <span className="text-lg text-[#0E6D32] font-medium">{t('heroSection.feature2')}</span>
                                 </div>
                             </motion.div>
 
                             <motion.div
-                                className="absolute bottom-[10rem] left-[13rem] bg-white rounded-full px-4 py-2 shadow-lg z-30"
+                                className="absolute bottom-[6rem] left-[7rem] bg-white rounded-full px-2 py-1.5 shadow-lg z-30"
                                 variants={badgeVariants}
                                 initial="hidden"
                                 animate="visible"
                                 transition={{ delay: 1.2 }}
                             >
-                                <div className="flex items-center gap-y-2 gap-x-7">
-                                    <span className="text-lg text-[#0E6D32] font-medium">{t('heroSection.feature3')}</span>
+                                <div className="flex items-center gap-y-1 gap-x-3">
+                                    <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature3')}</span>
                                     <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
                                         <circle cx="25" cy="25" r="16" fill="white"/>
@@ -235,7 +235,7 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.div
-                className="max-w-[93rem] md:hidden flex flex-col items-center justify-center h-1/2 mx-auto px-6 lg:px-8 pt-0 md:pt-20"
+                className="max-w-[93rem] md:hidden flex flex-col items-center justify-center h-1/2 mx-auto px-6 lg:px-8 pt-32 pb-8 md:pt-20"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
