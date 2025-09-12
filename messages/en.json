@@ -8,6 +8,13 @@
     "label": "Language"
   },
   "heroSection": {
+    "title": "OWN YOUR HEALTH DATA",
+    "subtitle": "Take control. <br/>Share securely. <br/>Get rewarded.",
+    "description": "Ulalo empowers you to manage, protect, and monetize your health data giving you true ownership and privacy",
+    "feature1": "Data Ownership ",
+    "feature2": "Secure & Private",
+    "feature3": "Earn Rewards",
+
     "reclaimControl": "Reclaim Control",
     "over": "Over",
     "healthData": "HEALTH DATA",

@@ -1,333 +1,240 @@
-import { TriangelLogo } from "@/VectorImage/Image";
-import { motion, useScroll, useTransform } from "motion/react";
-import React, { useRef, useEffect, useState } from "react";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
+import React from 'react';
+import { motion } from 'framer-motion';
+import {useTranslations} from "next-intl";
 
 const HeroSection = () => {
-  const t = useTranslations();
-  const ref = useRef<HTMLDivElement>(null);
-  const [vh, setVh] = useState(0);
-  const [text, setText] = useState("");
-  const fullText = t("heroSection.typingTextPrefix");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const isTyping = true;
 
-  useEffect(() => {
-    const updateVh = () => {
-      setVh(window.innerHeight);
+    const t = useTranslations();
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                duration: 0.6
+            }
+        }
     };
-    updateVh();
-    window.addEventListener("resize", updateVh);
-    return () => {
-      window.removeEventListener("resize", updateVh);
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        }
     };
-  }, []);
 
-  useEffect(() => {
-    if (isTyping) {
-      if (currentIndex < fullText.length) {
-        const timeout = setTimeout(() => {
-          setText((prev) => prev + fullText[currentIndex]);
-          setCurrentIndex((prev) => prev + 1);
-        }, 50);
-        return () => clearTimeout(timeout);
-      } else {
-        const resetTimeout = setTimeout(() => {
-          setText("");
-          setCurrentIndex(0);
-        }, 2000);
-        return () => clearTimeout(resetTimeout);
-      }
-    }
-  }, [currentIndex, isTyping, fullText]);
+    const phoneVariants = {
+        hidden: { opacity: 0, x: 100, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut",
+                delay: 0.3
+            }
+        }
+    };
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
-  const translateY = useTransform(scrollYProgress, [0, 1], [0, vh * 2]);
-  const scale = useTransform(scrollYProgress, [0, 0.9], [1, 2.3]);
-  const scale1 = useTransform(scrollYProgress, [0, 1], [0, 2.5]);
+    const floatingVariants = {
+        animate: {
+            y: [-5, 5, -5],
+            transition: {
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+            }
+        }
+    };
 
-  return (
-    <>
-      <div
-        ref={ref}
-        className="overflow-x-hidden hidden md:block  overflow-y-hidden bg-[#35E467] "
-      >
-        <div
-          id="main"
-          className="h-screen flex relative items-center justify-center w-full bg-[#35E467]"
-        >
-          <div className="absolute right-[20%] translate-x-1/2 bottom-[16%] z-10  ">
+    const buttonHover = {
+        scale: 1.05,
+        transition: { duration: 0.2 }
+    };
+
+    const badgeVariants = {
+        hidden: { opacity: 0, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.5,
+                delay: 0.8,
+                type: "spring",
+                stiffness: 200
+            }
+        }
+    };
+
+    return (
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#35E467] to-[#35E467] overflow-hidden relative">
             <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: -100 }}
-              transition={{
-                duration: 1,
-                ease: "easeInOut",
-              }}
+                className="max-w-[93rem] flex flex-col items-center justify-end h-screen mx-auto px-6 lg:px-8 pt-20"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
             >
-              <Image
-                width={100}
-                height={100}
-                src="/image/Herosection.png"
-                alt=""
-                className="w-[22vw] h-auto"
-              />
-            </motion.div>
-          </div>
-          <div className="absolute hidden md:flex flex-col justify-center items-center w-4/5">
-            <div className="flex w-full relative justify-center flex-col">
-              <p className="text-[8vw] leading-[142%] text-white text-justify font-black uppercase text-cWhite">
-                {t("heroSection.reclaimControl")}
-              </p>
-              <p className="text-[8vw] leading-[142%] text-white text-justify font-black uppercase text-cWhite">
-                {t("heroSection.over")}
-              </p>
-              <p className="text-[8vw] leading-[142%] text-white text-justify font-black uppercase text-cWhite">
-                {t("heroSection.healthData")}
-              </p>
-              <motion.div
-                style={{
-                  y: translateY,
-                  z: 0,
-                }}
-                className="absolute z-10 flex items-center justify-center self-center"
-              >
-                <motion.div
-                  style={{ scale: scale1 }}
-                  className="absolute  bg-[#374655] w-[100vw] h-[100vh] rounded-[2rem]"
-                />
-                <motion.div
-                  style={{ scale: scale }}
-                  className="absolute flex self-center items-center gap-3 px-3 rounded-[2rem] py-2 bg-cYellow"
-                >
-                  <div className="text-black bg-[#374655] rounded-[24px] gap-4 flex flex-row items-center justify-center px-[2vw] py-[1vw] font-bold">
-                    <p className="text-white text-[7vw] leading-[110%]">
-                      {t("heroSection.your")}
-                    </p>
-                    {/* SVG */}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="81"
-                      height="76"
-                      viewBox="0 0 81 76"
-                      fill="none"
+                <div className="flex w-full relative justify-center flex-col">
+                    <motion.h1
+                        className="text-[72px] text-white text-center font-black leading-tight"
+                        variants={itemVariants}
                     >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M80.0543 61.5179L49.307 0.699585L31.2327 0.728401L66.1697 75.0359L80.0543 61.5179Z"
-                        fill="url(#paint0_linear_1_1527)"
-                      />
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M0.377197 61.1981L30.6774 0.699585L48.7517 0.728401L12.9186 74.8753L0.377197 61.1981Z"
-                        fill="url(#paint1_linear_1_1527)"
-                      />
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M0.377197 61.1567L12.9186 74.8345H65.7717L59.3501 61.1567H0.377197Z"
-                        fill="url(#paint2_linear_1_1527)"
-                      />
-                      <defs>
-                        <linearGradient
-                          id="paint0_linear_1_1527"
-                          x1="55.643"
-                          y1="75.0359"
-                          x2="55.643"
-                          y2="0.699585"
-                          gradientUnits="userSpaceOnUse"
+                        {t('heroSection.title')}
+                    </motion.h1>
+                </div>
+                <div className={'flex items-center justify-center flex-col'}>
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        {/* Left Content */}
+                        <motion.div className="text-white space-y-8 h-full justify-center gap-y-8 flex flex-col" variants={itemVariants}>
+                            <motion.div className="space-y-4" variants={itemVariants}>
+                                <h2 className="text-[48px] font-bold" dangerouslySetInnerHTML={{ __html: t('heroSection.subtitle') }}>
+                                </h2>
+                            </motion.div>
+
+                            <motion.p
+                                className="text-lg lg:text-xl text-[#374655] leading-relaxed max-w-md"
+                                variants={itemVariants}
+                            >
+                                {t('heroSection.description')}
+                            </motion.p>
+
+                            <motion.div
+                                className="flex flex-col sm:flex-row gap-4"
+                                variants={itemVariants}
+                            >
+                                <motion.button
+                                    className=""
+                                    whileHover={buttonHover}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    <svg width="198" height="66" viewBox="0 0 198 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.825" y="0.825" width="196.35" height="64.35" rx="9.075" fill="black"/>
+                                        <rect x="0.825" y="0.825" width="196.35" height="64.35" rx="9.075" stroke="#A6A6A6" strokeWidth="1.65"/>
+                                        <path d="M40.7624 34.259C40.7825 32.7412 41.1954 31.253 41.9629 29.9328C42.7304 28.6126 43.8274 27.5035 45.1519 26.7085C44.3105 25.5352 43.2004 24.5697 41.9099 23.8886C40.6194 23.2074 39.184 22.8295 37.7177 22.7847C34.5899 22.4641 31.5576 24.612 29.9636 24.612C28.3389 24.612 25.8848 22.8165 23.2422 22.8696C21.5329 22.9235 19.867 23.4088 18.4069 24.2781C16.9468 25.1475 15.7422 26.3713 14.9106 27.8303C11.3083 33.9194 13.9953 42.8684 17.4461 47.7905C19.1726 50.2007 21.1904 52.8929 23.8306 52.7974C26.4143 52.6928 27.3792 51.189 30.4978 51.189C33.5876 51.189 34.4928 52.7974 37.1867 52.7367C39.959 52.6928 41.7057 50.3158 43.3717 47.8828C44.6122 46.1655 45.5667 44.2675 46.2 42.259C44.5893 41.594 43.2148 40.4807 42.2479 39.0581C41.2809 37.6354 40.7643 35.9664 40.7624 34.259Z" fill="white"/>
+                                        <path d="M35.6743 19.5477C37.186 17.7761 37.9307 15.499 37.7503 13.2C35.441 13.4368 33.3077 14.5143 31.7757 16.218C31.0266 17.0502 30.4529 18.0185 30.0874 19.0674C29.7219 20.1162 29.5717 21.2251 29.6454 22.3307C30.8005 22.3423 31.9432 22.0979 32.9875 21.6158C34.0318 21.1338 34.9505 20.4266 35.6743 19.5477Z" fill="white"/>
+                                        <path d="M60.7052 14.1024H64.1204C67.0715 14.1024 68.5072 15.8572 68.5072 19.0403C68.5072 22.2235 67.057 24 64.1204 24H60.7052V14.1024ZM62.3511 15.4874V22.6151H63.9391C65.8969 22.6151 66.8177 21.4332 66.8177 19.0621C66.8177 16.6765 65.8896 15.4874 63.9391 15.4874H62.3511ZM73.7134 16.2052C75.7147 16.2052 77.1141 17.5031 77.1141 19.6567V20.65C77.1141 22.8761 75.7147 24.1305 73.7134 24.1305C71.6831 24.1305 70.2982 22.8906 70.2982 20.6573V19.6639C70.2982 17.5684 71.7049 16.2052 73.7134 16.2052ZM73.7207 17.5031C72.575 17.5031 71.9224 18.4603 71.9224 19.7437V20.5993C71.9224 21.8827 72.5315 22.8326 73.7207 22.8326C74.8953 22.8326 75.4972 21.89 75.4972 20.5993V19.7437C75.4972 18.4603 74.8663 17.5031 73.7207 17.5031ZM88.9332 16.3357L86.9174 24H85.2787L83.6763 18.3442H83.6328L82.0593 24H80.4133L78.3105 16.3357H80.0435L81.2762 22.18H81.3487L82.8932 16.3357H84.4086L85.9966 22.18H86.0691L87.3235 16.3357H88.9332ZM90.5284 24V16.3357H92.1091V17.7134H92.1889C92.3847 17.1116 92.943 16.2197 94.4947 16.2197C96.0392 16.2197 97.0761 17.0753 97.0761 18.8228V24H95.4663V19.2941C95.4663 18.1267 94.8573 17.5901 93.9509 17.5901C92.7617 17.5901 92.1382 18.5038 92.1382 19.7437V24H90.5284ZM99.5124 24V13.5803H101.122V24H99.5124ZM106.647 16.2052C108.649 16.2052 110.048 17.5031 110.048 19.6567V20.65C110.048 22.8761 108.649 24.1305 106.647 24.1305C104.617 24.1305 103.232 22.8906 103.232 20.6573V19.6639C103.232 17.5684 104.639 16.2052 106.647 16.2052ZM106.655 17.5031C105.509 17.5031 104.856 18.4603 104.856 19.7437V20.5993C104.856 21.8827 105.465 22.8326 106.655 22.8326C107.829 22.8326 108.431 21.89 108.431 20.5993V19.7437C108.431 18.4603 107.8 17.5031 106.655 17.5031ZM114.217 24.116C112.731 24.116 111.709 23.2024 111.709 21.774C111.709 20.418 112.651 19.5044 114.42 19.5044H116.356V18.7865C116.356 17.9092 115.798 17.4959 114.913 17.4959C114.043 17.4959 113.652 17.8584 113.529 18.366H111.999C112.093 17.0826 113.057 16.2197 114.964 16.2197C116.603 16.2197 117.959 16.9013 117.959 18.8083V24H116.429V23.0066H116.356C116.016 23.5939 115.349 24.116 114.217 24.116ZM114.718 22.8688C115.631 22.8688 116.356 22.2453 116.356 21.4114V20.5848H114.674C113.739 20.5848 113.326 21.0561 113.326 21.6942C113.326 22.4918 113.993 22.8688 114.718 22.8688ZM122.919 16.2342C123.999 16.2342 124.826 16.7128 125.123 17.4886H125.203V13.5803H126.812V24H125.246V22.7746H125.166C124.934 23.5504 124.013 24.1015 122.897 24.1015C121.135 24.1015 119.989 22.8471 119.989 20.8241V19.5116C119.989 17.4886 121.157 16.2342 122.919 16.2342ZM123.368 17.5539C122.295 17.5539 121.628 18.3515 121.628 19.7437V20.5848C121.628 21.9842 122.302 22.7818 123.404 22.7818C124.492 22.7818 125.203 21.9915 125.203 20.6863V19.5261C125.203 18.3442 124.427 17.5539 123.368 17.5539ZM135.651 16.2052C137.653 16.2052 139.052 17.5031 139.052 19.6567V20.65C139.052 22.8761 137.653 24.1305 135.651 24.1305C133.621 24.1305 132.236 22.8906 132.236 20.6573V19.6639C132.236 17.5684 133.643 16.2052 135.651 16.2052ZM135.659 17.5031C134.513 17.5031 133.86 18.4603 133.86 19.7437V20.5993C133.86 21.8827 134.469 22.8326 135.659 22.8326C136.833 22.8326 137.435 21.89 137.435 20.5993V19.7437C137.435 18.4603 136.804 17.5031 135.659 17.5031ZM141.126 24V16.3357H142.706V17.7134H142.786C142.982 17.1116 143.54 16.2197 145.092 16.2197C146.636 16.2197 147.673 17.0753 147.673 18.8228V24H146.064V19.2941C146.064 18.1267 145.455 17.5901 144.548 17.5901C143.359 17.5901 142.735 18.5038 142.735 19.7437V24H141.126ZM153.902 16.3865V14.4722H155.475V16.3865H157.194V17.6481H155.475V21.7159C155.475 22.5498 155.787 22.7818 156.65 22.7818C156.868 22.7818 157.158 22.7673 157.281 22.7528V23.9855C157.15 24.0073 156.614 24.0508 156.251 24.0508C154.388 24.0508 153.88 23.3837 153.88 21.8465V17.6481H152.713V16.3865H153.902ZM159.224 24V13.5803H160.827V17.7134H160.906C161.073 17.1696 161.697 16.2197 163.234 16.2197C164.728 16.2197 165.794 17.0826 165.794 18.8301V24H164.191V19.3014C164.191 18.134 163.546 17.5901 162.632 17.5901C161.479 17.5901 160.827 18.4965 160.827 19.7437V24H159.224ZM171.196 24.1305C169.107 24.1305 167.809 22.8471 167.809 20.6863V19.6494C167.809 17.4741 169.231 16.2052 171.101 16.2052C173.023 16.2052 174.379 17.5394 174.379 19.6494V20.5485H169.405V20.9256C169.405 22.0277 170.057 22.8398 171.188 22.8398C172.029 22.8398 172.609 22.441 172.718 21.9625H174.292C174.197 22.8471 173.262 24.1305 171.196 24.1305ZM169.405 19.4971H172.805V19.3956C172.805 18.2427 172.131 17.4741 171.109 17.4741C170.086 17.4741 169.405 18.2427 169.405 19.3956V19.4971Z" fill="white"/>
+                                        <path d="M62.7935 51H59.719L66.622 31.2048H69.8704L76.7733 51H73.6119L71.7557 45.3297H64.6497L62.7935 51ZM68.2607 34.4533H68.1592L65.3603 43.0094H71.0451L68.2607 34.4533ZM85.8012 51.232C83.8289 51.232 82.3207 50.2894 81.4941 48.9117H81.3926V56.2497H78.4632V35.7149H81.3055V37.9337H81.4071C82.2627 36.4835 83.8289 35.4829 85.8882 35.4829C89.3106 35.4829 91.805 38.1078 91.805 42.6614V44.0391C91.805 48.5492 89.3541 51.232 85.8012 51.232ZM85.2501 48.7667C87.3964 48.7667 88.8466 47.0555 88.8466 43.8505V42.7629C88.8466 39.703 87.4834 37.9192 85.1921 37.9192C82.8283 37.9192 81.3636 39.8335 81.3636 42.7484V43.8505C81.3636 46.8524 82.8428 48.7667 85.2501 48.7667ZM102.022 51.232C100.05 51.232 98.5415 50.2894 97.7149 48.9117H97.6133V56.2497H94.684V35.7149H97.5263V37.9337H97.6279C98.4835 36.4835 100.05 35.4829 102.109 35.4829C105.531 35.4829 108.026 38.1078 108.026 42.6614V44.0391C108.026 48.5492 105.575 51.232 102.022 51.232ZM101.471 48.7667C103.617 48.7667 105.067 47.0555 105.067 43.8505V42.7629C105.067 39.703 103.704 37.9192 101.413 37.9192C99.049 37.9192 97.5843 39.8335 97.5843 42.7484V43.8505C97.5843 46.8524 99.0635 48.7667 101.471 48.7667ZM114.77 45.5618H117.714C117.888 47.36 119.439 48.8827 122.34 48.8827C124.979 48.8827 126.603 47.621 126.603 45.6343C126.603 44.0681 125.588 43.2125 123.428 42.6759L120.092 41.8348C117.627 41.2257 115.335 39.7175 115.335 36.5561C115.335 32.8 118.642 30.7553 122.369 30.7553C126.023 30.7553 129.301 32.713 129.373 36.469H126.487C126.328 34.6998 124.965 33.2641 122.325 33.2641C119.976 33.2641 118.337 34.3808 118.337 36.3385C118.337 37.6727 119.236 38.6443 121.107 39.0939L124.414 39.935C127.416 40.6891 129.62 42.0958 129.62 45.3877C129.62 49.2743 126.415 51.4061 122.079 51.4061C116.684 51.4061 114.842 48.2011 114.77 45.5618ZM133.645 35.7149V31.9444H136.53V35.7149H139.532V38.0933H136.53V46.5624C136.53 48.3026 137.154 48.7667 138.938 48.7667C139.199 48.7667 139.431 48.7522 139.634 48.7377V51.0145C139.387 51.058 138.807 51.116 138.213 51.116C134.529 51.116 133.616 49.7528 133.616 46.7074V38.0933H131.527V35.7149H133.645ZM148.299 35.4539C152.635 35.4539 154.984 38.5428 154.984 42.6759V43.9666C154.984 48.2156 152.65 51.261 148.299 51.261C143.934 51.261 141.57 48.2156 141.57 43.9666V42.6904C141.57 38.5573 143.934 35.4539 148.299 35.4539ZM148.285 37.8612C145.805 37.8612 144.514 39.8335 144.514 42.7484V43.923C144.514 46.8089 145.805 48.8247 148.285 48.8247C150.779 48.8247 152.041 46.8234 152.041 43.923V42.7484C152.041 39.819 150.764 37.8612 148.285 37.8612ZM157.834 51V35.7149H160.764V37.6582H160.865C161.271 36.7301 162.417 35.4829 164.563 35.4829C164.94 35.4829 165.288 35.5119 165.593 35.5554V38.1803C165.317 38.1223 164.781 38.0933 164.288 38.0933C161.648 38.0933 160.793 39.7175 160.793 41.7768V51H157.834ZM173.432 51.261C169.386 51.261 166.848 48.5057 166.848 44.0536V42.4438C166.848 38.2528 169.284 35.4539 173.316 35.4539C177.362 35.4539 179.755 38.3253 179.755 42.5889V44.0391H169.763V44.3581C169.763 47.07 171.184 48.8972 173.49 48.8972C175.172 48.8972 176.303 48.0561 176.738 46.6929H179.566C179.058 49.1873 177.057 51.261 173.432 51.261ZM169.763 41.8928H176.869V41.8493C176.869 39.5725 175.462 37.7887 173.33 37.7887C171.155 37.7887 169.763 39.587 169.763 41.8493V41.8928Z" fill="white"/>
+                                    </svg>
+                                </motion.button>
+
+                                <motion.button
+                                    className=""
+                                    whileHover={buttonHover}
+                                    whileTap={{ scale: 0.98 }}
+                                >
+                                    <svg width="198" height="66" viewBox="0 0 198 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.825" y="0.825" width="196.35" height="64.35" rx="9.075" fill="black"/>
+                                        <rect x="0.825" y="0.825" width="196.35" height="64.35" rx="9.075" stroke="#A6A6A6" stroke-width="1.65"/>
+                                        <path d="M29.3779 32.1118L13.3478 49.5098C13.3493 49.5129 13.3493 49.5175 13.3509 49.5206C13.8432 51.4097 15.5295 52.8 17.5319 52.8C18.3329 52.8 19.0842 52.5783 19.7286 52.1903L19.7798 52.1596L37.8228 41.5129L29.3779 32.1118Z" fill="#EA4335"/>
+                                        <path d="M45.5946 29.1492L45.5796 29.1384L37.7896 24.521L29.0135 32.5071L37.8212 41.511L45.569 36.9398C46.9271 36.1884 47.85 34.7242 47.85 33.0368C47.85 31.3586 46.9406 29.902 45.5946 29.1492Z" fill="#FBBC04"/>
+                                        <path d="M13.3475 16.4891C13.2512 16.8524 13.2 17.2343 13.2 17.6284V48.3721C13.2 48.7662 13.2512 49.1481 13.3491 49.5099L29.9287 32.5568L13.3475 16.4891Z" fill="#4285F4"/>
+                                        <path d="M29.4963 32.9998L37.7922 24.5178L19.7702 13.8327C19.1152 13.4308 18.3504 13.1999 17.5329 13.1999C15.5304 13.1999 13.8411 14.5933 13.3488 16.484C13.3488 16.4855 13.3473 16.487 13.3473 16.4886L29.4963 32.9998Z" fill="#34A853"/>
+                                        <path d="M71.9565 18.8215C71.9565 20.4715 71.467 21.786 70.488 22.765C69.388 23.931 67.9415 24.514 66.1485 24.514C64.4325 24.514 62.9805 23.92 61.7925 22.732C60.6045 21.544 60.0105 20.081 60.0105 18.343C60.0105 16.605 60.6045 15.142 61.7925 13.954C62.9805 12.766 64.4325 12.172 66.1485 12.172C67.0175 12.172 67.837 12.326 68.607 12.634C69.377 12.942 70.0095 13.3765 70.5045 13.9375L69.4155 15.0265C69.0525 14.5865 68.5795 14.2455 67.9965 14.0035C67.4245 13.7505 66.8085 13.624 66.1485 13.624C64.8615 13.624 63.7725 14.0695 62.8815 14.9605C62.0015 15.8625 61.5615 16.99 61.5615 18.343C61.5615 19.696 62.0015 20.8235 62.8815 21.7255C63.7725 22.6165 64.8615 23.062 66.1485 23.062C67.3255 23.062 68.3045 22.732 69.0855 22.072C69.8665 21.412 70.3175 20.5045 70.4385 19.3495H66.1485V17.9305H71.874C71.929 18.2385 71.9565 18.5355 71.9565 18.8215ZM80.6979 12.436V13.888H75.3189V17.6335H80.1699V19.0525H75.3189V22.798H80.6979V24.25H73.8009V12.436H80.6979ZM86.7698 13.888V24.25H85.2518V13.888H81.9518V12.436H90.0698V13.888H86.7698ZM96.7979 24.25H95.2799V12.436H96.7979V24.25ZM103.205 13.888V24.25H101.687V13.888H98.3873V12.436H106.505V13.888H103.205ZM122.96 18.343C122.96 20.092 122.377 21.555 121.211 22.732C120.034 23.92 118.593 24.514 116.888 24.514C115.172 24.514 113.731 23.92 112.565 22.732C111.399 21.555 110.816 20.092 110.816 18.343C110.816 16.594 111.399 15.131 112.565 13.954C113.731 12.766 115.172 12.172 116.888 12.172C118.604 12.172 120.045 12.7715 121.211 13.9705C122.377 15.1475 122.96 16.605 122.96 18.343ZM112.367 18.343C112.367 19.707 112.796 20.8345 113.654 21.7255C114.523 22.6165 115.601 23.062 116.888 23.062C118.175 23.062 119.247 22.6165 120.105 21.7255C120.974 20.8455 121.409 19.718 121.409 18.343C121.409 16.968 120.974 15.8405 120.105 14.9605C119.247 14.0695 118.175 13.624 116.888 13.624C115.601 13.624 114.523 14.0695 113.654 14.9605C112.796 15.8515 112.367 16.979 112.367 18.343ZM126.269 24.25H124.751V12.436H126.599L132.341 21.6265H132.407L132.341 19.3495V12.436H133.859V24.25H132.275L126.269 14.614H126.203L126.269 16.891V24.25Z" fill="white"/>
+                                        <path d="M154.305 49.0759H156.992V30.9069H154.305V49.0759ZM178.511 37.4516L175.431 45.3291H175.339L172.141 37.4516H169.246L174.041 48.4611L171.309 54.5858H174.11L181.5 37.4516H178.511ZM163.271 47.0121C162.389 47.0121 161.162 46.5688 161.162 45.4686C161.162 44.0675 162.69 43.5297 164.011 43.5297C165.192 43.5297 165.749 43.787 166.467 44.1373C166.258 45.8203 164.822 47.0121 163.271 47.0121ZM163.595 37.0548C161.649 37.0548 159.632 37.9196 158.8 39.8366L161.185 40.8409C161.695 39.8366 162.644 39.5082 163.641 39.5082C165.031 39.5082 166.443 40.3497 166.467 41.8467V42.0327C165.98 41.7522 164.938 41.3322 163.664 41.3322C161.093 41.3322 158.474 42.758 158.474 45.4221C158.474 47.8536 160.583 49.4204 162.945 49.4204C164.753 49.4204 165.749 48.6021 166.374 47.6429H166.467V49.0454H169.06V42.0792C169.06 38.8541 166.675 37.0548 163.595 37.0548ZM146.985 39.6637H143.163V33.4359H146.985C148.995 33.4359 150.135 35.1145 150.135 36.549C150.135 37.9574 148.995 39.6637 146.985 39.6637ZM146.916 30.9069H140.477V49.0759H143.163V42.1926H146.916C149.895 42.1926 152.823 40.0154 152.823 36.549C152.823 33.0827 149.895 30.9069 146.916 30.9069ZM111.801 47.015C109.945 47.015 108.391 45.4468 108.391 43.2928C108.391 41.1156 109.945 39.5227 111.801 39.5227C113.635 39.5227 115.072 41.1156 115.072 43.2928C115.072 45.4468 113.635 47.015 111.801 47.015ZM114.888 38.469H114.794C114.191 37.7437 113.031 37.0883 111.569 37.0883C108.506 37.0883 105.699 39.8032 105.699 43.2928C105.699 46.7578 108.506 49.4509 111.569 49.4509C113.031 49.4509 114.191 48.7954 114.794 48.0455H114.888V48.9364C114.888 51.3011 113.635 52.5655 111.615 52.5655C109.968 52.5655 108.947 51.3709 108.529 50.3636L106.186 51.3476C106.858 52.987 108.646 55 111.615 55C114.771 55 117.44 53.1266 117.44 48.5614V37.4618H114.888V38.469ZM119.296 49.0759H121.988V30.9055H119.296V49.0759ZM125.955 43.0821C125.886 40.6942 127.788 39.4762 129.156 39.4762C130.225 39.4762 131.13 40.014 131.431 40.7872L125.955 43.0821ZM134.308 41.0212C133.798 39.6404 132.243 37.0883 129.064 37.0883C125.909 37.0883 123.287 39.5925 123.287 43.2696C123.287 46.7345 125.886 49.4509 129.365 49.4509C132.174 49.4509 133.798 47.7184 134.471 46.7112L132.383 45.3058C131.687 46.3363 130.735 47.015 129.365 47.015C127.997 47.015 127.022 46.3828 126.395 45.143L134.586 41.7232L134.308 41.0212ZM69.0527 38.9849V41.6069H75.2703C75.0845 43.0821 74.5977 44.1591 73.856 44.9076C72.95 45.8218 71.5342 46.829 69.0527 46.829C65.223 46.829 62.2301 43.7143 62.2301 39.8512C62.2301 35.9866 65.223 32.8734 69.0527 32.8734C71.118 32.8734 72.626 33.6931 73.7393 34.7468L75.5728 32.8966C74.0173 31.3982 71.9534 30.25 69.0527 30.25C63.8087 30.25 59.4 34.5593 59.4 39.8512C59.4 45.143 63.8087 49.4509 69.0527 49.4509C71.8828 49.4509 74.0173 48.5135 75.688 46.7578C77.4062 45.0253 77.9391 42.5908 77.9391 40.6229C77.9391 40.014 77.893 39.4529 77.7994 38.9849H69.0527ZM85.0094 47.015C83.1529 47.015 81.5513 45.47 81.5513 43.2696C81.5513 41.0444 83.1529 39.5227 85.0094 39.5227C86.8644 39.5227 88.466 41.0444 88.466 43.2696C88.466 45.47 86.8644 47.015 85.0094 47.015ZM85.0094 37.0883C81.6204 37.0883 78.8594 39.6869 78.8594 43.2696C78.8594 46.829 81.6204 49.4509 85.0094 49.4509C88.3969 49.4509 91.1579 46.829 91.1579 43.2696C91.1579 39.6869 88.3969 37.0883 85.0094 37.0883ZM98.4226 47.015C96.5661 47.015 94.9645 45.47 94.9645 43.2696C94.9645 41.0444 96.5661 39.5227 98.4226 39.5227C100.279 39.5227 101.879 41.0444 101.879 43.2696C101.879 45.47 100.279 47.015 98.4226 47.015ZM98.4226 37.0883C95.0351 37.0883 92.2741 39.6869 92.2741 43.2696C92.2741 46.829 95.0351 49.4509 98.4226 49.4509C101.81 49.4509 104.571 46.829 104.571 43.2696C104.571 39.6869 101.81 37.0883 98.4226 37.0883Z" fill="white"/>
+                                    </svg>
+                                </motion.button>
+                            </motion.div>
+                        </motion.div>
+
+                        {/* Right Content - Phone Mockup */}
+                        <motion.div
+                            className="relative flex justify-center items-center"
+                            variants={phoneVariants}
                         >
-                          <stop stopColor="#8DF3B2" />
-                          <stop offset="1" stopColor="#1BE866" />
-                        </linearGradient>
-                        <linearGradient
-                          id="paint1_linear_1_1527"
-                          x1="24.564"
-                          y1="74.8753"
-                          x2="24.564"
-                          y2="0.699585"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop stopColor="#1BE866" />
-                          <stop offset="1" stopColor="#8DF3B2" />
-                        </linearGradient>
-                        <linearGradient
-                          id="paint2_linear_1_1527"
-                          x1="0.377197"
-                          y1="61.1567"
-                          x2="65.7717"
-                          y2="61.1567"
-                          gradientUnits="userSpaceOnUse"
-                        >
-                          <stop stopColor="#8DF3B2" />
-                          <stop offset="1" stopColor="#1BE866" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                </motion.div>
-              </motion.div>
-            </div>
-            <p className="self-start flex flex-col items-start justify-normal gap-4 text-[#374655] text-[32px] leading-[32px] whitespace-pre-wrap font-medium  ">
-              <p>{t("heroSection.decentralisedHealthWallet")}</p>
-              <span className=" text-[20px] leading-[24px] font-openSans_Regular">
-                {t("heroSection.welcomeWeb3Era")}
-                <span>{text}</span>
-              </span>
-            </p>
-          </div>
-          <div className="md:hidden flex flex-col items-center gap-1">
-            <p className="text-[6.5rem] uppercase font-black text-cWhite text-center">
-              {t("heroSection.reclaimControl")}
-              <br />
-              {t("heroSection.over")} <br />
-              {t("heroSection.healthData")}
-            </p>
-            <div className="flex items-center justify-center gap-2 p-1 bg-cYellow rounded-lg">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 564 116"
-                className="w-full"
-              >
-                {/* ...SVG Paths... */}
-              </svg>
-            </div>
-            <p className="text-[6.5rem] uppercase font-black text-cWhite text-center">
-              {t("heroSection.digitalWorld")}
-            </p>
-            <p className="text-center w-3/4 text-white text-md">
-              {t("heroSection.digitalWorldControls")}
-              <br />
-              <br />
-              {t("heroSection.takeControlInternet")}
-            </p>
-          </div>
-          {/* Social Icons: unchanged, not translated */}
-          <div className="absolute right-12 bottom-2 hidden md:flex flex-col-reverse gap-[26px]">
-            {/* ...Social Icon SVGs... */}
-          </div>
-          <motion.div
-            animate={{ y: [-5.05389, 0] }}
-            transition={{
-              duration: 1,
-              ease: "linear",
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="absolute bottom-1 cursor-pointer flex flex-col items-center gap-1"
-          >
-            <p className="text-[#364655] text-[20.3px] font-sfpro_400 ">
-              {t("heroSection.readyToBeFree")}
-            </p>
-            <div className="w-1.5">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="23"
-                height="28"
-                viewBox="0 0 23 28"
-                fill="none"
-              >
-                <path
-                  d="M9.3007 22.3428L16.3347 14.0675H10.8981L11.8836 6.49321L5.59686 15.4023H10.3198L9.3007 22.3428ZM5.83508 27.4148L7.19425 18.0717H0.398438L12.6309 0.720276H15.3492L13.9901 11.3981H22.145L8.55341 27.4148H5.83508Z"
-                  fill="#364655"
-                />
-              </svg>
-            </div>
-          </motion.div>
+                            <motion.div
+                                className="relative"
+                                variants={floatingVariants}
+                                animate="animate"
+                            >
+                                {/* Phone Image */}
+                                <img
+                                    src="/image/banner.png"
+                                    alt="Health Data App Mockup"
+                                    className="w-[40vw] h-[auto] relative z-20"
+                                />
+                            </motion.div>
+
+                            {/* Floating Badges */}
+                            <motion.div
+                                className="absolute top-40 left-70 bg-white rounded-full px-4 py-2 shadow-lg z-30"
+                                variants={badgeVariants}
+                                initial="hidden"
+                                animate="visible"
+                            >
+                                <div className="flex items-center gap-y-2 gap-x-7">
+                                    <span className="text-lg text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>
+                                    <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
+                                        <circle cx="25" cy="25" r="16" fill="white"/>
+                                        <defs>
+                                            <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#1AA44F"/>
+                                                <stop offset="0.509615" stop-color="#11542A"/>
+                                                <stop offset="1" stop-color="#189749"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="absolute top-[18rem] -left-20 bg-white rounded-full px-4 py-2 shadow-lg z-30"
+                                variants={badgeVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ delay: 1 }}
+                            >
+                                <div className="flex items-center gap-y-2 gap-x-7">
+                                    <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
+                                        <circle cx="25" cy="25" r="16" fill="white"/>
+                                        <defs>
+                                            <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#1AA44F"/>
+                                                <stop offset="0.509615" stop-color="#11542A"/>
+                                                <stop offset="1" stop-color="#189749"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <span className="text-lg text-[#0E6D32] font-medium">{t('heroSection.feature2')}</span>
+                                </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="absolute bottom-[10rem] left-[13rem] bg-white rounded-full px-4 py-2 shadow-lg z-30"
+                                variants={badgeVariants}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ delay: 1.2 }}
+                            >
+                                <div className="flex items-center gap-y-2 gap-x-7">
+                                    <span className="text-lg text-[#0E6D32] font-medium">{t('heroSection.feature3')}</span>
+                                    <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
+                                        <circle cx="25" cy="25" r="16" fill="white"/>
+                                        <defs>
+                                            <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#1AA44F"/>
+                                                <stop offset="0.509615" stop-color="#11542A"/>
+                                                <stop offset="1" stop-color="#189749"/>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </div>
+            </motion.div>
         </div>
-        <div id="yellow" className="h-screen md:block hidden bg-cBlue" />
-        <div className="h-screen md:block hidden bg-cYellow" />
-      </div>
-      <div className="container mx-auto md:hidden max-w-[88rem] px-[20px] pt-[100px] bg-primary">
-        <div className="flex flex-col items-center justify-start">
-          <div>
-            <p
-              className="text-[15vw] text-center text-[#FFF] font-sfpro_700 leading-[125%] uppercase"
-              style={{
-                WebkitTextStrokeWidth: "4px",
-                WebkitTextStrokeColor: "#FFF",
-              }}
-            >
-              {t("heroSection.reclaimControlOver")}
-            </p>
-          </div>
-          <div className=" flex flex-row items-center justify-center bg-[#374655] rounded-[12px] px-6 py-2 ">
-            <div className="w-[57px] h-[57px] relative ">
-              <TriangelLogo />
-            </div>
-            <p
-              className="text-[15vw] text-[#FFF] font-sfpro_700 leading-[125%] uppercase "
-              style={{
-                WebkitTextStrokeColor: "4px",
-                WebkitTextStrokeWidth: "#FFF",
-              }}
-            >
-              {t("heroSection.your")}
-            </p>
-          </div>
-          <p
-            className="text-[15vw] text-center text-[#374655] font-sfpro_700 leading-[125%] uppercase mt-[14px]"
-            style={{
-              WebkitTextStrokeWidth: "4px",
-              WebkitTextStrokeColor: "#374655",
-            }}
-          >
-            {t("heroSection.healthData")}
-          </p>
-        </div>
-        <p className="text-[22px] text-[#374655] font-sfpro_400 leading-[125%] text-center mt-[20px]">
-          {t("heroSection.decentralisedSmartHealthWallet")}
-        </p>
-        <p className="text-[18px] text-[#374655] font-sfpro_400 leading-[125%] text-center mt-[15px]">
-          {t("heroSection.welcomeWeb3Era")} {t("heroSection.typingTextPrefix")}
-        </p>
-        <div className="w-full flex-row flex items-center justify-center">
-          <Image
-            width={100}
-            height={100}
-            src="/image/Herosection.png"
-            alt=""
-            className="w-[] h-auto "
-          />
-        </div>
-        <motion.div
-          animate={{ y: [-5.05389, 0] }}
-          transition={{
-            duration: 1,
-            ease: "linear",
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="flex flex-col items-center"
-        >
-          <p className="text-[#364655] text-[20px] font-sfpro_400 ">
-            {t("heroSection.readyToBeFree")}
-          </p>
-          <div className="w-1.5">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="23"
-              height="28"
-              viewBox="0 0 23 28"
-              fill="none"
-            >
-              <path
-                d="M9.3007 22.3428L16.3347 14.0675H10.8981L11.8836 6.49321L5.59686 15.4023H10.3198L9.3007 22.3428ZM5.83508 27.4148L7.19425 18.0717H0.398438L12.6309 0.720276H15.3492L13.9901 11.3981H22.145L8.55341 27.4148H5.83508Z"
-                fill="#364655"
-              />
-            </svg>
-          </div>
-        </motion.div>
-      </div>
-    </>
-  );
+    );
 };
 
 export default HeroSection;

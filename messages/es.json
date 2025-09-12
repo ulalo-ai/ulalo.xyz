@@ -8,6 +8,13 @@
       "label": "Idioma"
     },
     "heroSection": {
+      "title": "POSEE TUS DATOS DE SALUD",
+      "subtitle": "Toma el control. <br/>Comparte de forma segura. <br/>Obtén recompensas.",
+      "description": "Ulalo te permite gestionar, proteger y monetizar tus datos de salud, dándote verdadera propiedad y privacidad",
+      "feature1": "Propiedad de Datos",
+      "feature2": "Seguro y Privado",
+      "feature3": "Gana Recompensas",
+
       "reclaimControl": "Recupera el Control",
       "over": "Sobre",
       "healthData": "DATOS DE SALUD",
