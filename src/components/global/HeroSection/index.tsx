@@ -83,7 +83,7 @@ const HeroSection = () => {
             >
                 <div className="flex w-full relative justify-center flex-col h-[20%]">
                     <motion.h1
-                        className="text-[72px] text-white text-center font-black leading-tight"
+                        className="text-[90px] text-white text-center font-black leading-tight"
                         variants={itemVariants}
                     >
                         {t('heroSection.title')}
@@ -94,11 +94,26 @@ const HeroSection = () => {
                         {/* Left Content */}
                         <motion.div className="text-white space-y-8 h-full justify-center gap-y-8 flex flex-col" variants={itemVariants}>
                             <motion.div className="space-y-4" variants={itemVariants}>
-                                <h2 className="text-[48px] font-bold" dangerouslySetInnerHTML={{ __html: t('heroSection.subtitle') }}>
+                                <h2
+                                    style={{
+                                        fontWeight: "900",
+                                        fontSize: "48px",
+                                        lineHeight: "100%",
+                                        letterSpacing: "0%",
+                                        textTransform: "uppercase"
+
+                                    }}
+                                    className="text-[48px] font-bold" dangerouslySetInnerHTML={{ __html: t('heroSection.subtitle') }}>
                                 </h2>
                             </motion.div>
 
-                            <motion.p
+                            <motion.p style={{
+                                fontFamily: "Inter, sans-serif",
+                                fontWeight: 600, // Semi Bold
+                                fontSize: "32px",
+                                lineHeight: "100%",
+                                letterSpacing: "0"
+                            }}
                                 className="text-lg lg:text-xl text-[#374655] leading-relaxed max-w-md"
                                 variants={itemVariants}
                             >
@@ -359,7 +374,6 @@ const HeroSection = () => {
                             </motion.div>
 
                         </motion.div>
-
                     </div>
                 </div>
             </motion.div>
