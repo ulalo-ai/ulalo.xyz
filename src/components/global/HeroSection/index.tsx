@@ -266,73 +266,73 @@ const HeroSection = () => {
                             </motion.div>
 
                             {/* Floating Badges */}
-                            <motion.div
-                                className="absolute top-[6rem] left-[10rem] bg-white rounded-full px-3 py-1.5 shadow-lg z-30"
-                                variants={badgeVariants}
-                                initial="hidden"
-                                animate="visible"
-                            >
-                                <div className="flex items-center gap-y-1.5 gap-x-3">
-                                    <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>
-                                    <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
-                                        <circle cx="25" cy="25" r="16" fill="white"/>
-                                        <defs>
-                                            <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#1AA44F"/>
-                                                <stop offset="0.509615" stop-color="#11542A"/>
-                                                <stop offset="1" stop-color="#189749"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                            </motion.div>
+                            {/*<motion.div*/}
+                            {/*    className="absolute top-[6rem] left-[10rem] bg-white rounded-full px-3 py-1.5 shadow-lg z-30"*/}
+                            {/*    variants={badgeVariants}*/}
+                            {/*    initial="hidden"*/}
+                            {/*    animate="visible"*/}
+                            {/*>*/}
+                            {/*    <div className="flex items-center gap-y-1.5 gap-x-3">*/}
+                            {/*        <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>*/}
+                            {/*        <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                            {/*            <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>*/}
+                            {/*            <circle cx="25" cy="25" r="16" fill="white"/>*/}
+                            {/*            <defs>*/}
+                            {/*                <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">*/}
+                            {/*                    <stop stop-color="#1AA44F"/>*/}
+                            {/*                    <stop offset="0.509615" stop-color="#11542A"/>*/}
+                            {/*                    <stop offset="1" stop-color="#189749"/>*/}
+                            {/*                </linearGradient>*/}
+                            {/*            </defs>*/}
+                            {/*        </svg>*/}
+                            {/*    </div>*/}
+                            {/*</motion.div>*/}
 
-                            <motion.div
-                                className="absolute top-[18rem] -left-20 bg-white rounded-full px-2 py-1.5 shadow-lg z-30"
-                                variants={badgeVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ delay: 1 }}
-                            >
-                                <div className="flex items-center gap-y-1.5 gap-x-3">
-                                    <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>
-                                    <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
-                                        <circle cx="25" cy="25" r="16" fill="white"/>
-                                        <defs>
-                                            <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#1AA44F"/>
-                                                <stop offset="0.509615" stop-color="#11542A"/>
-                                                <stop offset="1" stop-color="#189749"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                            </motion.div>
+                            {/*<motion.div*/}
+                            {/*    className="absolute top-[18rem] -left-20 bg-white rounded-full px-2 py-1.5 shadow-lg z-30"*/}
+                            {/*    variants={badgeVariants}*/}
+                            {/*    initial="hidden"*/}
+                            {/*    animate="visible"*/}
+                            {/*    transition={{ delay: 1 }}*/}
+                            {/*>*/}
+                            {/*    <div className="flex items-center gap-y-1.5 gap-x-3">*/}
+                            {/*        <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>*/}
+                            {/*        <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                            {/*            <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>*/}
+                            {/*            <circle cx="25" cy="25" r="16" fill="white"/>*/}
+                            {/*            <defs>*/}
+                            {/*                <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">*/}
+                            {/*                    <stop stop-color="#1AA44F"/>*/}
+                            {/*                    <stop offset="0.509615" stop-color="#11542A"/>*/}
+                            {/*                    <stop offset="1" stop-color="#189749"/>*/}
+                            {/*                </linearGradient>*/}
+                            {/*            </defs>*/}
+                            {/*        </svg>*/}
+                            {/*    </div>*/}
+                            {/*</motion.div>*/}
 
-                            <motion.div
-                                className="absolute bottom-[6rem] left-[7rem] bg-white rounded-full px-2 py-1.5 shadow-lg z-30"
-                                variants={badgeVariants}
-                                initial="hidden"
-                                animate="visible"
-                                transition={{ delay: 1.2 }}
-                            >
-                                <div className="flex items-center gap-y-1 gap-x-3">
-                                    <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature3')}</span>
-                                    <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>
-                                        <circle cx="25" cy="25" r="16" fill="white"/>
-                                        <defs>
-                                            <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">
-                                                <stop stop-color="#1AA44F"/>
-                                                <stop offset="0.509615" stop-color="#11542A"/>
-                                                <stop offset="1" stop-color="#189749"/>
-                                            </linearGradient>
-                                        </defs>
-                                    </svg>
-                                </div>
-                            </motion.div>
+                            {/*<motion.div*/}
+                            {/*    className="absolute bottom-[6rem] left-[7rem] bg-white rounded-full px-2 py-1.5 shadow-lg z-30"*/}
+                            {/*    variants={badgeVariants}*/}
+                            {/*    initial="hidden"*/}
+                            {/*    animate="visible"*/}
+                            {/*    transition={{ delay: 1.2 }}*/}
+                            {/*>*/}
+                            {/*    <div className="flex items-center gap-y-1 gap-x-3">*/}
+                            {/*        <span className="text-sm text-[#0E6D32] font-medium">{t('heroSection.feature3')}</span>*/}
+                            {/*        <svg width="24" height="24" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                            {/*            <circle cx="25" cy="25" r="25" fill="url(#paint0_linear_2367_739)"/>*/}
+                            {/*            <circle cx="25" cy="25" r="16" fill="white"/>*/}
+                            {/*            <defs>*/}
+                            {/*                <linearGradient id="paint0_linear_2367_739" x1="25" y1="0" x2="25" y2="50" gradientUnits="userSpaceOnUse">*/}
+                            {/*                    <stop stop-color="#1AA44F"/>*/}
+                            {/*                    <stop offset="0.509615" stop-color="#11542A"/>*/}
+                            {/*                    <stop offset="1" stop-color="#189749"/>*/}
+                            {/*                </linearGradient>*/}
+                            {/*            </defs>*/}
+                            {/*        </svg>*/}
+                            {/*    </div>*/}
+                            {/*</motion.div>*/}
                         </motion.div>
                     </div>
                 </div>
@@ -374,43 +374,43 @@ const HeroSection = () => {
                                 </motion.div>
 
                                 {/* Floating Badges */}
-                                <motion.div
-                                    className="absolute top-[5rem] left-[9rem] bg-white rounded-full px-2 py-1 shadow-lg z-30"
-                                    variants={badgeVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                >
-                                    <div className="flex items-center gap-y-1.5 gap-x-3">
-                                        <img src={"/image/ring.png"} alt={""} className={'w-[16px] h-[16px]'} />
-                                        <span className="text-[0.75rem] text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>
-                                    </div>
-                                </motion.div>
+                                {/*<motion.div*/}
+                                {/*    className="absolute top-[5rem] left-[9rem] bg-white rounded-full px-2 py-1 shadow-lg z-30"*/}
+                                {/*    variants={badgeVariants}*/}
+                                {/*    initial="hidden"*/}
+                                {/*    animate="visible"*/}
+                                {/*>*/}
+                                {/*    <div className="flex items-center gap-y-1.5 gap-x-3">*/}
+                                {/*        <img src={"/image/ring.png"} alt={""} className={'w-[16px] h-[16px]'} />*/}
+                                {/*        <span className="text-[0.75rem] text-[#0E6D32] font-medium">{t('heroSection.feature1')}</span>*/}
+                                {/*    </div>*/}
+                                {/*</motion.div>*/}
 
-                                <motion.div
-                                    className="absolute top-[15rem] left-0 bg-white rounded-full px-2 py-1 shadow-lg z-30"
-                                    variants={badgeVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    transition={{ delay: 1 }}
-                                >
-                                    <div className="flex items-center gap-y-1.5 gap-x-3">
-                                        <img src={"/image/ring.png"} alt={""} className={'w-[16px] h-[16px]'} />
-                                        <span className="text-[0.75rem] text-[#0E6D32] font-medium">{t('heroSection.feature2')}</span>
-                                    </div>
-                                </motion.div>
+                                {/*<motion.div*/}
+                                {/*    className="absolute top-[15rem] left-0 bg-white rounded-full px-2 py-1 shadow-lg z-30"*/}
+                                {/*    variants={badgeVariants}*/}
+                                {/*    initial="hidden"*/}
+                                {/*    animate="visible"*/}
+                                {/*    transition={{ delay: 1 }}*/}
+                                {/*>*/}
+                                {/*    <div className="flex items-center gap-y-1.5 gap-x-3">*/}
+                                {/*        <img src={"/image/ring.png"} alt={""} className={'w-[16px] h-[16px]'} />*/}
+                                {/*        <span className="text-[0.75rem] text-[#0E6D32] font-medium">{t('heroSection.feature2')}</span>*/}
+                                {/*    </div>*/}
+                                {/*</motion.div>*/}
 
-                                <motion.div
-                                    className="absolute bottom-[5rem] left-[6rem] bg-white rounded-full px-2 py-1 shadow-lg z-30"
-                                    variants={badgeVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    transition={{ delay: 1.2 }}
-                                >
-                                    <div className="flex items-center gap-y-1.5 gap-x-3">
-                                        <span className="text-[0.75rem] text-[#0E6D32] font-medium">{t('heroSection.feature3')}</span>
-                                        <img src={"/image/ring.png"} alt={""} className={'w-[16px] h-[16px]'} />
-                                    </div>
-                                </motion.div>
+                                {/*<motion.div*/}
+                                {/*    className="absolute bottom-[5rem] left-[6rem] bg-white rounded-full px-2 py-1 shadow-lg z-30"*/}
+                                {/*    variants={badgeVariants}*/}
+                                {/*    initial="hidden"*/}
+                                {/*    animate="visible"*/}
+                                {/*    transition={{ delay: 1.2 }}*/}
+                                {/*>*/}
+                                {/*    <div className="flex items-center gap-y-1.5 gap-x-3">*/}
+                                {/*        <span className="text-[0.75rem] text-[#0E6D32] font-medium">{t('heroSection.feature3')}</span>*/}
+                                {/*        <img src={"/image/ring.png"} alt={""} className={'w-[16px] h-[16px]'} />*/}
+                                {/*    </div>*/}
+                                {/*</motion.div>*/}
                             </motion.div>
 
                             <motion.div
