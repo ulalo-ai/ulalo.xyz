@@ -1,10 +1,64 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { motion } from 'framer-motion';
 import {useTranslations} from "next-intl";
+import {createClient} from "@supabase/supabase-js";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://mgsybbcgfpqleqimaelv.supabase.co";
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_JDbbK6HDvvfPQStykgo9JQ_FWpnWaXE";
+
+const supabase = createClient(
+    supabaseUrl,
+    supabaseAnonKey
+);
 
 const HeroSection = () => {
 
     const t = useTranslations();
+
+    const [open, setOpen] = useState(false);
+    const [email, setEmail] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+
+    async function handleSubscribe() {
+        if (!email) return;
+
+        setLoading(true);
+
+        try {
+            // Collect metadata
+            const userAgent = navigator.userAgent;
+            const ipRes = await fetch("https://api64.ipify.org?format=json");
+            const { ip } = await ipRes.json();
+
+            const geoRes = await fetch(`https://ipapi.co/${ip}/json/`);
+            const geo = await geoRes.json();
+
+            // Insert into Supabase
+            const { error } = await supabase.from("mailing_list").insert({
+                email,
+                user_agent: userAgent,
+                ip_address: ip,
+                country: geo.country_name,
+                city: geo.city,
+                region: geo.region,
+                latitude: geo.latitude,
+                longitude: geo.longitude,
+                signup_source: "landing_page",
+            });
+
+            if (error) throw error;
+
+            setSuccess(true);
+        } catch (err) {
+            console.error("Error subscribing:", err);
+        } finally {
+            setLoading(false);
+        }
+    }
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -75,6 +129,39 @@ const HeroSection = () => {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#35E467] to-[#35E467] overflow-hidden relative">
+
+            {/* Modal */}
+            <Dialog open={open} onOpenChange={setOpen}>
+                <DialogContent className="sm:max-w-md">
+                    <DialogHeader>
+                        <DialogTitle>Join our mailing list 🚀</DialogTitle>
+                    </DialogHeader>
+
+                    {!success ? (
+                        <div className="flex flex-col gap-3">
+                            <Input
+                                type="email"
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+
+                            <Button
+                                onClick={handleSubscribe}
+                                disabled={loading}
+                                className="w-full"
+                            >
+                                {loading ? "Subscribing..." : "Subscribe"}
+                            </Button>
+                        </div>
+                    ) : (
+                        <div className="text-center p-4">
+                            🎉 Thanks for subscribing!
+                        </div>
+                    )}
+                </DialogContent>
+            </Dialog>
+
             <motion.div
                 className="max-w-[93rem] hidden md:flex flex-col items-center justify-end h-screen mx-auto px-6 lg:px-8 pt-20"
                 variants={containerVariants}
@@ -126,6 +213,7 @@ const HeroSection = () => {
                             >
                                 <motion.button
                                     className=""
+                                    onClick={() => setOpen(true)}
                                     whileHover={buttonHover}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -141,6 +229,7 @@ const HeroSection = () => {
 
                                 <motion.button
                                     className=""
+                                    onClick={() => setOpen(true)}
                                     whileHover={buttonHover}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -330,6 +419,7 @@ const HeroSection = () => {
                             >
                                 <motion.button
                                     className=""
+                                    onClick={() => setOpen(true)}
                                     whileHover={buttonHover}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -345,6 +435,7 @@ const HeroSection = () => {
 
                                 <motion.button
                                     className=""
+                                    onClick={() => setOpen(true)}
                                     whileHover={buttonHover}
                                     whileTap={{ scale: 0.98 }}
                                 >
