@@ -113,20 +113,6 @@ const HeroSection = () => {
         transition: { duration: 0.2 }
     };
 
-    const badgeVariants = {
-        hidden: { opacity: 0, scale: 0 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            transition: {
-                duration: 0.5,
-                delay: 0.8,
-                type: "spring",
-                stiffness: 200
-            }
-        }
-    };
-
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#35E467] to-[#35E467] overflow-hidden relative">
 
