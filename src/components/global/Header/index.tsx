@@ -208,7 +208,7 @@ const Header = () => {
                 <XFooter color="#364655" />
               </Link>
               <Link
-                href="https://t.me/ulaloNews"
+                href="https://t.me/ulaloToken"
                 onClick={() => setMobileNav(false)}
               >
                 <TelegramFooter color="#364655" />

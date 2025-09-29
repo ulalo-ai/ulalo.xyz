@@ -109,7 +109,7 @@ const Footer = () => {
                       <Discord />
                     </Link>
                     <Link
-                      href="https://t.me/ulaloNews"
+                      href="https://t.me/ulaloToken"
                       target="_blank"
                       className="bg-[#FFF] rounded-[3.75px] p-2"
                     >
@@ -146,7 +146,7 @@ const Footer = () => {
                 <Link href="https://x.com/ulalo_io" target="_blank">
                   <XFooter />
                 </Link>
-                <Link href="https://t.me/ulaloNews" target="_blank">
+                <Link href="https://t.me/ulaloToken" target="_blank">
                   <TelegramFooter />
                 </Link>
                 {/* <Link href='/'><MediumFooter /></Link> */}

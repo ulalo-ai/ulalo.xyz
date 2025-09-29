@@ -87,7 +87,7 @@ const TokenLaunchSoon = () => {
                     <FaDiscord className={'w-[40px] !text-[#364655] h-auto'} />
                   </Link>
                   <Link
-                    href="https://t.me/ulaloNews"
+                    href="https://t.me/ulaloToken"
                     target="_blank"
                     className="w-[64px] h-[64px] flex flex-col items-center justify-center bg-white rounded-[8px]"
                   >

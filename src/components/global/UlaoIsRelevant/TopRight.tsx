@@ -33,7 +33,7 @@ const TopRight = () => {
         </p>
         <div className="flex flex-row items-center justify-between gap-[10px]">
           <Link
-            href={"https://t.me/ulaloNews"}
+            href={"https://t.me/ulaloToken"}
             target="_blank"
             className="w-full py-[13px] mt-[16px] bg-[#364655] text-white rounded-[12px] flex flex-col items-center justify-center"
           >
