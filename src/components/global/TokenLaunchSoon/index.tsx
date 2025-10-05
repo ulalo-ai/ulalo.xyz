@@ -1,167 +1,195 @@
-import { GoArrow, Logo, SinigCoin, Speaker } from "@/VectorImage/Image";
+import {useTranslations} from "next-intl";
+
+import {DollarSign} from "lucide-react";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { FaTelegram } from "@react-icons/all-files/fa/FaTelegram";
-import { FaDiscord } from "@react-icons/all-files/fa/FaDiscord";
+
+interface CartItemProps {
+    text: string;
+    icon?: React.ReactNode;
+    href?: string;
+    width?: number;
+    start?: boolean;
+}
+
+export function CartItem({text, icon = <DollarSign size={16}/>, href, width = 330, start = true}: CartItemProps) {
+    const content = (
+        <div
+            className="p-[3px] rounded-[1rem]"
+            style={{
+                width: width + "px",
+                background: "linear-gradient(90deg, #05931F 0%, #22D243 100%)",
+                display: "inline-block",
+            }}
+        >
+            <button
+                className="flex items-center gap-y-3 gap-x-5 bg-[#008F1F] text-white font-semibold py-3 px-5 rounded-[calc(1rem-3px)] w-full h-full transition-transform hover:scale-[1.02]"
+            >
+                {
+                    start ?
+                        <div className="flex items-center justify-center">
+                            {icon}
+                        </div> : <></>
+                }
+                <span className={`text-[1.12rem] flex-1 ${start ? 'text-start' : 'text-center'} leading-tight`} dangerouslySetInnerHTML={{__html: text}}/>
+                {
+                    !start ?
+                        <div className="flex items-center justify-center">
+                            {icon}
+                        </div> : <></>
+                }
+            </button>
+        </div>
+    );
+
+    return href ? (
+        <Link href={href} className="inline-block">
+            {content}
+        </Link>
+    ) : (
+        content
+    );
+}
 
 
 const TokenLaunchSoon = () => {
-  const t = useTranslations();
+    const t = useTranslations();
 
-  return (
-    <section id="token" className="w-full bg-[#374655]">
-      <div className="container mx-auto max-w-[88rem] lg:px-8 flex flex-col items-center justify-center py-20">
-        <p className="text-white font-sfpro_700 text-center text-[24px] md:text-[64px] font-bold leading-[125%] uppercase">
-          {t("tokenLaunchSoon.tokenLaunchSoonHeading")}
-        </p>
-        <p className="text-white text-center font-openSans_Medium text-[18px] md:text-[24px] font-medium leading-[125%] uppercase mt-[18px]">
-          {t("tokenLaunchSoon.tokenLaunchSoonSubheading")}
-        </p>
+    return (
+        <section
+                 id="token" className="w-full relative bg-[#364655]">
+            <div className="absolute top-0 left-0 w-1/6 h-full bg-gradient-to-r from-[#364655] to-transparent z-10" />
+            <div className="absolute top-0 right-0 w-1/6 h-full bg-gradient-to-l from-[#364655] to-transparent z-10" />
+            <div
+                className="container mx-auto max-w-[88rem] lg:px-8 flex flex-col items-center justify-center pt-8 pb-0 md:py-20 z-20 relative">
+                <p className="text-white font-sfpro_700 text-center text-[24px] md:text-[64px] font-bold leading-[125%] uppercase">
+                    {t("feature.title")}
+                </p>
+                <p className="text-gray-300 text-center font-openSans_Medium text-[20px] md:text-[20px] font-medium leading-[125%] mt-[18px]">
+                    {t("feature.subtitle")}
+                </p>
 
-        <div className="w-full flex md:flex-row flex-col  gap-x-[56px] mt-[83px]">
-          <div className="flex flex-col justify-center items-center  gap-y-5">
-            <div className="flex flex-col  md:flex-row  h-full  gap-5">
-              <Card
-                title={t("tokenLaunchSoon.cornerstoneTitle")}
-                description={t("tokenLaunchSoon.cornerstoneDescription")}
-              />
-              <Card
-                title={t("tokenLaunchSoon.earnTitle")}
-                description={t("tokenLaunchSoon.earnDescription")}
-              />
-            </div>
+                <div className={'!h-[0px] md:!h-[50px]'}></div>
 
-            <div className="flex flex-col md:flex-row h-full   gap-5">
-              <Card
-                title={t("tokenLaunchSoon.stakingTitle")}
-                description={t("tokenLaunchSoon.stakingDescription")}
-              />
-              <Card
-                title={t("tokenLaunchSoon.governanceTitle")}
-                description={t("tokenLaunchSoon.governanceDescription")}
-              />
-            </div>
-          </div>
-          <div className="flex-1 flex flex-col  gap-[59px] px-5 md:pt-0 pt-32">
-            <div className=" relative z-50 w-full bg-[#36C56B] border-solid border-[3px] border-white rounded-[64px] p-[24px] flex flex-col items-center  justify-start  ">
-              <p className="text-white text-[40px] font-openSans_ExtraBold leading-[125%] uppercase mt-[24px]">
-                {t("tokenLaunchSoon.isMoreThanAsset")}
-              </p>
-              <p className="text-white text-[24px] font-openSans_SemiBold mt-[20px] leading-[125%]">
-                {t("tokenLaunchSoon.keyToHealthcareEra")}
-              </p>
-              <Link
-                href={"#tokenomics"}
-                className="w-[80%] flex flex-col items-center justify-center bg-[#364655] text-white text-[24px] font-openSans_Medium leading-[23.856px] capitalize py-[25px] mt-[20px] rounded-[25px]"
-              >
-                {t("tokenLaunchSoon.viewTokenomics")}
-              </Link>
-              <Link
-                href={"https://ulalo.gitbook.io/ulalo-whitepaper"}
-                target="_blank"
-                className="flex flex-col items-center justify-center w-[80%] bg-[#FFF] text-[#364655] text-[24px] font-openSans_Medium leading-[23.856px] capitalize py-[25px] mt-[20px] rounded-[25px]"
-              >
-                {t("tokenLaunchSoon.exploreWhitepaper")}
-              </Link>
-              <div className="absolute top-0 right-0 -z-10 -translate-y-[70%]">
-                <SinigCoin />
-              </div>
-            </div>
-            <div className=" relative z-50 w-full bg-[#36C56B] border-solid border-[3px] border-white rounded-[64px] p-[24px] pt-[151px] flex flex-col items-center  justify-start  ">
-              <Link
-                href={"#roadmap"}
-                className="w-[80%] flex flex-col items-center text-center justify-center bg-[#364655] text-white text-[24px] font-openSans_Medium leading-[23.856px] capitalize py-[25px] mt-[22px] rounded-[25px]"
-              >
-                {t("tokenLaunchSoon.exploreRoadmap")}
-              </Link>
-              <div className="w-[80%] bg-[#364655] text-[#FFF] flex flex-col text-center items-center gap-y-[20px] text-[24px] font-openSans_Medium leading-[23.856px] capitalize py-[25px] mt-[22px] rounded-[25px]">
-                <div className={'flex justify-center items-center text-center'}>
-                  {t("tokenLaunchSoon.joinCommunity")}
+                <div className={'md:mt-10 mt-0 flex flex-col space-y-10 items-center justify-between !py-10 w-full md:w-[45dvw]'}>
+                    <div className={'flex md:flex-row flex-col gap-y-16 md:gap-y-0 items-center gap-x-24 justify-between'}>
+                        <CartItem
+                            text={t('tokenLaunchSoon.cornerstoneTitle')}
+                            icon={<svg width="32" height="27.5" viewBox="0 0 37 36" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34.25 6.69836V27.0519C34.25 28.6437 32.6424 29.7316 31.1641 29.141L17.375 23.6251V27.0001C17.375 27.6211 16.871 28.1251 16.25 28.1251H7.25C6.629 28.1251 6.125 27.6211 6.125 27.0001V22.5001C5.504 22.5001 5 21.9961 5 21.3751V12.3751C5 11.7541 5.504 11.2501 6.125 11.2501H11.75C12.371 11.2501 12.875 11.7541 12.875 12.3751V21.3751C12.875 21.9961 12.371 22.5001 11.75 22.5001H8.375V25.8751H15.125V22.7251L14 22.2762V11.4774L31.1641 4.60923C32.6424 4.01861 34.25 5.10648 34.25 6.69836ZM3.875 12.3751C2.63188 12.3751 1.625 13.382 1.625 14.6251V19.1251C1.625 20.3682 2.63188 21.3751 3.875 21.3751V12.3751Z" fill="white"/>
+                            </svg>
+                            }
+                        />
+                        <CartItem
+                            text={t('tokenLaunchSoon.earnTitle')}
+                            icon={<svg width="36.5" height="32" viewBox="0 0 37 34" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_121_1109)">
+                                    <path d="M18.0605 0C11.9529 0 7.00195 4.65967 7.00195 10.4081C7.00195 16.9628 13.6189 24.4689 13.6189 24.4689H22.893C22.893 24.4689 29.1231 16.9628 29.1231 10.4081C29.1191 4.65967 24.1682 0 18.0605 0ZM21.3256 17.5536C20.7689 18.1036 20.0187 18.4826 19.1581 18.6572V18.9359C19.1581 19.419 18.7396 19.8129 18.2264 19.8129H17.8237C17.3104 19.8129 16.8919 19.419 16.8919 18.9359V18.6386C16.4379 18.5458 16.0114 18.4046 15.6166 18.2113C15.0915 17.9587 14.6375 17.5462 14.2624 16.9889C14.0137 16.621 13.8321 16.1899 13.7216 15.7106C13.6663 15.4765 13.7176 15.2424 13.8597 15.0417C14.0019 14.8448 14.227 14.7073 14.4757 14.6664L14.8784 14.5995C14.9297 14.5921 14.9849 14.5847 15.0403 14.5847C15.4667 14.5847 15.8378 14.856 15.9404 15.2461C16.047 15.64 16.1892 15.9447 16.3629 16.1565C16.7537 16.6284 17.4052 16.9108 18.1 16.9108C18.2185 16.9108 18.3369 16.9034 18.4514 16.8848C18.9489 16.8142 19.3871 16.595 19.6951 16.268C20.0188 15.9224 20.1846 15.4802 20.1846 14.96C20.1846 14.5252 20.074 14.176 19.8569 13.9233C19.4384 13.4403 18.7001 13.2321 18.0329 13.0872C17.1524 12.8977 16.3549 12.7082 15.5496 12.2846C15.0126 12.0022 14.598 11.6083 14.3059 11.1104C14.0177 10.6162 13.8756 10.0551 13.8756 9.43453C13.8756 8.33464 14.298 7.42798 15.1311 6.74055C15.5891 6.36525 16.197 6.09399 16.8959 5.95279V5.52546C16.8959 5.0424 17.3144 4.64852 17.8276 4.64852H18.2304C18.7436 4.64852 19.1621 5.0424 19.1621 5.52546V5.96393C19.8096 6.10142 20.3741 6.35038 20.8084 6.68852C21.306 7.07869 21.673 7.57661 21.8982 8.16743C21.9928 8.41268 21.9652 8.68022 21.8232 8.90688C21.6811 9.13355 21.4362 9.2859 21.1598 9.32678L20.769 9.38251C20.7216 9.38995 20.6782 9.39366 20.6308 9.39366C20.232 9.39366 19.8767 9.15585 19.7504 8.79912C19.6635 8.56131 19.5491 8.36437 19.4109 8.21945C19.091 7.88131 18.5818 7.68809 18.0172 7.68809C17.4092 7.68809 16.8406 7.90732 16.4932 8.27519C16.2129 8.57246 16.0747 8.91803 16.0747 9.32678C16.0747 9.7318 16.1931 10.0699 16.426 10.3338C16.9314 10.906 17.796 11.0695 18.633 11.2293C19.1502 11.3259 19.6832 11.4299 20.157 11.6232C20.6624 11.8313 21.0848 12.0951 21.4086 12.3998C21.7362 12.7082 21.9928 13.0798 22.1666 13.5034C22.3403 13.9233 22.4271 14.3804 22.4271 14.8671C22.4192 15.9336 22.052 16.8365 21.3256 17.5536Z" fill="white"/>
+                                    <path d="M22.7154 25.6992H13.4019V27.9622H22.7154V25.6992Z" fill="white"/>
+                                    <path d="M13.4019 29.6565C13.4255 32.0607 15.4983 34.0004 18.0566 34.0004C20.615 34.0004 22.6917 32.0607 22.7114 29.6565V29.1475H13.4019V29.6565Z" fill="white"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_121_1109">
+                                        <rect width="36.125" height="34" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            }
+                        />
+                    </div>
+                    <div className={'flex md:mt-0 !mt-12 md:mb-0 !mb-6 md:flex-row flex-col gap-y-16 md:gap-y-0 items-center  gap-x-12 justify-between'}>
+                        <CartItem
+                            text={t('tokenLaunchSoon.stakingTitle')}
+                            icon={<svg width={'32'} height={'32'} viewBox="0 0 33 36" fill="#ffffff"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M21.4923 12.9342C21.4923 14.5417 18.4311 15.8448 14.6553 15.8448C10.8785 15.8448 7.81726 14.5417 7.81726 12.9342C7.81726 11.3256 10.8785 10.0215 14.6553 10.0215C18.4311 10.0214 21.4923 11.3256 21.4923 12.9342Z"
+                                    fill="white"/>
+                                <path
+                                    d="M7.81733 32.7769C7.81733 34.3855 10.8785 35.6886 14.6554 35.6886C18.4311 35.6886 21.4924 34.3855 21.4924 32.7769V32.0548C21.4924 31.8327 21.3813 31.6255 21.1944 31.5015C21.0097 31.3798 20.7746 31.3584 20.5696 31.446C20.5696 31.446 18.4312 32.7672 14.6554 32.7672C10.8785 32.7672 8.73909 31.446 8.73909 31.446C8.5351 31.3584 8.30008 31.3797 8.11421 31.5015C7.92834 31.6255 7.81726 31.8327 7.81726 32.0548L7.81733 32.7769Z"
+                                    fill="white"/>
+                                <path
+                                    d="M7.81733 27.8307C7.81733 29.4392 10.8785 30.7413 14.6554 30.7413C18.4311 30.7413 21.4924 29.4392 21.4924 27.8307V27.1076C21.4924 26.8854 21.3813 26.6782 21.1944 26.5543C21.0097 26.4325 20.7746 26.4111 20.5696 26.4987C20.5696 26.4987 18.4312 27.8199 14.6554 27.8199C10.8785 27.8199 8.73909 26.4987 8.73909 26.4987C8.5351 26.4111 8.30008 26.4324 8.11421 26.5543C7.92834 26.6782 7.81726 26.8854 7.81726 27.1076L7.81733 27.8307Z"
+                                    fill="white"/>
+                                <path
+                                    d="M7.81733 22.8845C7.81733 24.4931 10.8785 25.7951 14.6554 25.7951C18.4311 25.7951 21.4924 24.4931 21.4924 22.8845V22.1603C21.4924 21.9381 21.3813 21.7309 21.1944 21.607C21.0097 21.4852 20.7746 21.4639 20.5696 21.5514C20.5696 21.5514 18.4312 22.8738 14.6554 22.8738C10.8785 22.8738 8.73909 21.5514 8.73909 21.5514C8.5351 21.4639 8.30008 21.4852 8.11421 21.607C7.92834 21.7309 7.81726 21.9381 7.81726 22.1603L7.81733 22.8845Z"
+                                    fill="white"/>
+                                <path
+                                    d="M7.81733 17.9361C7.81733 19.5447 10.8785 20.8478 14.6554 20.8478C18.4311 20.8478 21.4924 19.5447 21.4924 17.9361V17.214C21.4924 16.9907 21.3813 16.7846 21.1944 16.6607C21.0097 16.539 20.7746 16.5176 20.5696 16.6051C20.5696 16.6051 18.4312 17.9254 14.6554 17.9254C10.8785 17.9254 8.73909 16.6051 8.73909 16.6051C8.5351 16.5176 8.30008 16.5389 8.11421 16.6607C7.92834 16.7846 7.81726 16.9907 7.81726 17.214L7.81733 17.9361Z"
+                                    fill="white"/>
+                                <path
+                                    d="M32.1286 7.07381C32.1286 8.68025 29.0674 9.98339 25.2915 9.98339C21.5147 9.98339 18.4535 8.68025 18.4535 7.07381C18.4535 5.46415 21.5147 4.16211 25.2915 4.16211C29.0674 4.16218 32.1286 5.46415 32.1286 7.07381Z"
+                                    fill="white"/>
+                                <path
+                                    d="M32.1267 26.1913V26.9144C32.1267 28.523 29.0655 29.825 25.295 29.825C24.4084 29.825 23.5689 29.7546 22.7935 29.6242V26.6997C23.523 26.8237 24.3572 26.9091 25.295 26.9091C29.0654 26.9091 31.207 25.5868 31.207 25.5868C31.41 25.4949 31.6439 25.5205 31.8329 25.638C32.0156 25.7619 32.1267 25.9713 32.1267 26.1913Z"
+                                    fill="white"/>
+                                <path
+                                    d="M32.1267 21.2477V21.9719C32.1267 23.5795 29.0655 24.8815 25.295 24.8815C24.4084 24.8815 23.5689 24.811 22.7935 24.6807V21.7498C23.523 21.8737 24.3572 21.9592 25.295 21.9592C29.0654 21.9592 31.207 20.6368 31.207 20.6368C31.41 20.5525 31.6439 20.5706 31.8329 20.6945C32.0156 20.8184 32.1267 21.0213 32.1267 21.2477Z"
+                                    fill="white"/>
+                                <path
+                                    d="M32.1267 16.3002V17.0223C32.1267 18.6308 29.0655 19.934 25.295 19.934C24.4084 19.934 23.5689 19.8613 22.7935 19.731V16.8001C23.523 16.924 24.3572 17.0095 25.295 17.0095C29.0654 17.0095 31.207 15.6871 31.207 15.6871C31.41 15.6028 31.6439 15.622 31.8329 15.7469C32.0156 15.8687 32.1267 16.078 32.1267 16.3002Z"
+                                    fill="white"/>
+                                <path
+                                    d="M32.1265 11.3506V12.0726C32.1265 13.6812 29.0653 14.9832 25.2948 14.9832C24.4082 14.9832 23.5687 14.9117 22.7932 14.7824V12.9324C22.7932 12.5287 22.7089 12.158 22.5465 11.8119C23.3284 11.9615 24.2459 12.0661 25.2948 12.0661C28.5109 12.0661 30.5435 11.1027 31.07 10.8228C31.1619 10.7716 31.2068 10.7438 31.2068 10.7438C31.4097 10.653 31.6436 10.6797 31.8327 10.7962C31.917 10.8549 31.9886 10.9275 32.0345 11.0172C32.0933 11.1155 32.1265 11.233 32.1265 11.3506Z"
+                                    fill="white"/>
+                                <path
+                                    d="M14.5464 3.60018C14.5464 5.20772 11.4841 6.50976 7.70837 6.50976C3.93261 6.50976 0.871338 5.20765 0.871338 3.60018C0.871338 1.99161 3.93254 0.688477 7.70837 0.688477C11.4842 0.688477 14.5464 1.99161 14.5464 3.60018Z"
+                                    fill="white"/>
+                                <path
+                                    d="M6.51318 23.3835V26.308C3.30884 26.0666 0.873535 24.8756 0.873535 23.4433V22.7202C0.873535 22.4991 0.984619 22.2908 1.16728 22.1659C1.35526 22.043 1.59028 22.0238 1.79215 22.1082C1.79215 22.1082 3.48507 23.1496 6.51318 23.3835Z"
+                                    fill="white"/>
+                                <path
+                                    d="M6.51318 18.4429V21.3588C3.30884 21.1185 0.873535 19.9275 0.873535 18.4942V17.7721C0.873535 17.5499 0.984619 17.3405 1.16728 17.2188C1.35526 17.1003 1.59028 17.0735 1.79215 17.1654C1.79215 17.1654 3.48507 18.2079 6.51318 18.4429Z"
+                                    fill="white"/>
+                                <path
+                                    d="M6.51318 13.4929V16.4164C3.30884 16.175 0.873535 14.983 0.873535 13.5506V12.8286C0.873535 12.6064 0.984619 12.3981 1.16728 12.2753C1.35526 12.1503 1.59028 12.1311 1.79215 12.2154C1.79215 12.2154 3.48507 13.2579 6.51318 13.4929Z"
+                                    fill="white"/>
+                                <path
+                                    d="M14.5433 7.87942V8.6015C14.5433 8.6421 14.5433 8.68052 14.5369 8.71901C11.3069 8.74676 8.06303 9.68992 6.93722 11.494C3.52458 11.3305 0.873535 10.099 0.873535 8.6015V7.87942C0.873535 7.65725 0.984619 7.45005 1.16728 7.32612C1.35526 7.20218 1.59028 7.18297 1.79215 7.27376C1.79215 7.27376 3.93481 8.595 7.71166 8.595C11.4821 8.595 13.6247 7.27376 13.6247 7.27376C13.7358 7.22139 13.8598 7.20861 13.9825 7.22139C14.0744 7.23424 14.1652 7.27376 14.2506 7.32605C14.4066 7.43071 14.5038 7.59306 14.5305 7.77469C14.5433 7.80785 14.5433 7.84626 14.5433 7.87942Z"
+                                    fill="white"/>
+                                <path
+                                    d="M21.4923 12.9342C21.4923 14.5417 18.4311 15.8448 14.6553 15.8448C10.8785 15.8448 7.81726 14.5417 7.81726 12.9342C7.81726 11.3256 10.8785 10.0215 14.6553 10.0215C18.4311 10.0214 21.4923 11.3256 21.4923 12.9342Z"
+                                    fill="white"/>
+                            </svg>
+                            }
+                        />
+                        <img src={'/image/ulalo-token.png'} alt="Logo" className={'w-[132px] h-auto'}/>
+                        <CartItem
+                            text={t('tokenLaunchSoon.governanceTitle')}
+                            icon={<svg width={'32'} height={'32'} viewBox="0 0 41 41" fill="#ffffff"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M30.8297 19.676C32.3157 19.676 33.5204 20.8807 33.5204 22.3666C33.5204 23.8525 32.3157 25.0572 30.8297 25.0572C29.3438 25.0572 28.1391 23.8525 28.1391 22.3666C28.1391 20.8807 29.3438 19.676 30.8297 19.676ZM27.5145 26.3705C29.0004 26.3705 30.2051 27.5752 30.2051 29.0611C30.2051 30.5471 29.0004 31.7518 27.5145 31.7518C26.0286 31.7518 24.8239 30.5471 24.8239 29.0611C24.8239 27.5752 26.0286 26.3705 27.5145 26.3705ZM23.2223 32.2482H20.1954H17.1684C15.3266 32.2482 14.1735 33.7697 14.1735 35.6756V40.3682H16.2395V36.2201C16.2395 36.0279 16.3997 35.8998 16.5598 35.8998C16.752 35.8998 16.8801 36.0279 16.8801 36.2201V40.3521H23.5266V36.2201C23.5266 36.0279 23.6868 35.8998 23.8469 35.8998C24.0391 35.8998 24.1672 36.06 24.1672 36.2201V40.3521H26.2333V35.6916C26.2653 33.7697 25.0962 32.2482 23.2223 32.2482ZM23.9751 19.676C25.461 19.676 26.6657 20.8807 26.6657 22.3666C26.6657 23.8525 25.461 25.0572 23.9751 25.0572C22.4891 25.0572 21.2844 23.8525 21.2844 22.3666C21.2844 20.8807 22.4891 19.676 23.9751 19.676ZM31.8868 29.0611C31.8868 30.5506 33.0879 31.7518 34.5774 31.7518C36.0669 31.7518 37.268 30.5506 37.268 29.0611C37.268 27.5717 36.0669 26.3705 34.5774 26.3705C33.0879 26.3705 31.8868 27.5717 31.8868 29.0611ZM31.6145 32.2482C29.7727 32.2482 28.6196 33.7697 28.6196 35.6756V40.3682H30.6856V36.2201C30.6856 36.0279 30.8458 35.8998 31.0059 35.8998C31.1981 35.8998 31.3262 36.0279 31.3262 36.2201V40.3521H37.9727V36.2201C37.9727 36.0279 38.1329 35.8998 38.293 35.8998C38.4852 35.8998 38.6133 36.06 38.6133 36.2201V40.3521H40.6794V35.6916C40.7114 33.7537 39.5422 32.2322 37.6844 32.2322H34.6575H31.6145V32.2482ZM6.37388 26.3705C7.85981 26.3705 9.06451 27.5752 9.06451 29.0611C9.06451 30.5471 7.85981 31.7518 6.37388 31.7518C4.88795 31.7518 3.68326 30.5471 3.68326 29.0611C3.68326 27.5752 4.88795 26.3705 6.37388 26.3705ZM2.36998 40.3521V36.2201C2.36998 36.0279 2.53013 35.8998 2.69029 35.8998C2.88248 35.8998 3.0106 36.0279 3.0106 36.2201V40.3521H9.65709V36.2201C9.65709 36.0279 9.81724 35.8998 9.9774 35.8998C10.1696 35.8998 10.2977 36.06 10.2977 36.2201V40.3521H12.3637V35.6916C12.3958 33.7537 11.2266 32.2322 9.36881 32.2322H6.34185H3.3149C1.4731 32.2322 0.319977 33.7537 0.319977 35.6596V40.3521H2.36998ZM17.5047 29.0611C17.5047 30.5506 18.7059 31.7518 20.1954 31.7518C21.6848 31.7518 22.886 30.5506 22.886 29.0611C22.886 27.5717 21.6848 26.3705 20.1954 26.3705C18.7059 26.3705 17.5047 27.5717 17.5047 29.0611ZM9.81724 19.676C11.3032 19.676 12.5079 20.8807 12.5079 22.3666C12.5079 23.8525 11.3032 25.0572 9.81724 25.0572C8.33131 25.0572 7.12662 23.8525 7.12662 22.3666C7.12662 20.8807 8.33131 19.676 9.81724 19.676ZM17.0883 19.676C18.5743 19.676 19.779 20.8807 19.779 22.3666C19.779 23.8525 18.5743 25.0572 17.0883 25.0572C15.6024 25.0572 14.3977 23.8525 14.3977 22.3666C14.3977 20.8807 15.6024 19.676 17.0883 19.676ZM13.4688 26.3705C14.9547 26.3705 16.1594 27.5752 16.1594 29.0611C16.1594 30.5471 14.9547 31.7518 13.4688 31.7518C11.9829 31.7518 10.7782 30.5471 10.7782 29.0611C10.7782 27.5752 11.9829 26.3705 13.4688 26.3705ZM20.5 0.00878906C15.9078 0.00878906 12.1719 3.74475 12.1719 8.33691C12.1719 12.9291 15.9078 16.665 20.5 16.665C25.0921 16.665 28.8281 12.9291 28.8281 8.33691C28.8281 3.74475 25.0921 0.00878906 20.5 0.00878906ZM26.6591 5.14452H24.4054C24.2199 4.28624 23.9595 3.49315 23.6294 2.80304C23.4734 2.47696 23.3046 2.18115 23.1253 1.91417C24.65 2.53958 25.9033 3.69222 26.6591 5.14452ZM27.44 8.33691C27.44 9.01149 27.3415 9.66317 27.1612 10.2801H24.6165C24.694 9.65164 24.7344 9.00012 24.7344 8.33691C24.7344 7.72223 24.6991 7.11797 24.6325 6.53243H27.2006C27.356 7.1082 27.44 7.71279 27.44 8.33691ZM20.5 15.0457C19.5778 15.0457 18.5839 13.7529 18.0488 11.6682H22.9512C22.4161 13.7529 21.4222 15.0457 20.5 15.0457ZM17.7817 10.2801C17.6998 9.67358 17.6535 9.02382 17.6535 8.33691C17.6535 7.70221 17.6926 7.09891 17.7631 6.53243H23.2369C23.3074 7.09891 23.3464 7.70221 23.3464 8.33691C23.3464 9.02398 23.3003 9.67374 23.2183 10.2801H17.7817ZM13.5599 8.33691C13.5599 7.71279 13.644 7.1082 13.7994 6.53243H16.3675C16.3007 7.11797 16.2656 7.72223 16.2656 8.33691C16.2656 9.00028 16.306 9.65164 16.3835 10.2801H13.8388C13.6584 9.66317 13.5599 9.01149 13.5599 8.33691ZM20.5 1.62813C21.4423 1.62813 22.4592 2.97889 22.9851 5.14436H18.0148C18.5408 2.97905 19.5576 1.62813 20.5 1.62813ZM17.8745 1.91401C17.6952 2.18099 17.5264 2.47696 17.3704 2.80287C17.0403 3.49299 16.7799 4.28608 16.5944 5.14436H14.3409C15.0966 3.69222 16.35 2.53958 17.8745 1.91401ZM14.4136 11.6682H16.6242C16.8074 12.4734 17.0582 13.2178 17.3705 13.8708C17.5265 14.1969 17.6953 14.4927 17.8747 14.7597C16.3987 14.1543 15.1759 13.0553 14.4136 11.6682ZM23.1254 14.7598C23.3048 14.4928 23.4736 14.1969 23.6296 13.871C23.9419 13.218 24.1927 12.4736 24.3759 11.6683H26.5864C25.8241 13.0553 24.6013 14.1543 23.1254 14.7598Z"
+                                    fill="white"/>
+                            </svg>
+                            }
+                        />
+                    </div>
+                    <div className={'flex md:flex-row flex-col gap-y-16 md:gap-y-0 items-center  gap-x-24 justify-between'}>
+                        <CartItem
+                            text={t('tokenLaunchSoon.viewTokenomics')}
+                            icon={<svg className={'rotate-[0deg]'} width="32" height="28" viewBox="0 0 41 36" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1667 25.1683L28.8334 10.585M28.8334 10.585H13.8334M28.8334 10.585V23.71" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>}
+                            start={false}
+                            href="#tokenomics"
+                        />
+                        <CartItem
+                            text={t('tokenLaunchSoon.exploreWhitepaper')}
+                            icon={<svg className={'rotate-[0deg]'} width="32" height="28" viewBox="0 0 41 36" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.1667 25.1683L28.8334 10.585M28.8334 10.585H13.8334M28.8334 10.585V23.71" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>}
+                            start={false}
+                            href="https://ulalo.gitbook.io/ulalo-whitepaper"
+                        />
+                    </div>
                 </div>
-                <div className="flex flex-row gap-x-4 ">
-                  <Link
-                    href="https://discord.gg/hbNXEV2Xp8"
-                    target="_blank"
-                    className="w-[64px] h-[64px]  flex flex-col items-center justify-center bg-white rounded-[8px]"
-                  >
-                    <FaDiscord className={'w-[40px] !text-[#364655] h-auto'} />
-                  </Link>
-                  <Link
-                    href="https://t.me/ulaloToken"
-                    target="_blank"
-                    className="w-[64px] h-[64px] flex flex-col items-center justify-center bg-white rounded-[8px]"
-                  >
-                    <FaTelegram className={'w-[40px] !text-[#364655] h-auto'} />
-                  </Link>
-                </div>
-              </div>
-              <div className="absolute top-0 right-1/2 translate-x-1/2 -z-10 -translate-y-[20%]">
-                <SinigCoin />
-              </div>
+
+                <div className={'!h-[0px] md:!h-[100px]'}></div>
+
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="w-full bg-[#272727]  ">
-        <div className=" container max-w-[88rem] mx-auto flex flex-row items-center justify-center gap-x-[100px] group">
-          <p className="text-white text-[24px] md:text-[70px] font-openSans_Medium leading-[110%] capitalize py-[25px] relative  mt-[41px] rounded-[25px]">
-            <div className="absolute top-0 left-0 w-[105%] h-[2px] bg-white leading-[125%]" />
-            {t("tokenLaunchSoon.purchaseTokens")}
-          </p>
-          <div className=" group-hover:rotate-[-45deg] ease-in-out  transition-all duration-300 relative h-[43px] md:h-[97px]">
-            <GoArrow />
-          </div>
-          <p className="text-[#626262] text-[24px] hidden md:flex items-center justify-center font-openSans_Medium leading-[125%] capitalize ">
-            <button className="md:block hidden bg-[#1BE866] text-[#fff] relative text-[16px] font-openSans_SemiBold px-[21.3px] py-[12.5px] rounded-[48px]">
-              <Link href="https://www.mexc.com/exchange/ULA_USDT" target={"_blank"}>{t("header.buyUlaToken")}</Link>
-              {/*<div className="w-[68px] bg-white rotate-[-7deg] h-[41px] rounded-[48px] absolute top-0 right-0 -translate-y-1/2 flex flex-col items-center justify-center translate-x-1/2">*/}
-              {/*  <p className="text-[#FE0101] text-[13px] leading-[110%] font-sfpro_500 text-center">*/}
-              {/*    {t("header.comingSoonLabel")}*/}
-              {/*  </p>*/}
-              {/*</div>*/}
-            </button>
-          </p>
-        </div>
-      </div>
-      <div className="container max-w-[88rem] mx-auto lg:px-8 px-3 min-h-dvh flex flex-col items-center justify-center gap-y-[48px] md:gap-y-[100px]">
-        <div className="w-[200px] md:w-[500px] ">
-          <Logo />
-        </div>
-        <p className="text-[#FFF] text-[24px] md:text-[40px] font-sfpro_500 leading-[110%] text-center">
-          {t("tokenLaunchSoon.empoweringHeading")}
-        </p>
-      </div>
-    </section>
-  );
+            <section style={{ backgroundImage: `url(/image/bg.png)`, backgroundSize: "cover", opacity: 0.7 }} className="top-0 left-0 absolute w-full h-full bg-[#364655]">
+            </section>
+        </section>
+    );
 };
 export default TokenLaunchSoon;
-
-const Card = ({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) => {
-  return (
-    <div className="pt-[88px] bg-[#1BE866] rounded-[64px]  ">
-      <div className=" relative border-solid border-[3px] h-full border-black rounded-[48px] p-8 pt-[64px] pb-[120px] bg-white flex flex-col  gap-6  max-w-[400px]">
-        <h1 className="!text-[#364655] text-[32px] uppercase font-openSans_ExtraBold leading-[125%]">
-          {title}
-        </h1>
-        <p className="text-[#364655] text-[16px] font-openSans_Medium leading-[125%]">
-          {description}
-        </p>
-        <SpeakerCircle />
-      </div>
-    </div>
-  );
-};
-
-const SpeakerCircle = () => {
-  return (
-    <div className="w-[96px] top-0 translate-x-1/2 -translate-y-1/2 absolute left-0 border-[2px] border-solid border-black  h-[96px] rounded-full bg-white flex items-center justify-center">
-      <Speaker />
-    </div>
-  );
-};

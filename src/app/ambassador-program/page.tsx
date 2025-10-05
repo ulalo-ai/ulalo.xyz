@@ -1,8 +1,7 @@
 "use client"
 import React, { useEffect } from 'react'
 import Header from '@/components/global/Header'
-import Herosection from '@/components/global/Ambassador/Herosection'
-import TextSection from '@/components/global/Ambassador/TextSection'
+import Herosection, {Herosection2, Herosection3, JoinForm} from '@/components/global/Ambassador/Herosection'
 import Footer from '@/components/global/Footer'
 import Lenis from 'lenis'
 
@@ -21,7 +20,9 @@ const Page = () => {
         <div>
             <Header />
             <Herosection />
-            <TextSection />
+            <Herosection2 />
+            <Herosection3 />
+            <JoinForm />
             <Footer />
         </div>
     )

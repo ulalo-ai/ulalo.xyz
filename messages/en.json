@@ -1,4 +1,42 @@
 {
+  "feature": {
+    "title": "$ULA Token",
+    "subtitle": "Buy tokens to enjoy unrivaled holder benefits!",
+    "join": "Join Now",
+    "learnMore": "Learn More",
+    "success": "Ambassador Application Sent!",
+    "error": "Failed to send application",
+    "ambassador": {
+      "heroTitle": "Become a Local Health Data Ambassador",
+      "heroSubtitle": "Join the Ulalo Ambassador Network and help revolutionize healthcare in your community.\n                    Earn rewards, connect with local hospitals, and be a voice for change",
+      "hero2Title": "Why Join?",
+      "hero2Subtitle": "Discover the rewards of leading change, from exclusive perks to meaningful connections that empower both you and your community",
+      "why1": "Exclusive Rewards",
+      "why2": "Network with Leaders",
+      "why3": "Be a Voice for Change",
+      "why4": "Skill Development"
+    },
+    "joinForm": {
+      "email": "Email Address",
+      "location": "Location",
+      "reason": "Why Do You Want to Become an Ambassador?",
+      "note": "Experience in Community Outreach or Healthcare (Optional):",
+      "explain": "Explain in Brief",
+      "mandatory": "This field is Mandatory"
+    },
+    "loading": "Loading..",
+    "joinTitle": "Join the Movement",
+    "joinAction": "Submit",
+    "joinSubtitle": "Take the first step toward becoming a healthcare changemaker. Apply now and be the bridge between your community and better healthcare",
+    "heroTitle": "Your Journey as an Ambassador",
+    "heroSubtitle": "From applying to creating impact, here’s how you’ll grow with Ulalo and inspire change in your community",
+    "item1Title": "Step In",
+    "item1Text": "Apply to join the Ulalo Ambassador Program. Once selected, you’ll receive onboarding and guidance.",
+    "item2Title": "Step Up",
+    "item2Text": "Engage with your community, host awareness sessions, and share feedback with hospitals and Ulalo.",
+    "item3Title": "Step Forward",
+    "item3Text": "Earn rewards, grow your network, and be recognized as a leader driving healthcare transformation."
+  },
   "homePage": {
     "title": "Hello world!"
   },
@@ -34,7 +72,7 @@
     "tokenLaunchSoonSubheading": "Buy tokens to enjoy unrivaled holder benefits!",
     "cornerstoneTitle": "Cornerstone of ULALO Ecosystem",
     "cornerstoneDescription": "$ULA gives you exclusive and priority access to the ecosystem’s premium features like AI-based personalised health insights and dedicated customer service.",
-    "earnTitle": "Earn by Growing Project",
+    "earnTitle": "Earn by Growing the Project",
     "earnDescription": "Earn tokens on a regular basis and improve the healthcare system by sharing data and engaging in community initiatives.",
     "stakingTitle": "Higher Staking Rewards",
     "stakingDescription": "Stake your $ULA tokens for an attractive APY!",
@@ -42,7 +80,7 @@
     "governanceDescription": "Vote on key decisions within the ULALO’s ecosystem. Governance rights mean you control the project's direction.",
     "isMoreThanAsset": "$ULA is more than just a digital asset",
     "keyToHealthcareEra": "—it’s a key to unlocking a new era in patient-centric healthcare.",
-    "viewTokenomics": "view Tokenomics",
+    "viewTokenomics": "View Tokenomics",
     "exploreWhitepaper": "Explore Whitepaper",
     "exploreRoadmap": "Explore Roadmap",
     "joinCommunity": "Join Community",

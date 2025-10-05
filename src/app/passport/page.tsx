@@ -217,6 +217,9 @@ const collectUserInfo = async (): Promise<UserInfo> => {
 };
 
 
+const VALID_SCORE = 3;
+
+
 // Check Human Passport score for wallet address
 const checkHumanPassportScore = async (walletAddress: string): Promise<HumanPassportScore> => {
     try {
@@ -237,7 +240,7 @@ const checkHumanPassportScore = async (walletAddress: string): Promise<HumanPass
         return {
             address: data.address || walletAddress,
             score: parseFloat(data.score) || 0,
-            status: data.score >= 20 ? 'valid' : 'invalid',
+            status: data.score >= VALID_SCORE ? 'valid' : 'invalid',
             message: data
         };
     } catch (error) {
@@ -303,7 +306,7 @@ export default function App(): JSX.Element {
                 .from('ulalo_passport')
                 .upsert([{
                     address: address,
-                    validated: record.score >= 20,
+                    validated: record.score >= VALID_SCORE,
                     score: record.score,
                     claimed_airdrop: false,
                     device_id: getDeviceId(),
@@ -334,7 +337,7 @@ export default function App(): JSX.Element {
             setHumanPassportScore(scoreData);
 
             const score = scoreData.score;
-            const isValidated = score >= 20;
+            const isValidated = score >= VALID_SCORE;
 
             setStep('submitting-wallet');
             await saveWalletValidation(address, isValidated, scoreData);

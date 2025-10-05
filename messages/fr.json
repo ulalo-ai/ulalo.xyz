@@ -1,4 +1,51 @@
 {
+  "feature": {
+    "title": "Jeton $ULA",
+    "subtitle": "Achetez des jetons pour profiter d'avantages incomparables !",
+    "join": "Rejoignez-nous",
+    "learnMore": "En savoir plus",
+    "success": "Candidature d'ambassadeur envoyée !",
+    "error": "Échec de l'envoi de la candidature",
+    "ambassador": {
+      "heroTitle": "Devenez ambassadeur des données de santé locales",
+      "heroSubtitle": "Rejoignez le réseau d'ambassadeurs Ulalo et participez à la révolution des soins de santé dans votre communauté.\n                    Gagnez des récompenses, connectez-vous avec les hôpitaux locaux et soyez une voix pour le changement",
+      "hero2Title": "Pourquoi nous rejoindre ?",
+      "hero2Subtitle": "Découvrez les avantages de mener le changement, des privilèges exclusifs aux connexions significatives qui vous responsabilisent, vous et votre communauté",
+      "why1": "Récompenses exclusives",
+      "why2": "Réseautage avec des leaders",
+      "why3": "Soyez une voix pour le changement",
+      "why4": "Développement des compétences"
+    },
+    "joinForm": {
+      "email": "Adresse e-mail",
+      "location": "Localisation",
+      "reason": "Pourquoi voulez-vous devenir ambassadeur ?",
+      "note": "Expérience en sensibilisation communautaire ou en soins de santé (facultatif) :",
+      "explain": "Expliquez brièvement",
+      "mandatory": "Ce champ est obligatoire",
+      "optional": "Facultatif",
+      "availability": "Disponibilité pour assister aux réunions",
+      "successMessage": "Candidature soumise avec succès !",
+      "errorMessage": "Une erreur s'est produite. Veuillez réessayer.",
+      "errors": {
+        "emailRequired": "L'e-mail est obligatoire",
+        "emailInvalid": "Format d'e-mail invalide",
+        "reasonTooShort": "Veuillez fournir au moins 10 caractères"
+      }
+    },
+    "loading": "Chargement..",
+    "joinTitle": "Rejoignez le mouvement",
+    "joinAction": "Soumettre",
+    "joinSubtitle": "Faites le premier pas pour devenir un acteur du changement en matière de santé. Postulez maintenant et soyez le pont entre votre communauté et de meilleurs soins de santé",
+    "heroTitle": "Votre parcours en tant qu'ambassadeur",
+    "heroSubtitle": "De la candidature à la création d'impact, voici comment vous évoluerez avec Ulalo et inspirerez le changement dans votre communauté",
+    "item1Title": "Entrez",
+    "item1Text": "Postulez pour rejoindre le programme d'ambassadeurs Ulalo. Une fois sélectionné, vous recevrez une intégration et des conseils.",
+    "item2Title": "Montez en puissance",
+    "item2Text": "Engagez-vous avec votre communauté, organisez des sessions de sensibilisation et partagez vos commentaires avec les hôpitaux et Ulalo.",
+    "item3Title": "Avancez",
+    "item3Text": "Gagnez des récompenses, développez votre réseau et soyez reconnu comme un leader de la transformation des soins de santé."
+  },
   "homePage": {
     "title": "Bonjour le monde !"
   },
