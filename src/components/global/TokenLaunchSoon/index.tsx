@@ -80,7 +80,7 @@ const TokenLaunchSoon = () => {
                 </div>
                 <div className="flex flex-row gap-x-4 ">
                   <Link
-                    href="https://discord.gg/jGfMR3Tu5t"
+                    href="https://discord.gg/hbNXEV2Xp8"
                     target="_blank"
                     className="w-[64px] h-[64px]  flex flex-col items-center justify-center bg-white rounded-[8px]"
                   >

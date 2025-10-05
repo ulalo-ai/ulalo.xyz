@@ -217,7 +217,7 @@ const Header = () => {
                 <MediumFooter color="#364655" />
               </Link>
               <Link
-                href="https://discord.gg/jGfMR3Tu5t"
+                href="https://discord.gg/hbNXEV2Xp8"
                 onClick={() => setMobileNav(false)}
               >
                 <DiscordFooter color="#364655" />

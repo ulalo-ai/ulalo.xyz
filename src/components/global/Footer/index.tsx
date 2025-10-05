@@ -102,7 +102,7 @@ const Footer = () => {
                   <span>{t("joinCommunity")}</span>
                   <div className="flex flex-row items-center gap-x-2 mt-2">
                     <Link
-                      href="https://discord.gg/ChhVCqe9Vp"
+                      href="https://discord.gg/hbNXEV2Xp8"
                       target="_blank"
                       className="bg-[#FFF] rounded-[3.75px] p-2"
                     >
@@ -150,7 +150,7 @@ const Footer = () => {
                   <TelegramFooter />
                 </Link>
                 {/* <Link href='/'><MediumFooter /></Link> */}
-                <Link href="https://discord.gg/jGfMR3Tu5t" target="_blank">
+                <Link href="https://discord.gg/hbNXEV2Xp8" target="_blank">
                   <DiscordFooter />
                 </Link>
                 <Link href="https://www.youtube.com/@ULALO_IO" target="_blank">

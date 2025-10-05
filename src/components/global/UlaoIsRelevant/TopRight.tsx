@@ -40,7 +40,7 @@ const TopRight = () => {
             {t("topRight.joinTelegramButton")}
           </Link>
           <Link
-            href={"https://discord.gg/ChhVCqe9Vp"}
+            href={"https://discord.gg/hbNXEV2Xp8"}
             target="_blank"
             className="w-full py-[13px] mt-[16px] bg-[#364655] text-white rounded-[12px] flex flex-col items-center justify-center"
           >
