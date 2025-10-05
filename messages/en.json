@@ -22,7 +22,16 @@
       "reason": "Why Do You Want to Become an Ambassador?",
       "note": "Experience in Community Outreach or Healthcare (Optional):",
       "explain": "Explain in Brief",
-      "mandatory": "This field is Mandatory"
+      "mandatory": "This field is Mandatory",
+      "optional": "Optional",
+      "availability": "Availability to attend meetings",
+      "successMessage": "Ambassador demand submitted!",
+      "errorMessage": "Something went wrong. Try again.",
+      "errors": {
+        "emailRequired": "E-mail is required",
+        "emailInvalid": "E-mail is invalid",
+        "reasonTooShort": "At least 10 characters"
+      }
     },
     "loading": "Loading..",
     "joinTitle": "Join the Movement",
