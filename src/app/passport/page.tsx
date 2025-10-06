@@ -467,7 +467,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => (
                 </div>
                 <div className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-sm text-gray-300">Validated if score ≥ 20</span>
+                    <span className="text-sm text-gray-300">Validated if score ≥ {VALID_SCORE}</span>
                 </div>
             </div>
         </div>
@@ -659,7 +659,7 @@ const SuccessScreen: React.FC<SuccessScreenProps> = ({ walletAddress, humanPassp
                 <p className="text-3xl font-bold text-green-300">
                     {humanPassportScore?.score || 'N/A'}
                 </p>
-                <p className="text-green-400 text-sm mt-1">Score ≥ 20 required for validation</p>
+                <p className="text-green-400 text-sm mt-1">Score ≥ {VALID_SCORE} required for validation</p>
             </div>
 
             <div className="bg-gray-700/50 rounded-xl p-4 backdrop-blur">
@@ -701,7 +701,7 @@ const ValidationFailedScreen: React.FC<ValidationFailedScreenProps> = ({ walletA
                 <p className="text-3xl font-bold text-red-300">
                     {humanPassportScore?.score || '0'}
                 </p>
-                <p className="text-red-400 text-sm mt-1">Minimum score of 20 required</p>
+                <p className="text-red-400 text-sm mt-1">Minimum score of {VALID_SCORE} required</p>
             </div>
 
             <div className="bg-gray-700/50 rounded-xl p-4 backdrop-blur">
