@@ -3,7 +3,7 @@ import BridgingTheWorld from "@/components/global/BridgingTheWorld";
 import DistributionOfTokens from "@/components/global/DistributionOfTokens";
   // import DistributionOfTokens from "@/components/global/DistributionOfTokens";
 import Footer from "@/components/global/Footer";
-import HeroSection from "@/components/global/HeroSection";
+import HeroSection from "@/components/global/Ambassador/Herosection";
 import OwningYourHealth from "@/components/global/OwningYourHealth";
 import Roadmap from "@/components/global/Roadmap";
 import ShowCase from "@/components/global/ShowCase/Index";
