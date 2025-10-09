@@ -24,8 +24,7 @@ export default function Home() {
   }, []);
   return (
     <>
-
-      <HeroSection />
+        <HeroSection />
       <TokenLaunchSoon />
       <OwningYourHealth />
       <ShowCase />
@@ -34,8 +33,6 @@ export default function Home() {
       <UlaoIsRelevant />
       <DistributionOfTokens />
       <Footer />
-
-      
     </>
   );
 }
