@@ -486,10 +486,10 @@ const Herosection = () => {
             <div className="absolute top-0 left-0 w-1/6 h-full bg-gradient-to-r from-[#005716] to-transparent z-10"/>
             <div className="absolute top-0 right-0 w-1/6 h-full bg-gradient-to-l from-[#005716] to-transparent z-10"/>
             <div
-                className={'container mx-auto max-w-[88rem]  px-5 md:px-8 py-[48px] md:py-[100px] relative flex h-full flex-col items-start justify-center gap-y-5 z-20'}>
+                className={'container mx-auto max-w-[88rem] px-5 md:px-8 py-[48px] md:py-[100px] relative flex h-full flex-col items-start justify-center gap-y-5 z-20'}>
 
-                <h1 className={'text-white font-[900] text-[36px] md:!text-[72px]'}>
-                    <b>
+                <h1 className={'text-white font-[900] text-[36px] md:!text-[100px] !pt-16 !leading-[95%] !mb-5'}>
+                    <b className={' whitespace-pre-line'}>
                         {t("feature.ambassador.heroTitle")}
                     </b>
                 </h1>
@@ -497,12 +497,12 @@ const Herosection = () => {
                     {t("feature.ambassador.heroSubtitle")}
                 </p>
 
-                <img src={'/image/ambassador.png'} className={'mt-24 !w-[2690px] h-auto'} alt={''} />
+                <img src={'/image/ambassador.png'} className={'mt-4 !w-[2690px] h-auto'} alt={''} />
 
                 <Link
                     href={"https://ulalo.gitbook.io/ulalo-whitepaper"}
                     target="_blank"
-                    className="bg-[#1BE866] text-[#005716] text-[16px] md:text-[24px] font-openSans_Medium leading-[23.856px] px-[32px] py-[24px] rounded-[12px] mt-24"
+                    className="bg-[#1BE866] text-[#005716] !text-[12px] md:!text-[18px] font-openSans_Medium leading-[23.856px] px-[12px] py-[8px] rounded-[12px] mt-8"
                 >
                     {t("feature.join")}
                 </Link>
