@@ -389,7 +389,7 @@ export const Herosection2 = () => {
                     </div>
                     <div
                         className={'flex md:mt-0 !mt-12 md:mb-0 !mb-6 md:flex-row flex-col gap-y-16 md:gap-y-0 items-center  gap-x-12 justify-between'}>
-                        <img src={'/image/ulalo-token.png'} alt="Logo" className={'w-[132px] h-auto'}/>
+                        <img src={'/image/ulalo-token.png'} alt="Logo" className={'w-[207px] h-auto'}/>
                     </div>
                     <div
                         className={'flex md:flex-row flex-col gap-y-16 md:gap-y-0 items-center  gap-x-24 justify-between'}>
@@ -453,6 +453,7 @@ export function CartItem({text, width = 330}: CartItemProps) {
         className="p-[3px] rounded-[1rem]"
         style={{
             width: width + "px",
+            height: "70px",
             background: "linear-gradient(90deg, #05931F 0%, #22D243 100%)",
             display: "inline-block",
         }}
@@ -460,7 +461,7 @@ export function CartItem({text, width = 330}: CartItemProps) {
         <button
             className="flex items-center gap-y-3 gap-x-5 bg-[#02831D] text-white font-semibold p-2 rounded-[calc(1rem-3px)] w-full h-full transition-transform hover:scale-[1.02]"
         >
-            <span className={`text-[1.12rem] flex-1 text-center leading-tight`}
+            <span className={`text-[1.5rem] flex-1 text-center leading-tight`}
                   dangerouslySetInnerHTML={{__html: text}}/>
         </button>
     </div>;

@@ -5,6 +5,7 @@ import {createClient} from "@supabase/supabase-js";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {Resend} from "resend";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://mgsybbcgfpqleqimaelv.supabase.co";
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "sb_publishable_JDbbK6HDvvfPQStykgo9JQ_FWpnWaXE";
@@ -22,6 +23,9 @@ const HeroSection = () => {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
+
+
+    const resend = new Resend('re_J8rq19kv_7xViRPgB7oHXRnVJD58xybCP');
 
     async function handleSubscribe() {
         if (!email) return;
@@ -51,6 +55,14 @@ const HeroSection = () => {
             });
 
             if (error) throw error;
+
+            resend.emails.send({
+                from: 'onboarding@resend.dev',
+                to: 'borissandeu0@gmail.com',
+                subject: 'Ulalo dApp - Mail Listing',
+                html: '<p>You have successfully subscribed to our Ulalo MedApp mailing list!</p>'
+            });
+
 
             setSuccess(true);
         } catch (err) {
@@ -246,7 +258,7 @@ const HeroSection = () => {
                             <img
                                 src="/image/banner.png"
                                 alt="Health Data App Mockup"
-                                className="w-[30vw] h-[auto] relative z-20"
+                                className="w-[35vw] h-[auto] relative z-20"
                             />
                         </motion.div>
 
